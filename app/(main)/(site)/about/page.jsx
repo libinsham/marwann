@@ -102,7 +102,7 @@ export default function Page() {
                       <img src="/assets/img/icons/icon-4.svg" alt="" />
                       <div className="annual-text">
                         <p>Established</p>
-                        <h5>2019</h5>
+                        <h5>2016</h5>
                       </div>
                     </div>
                   </div>
@@ -270,7 +270,7 @@ export default function Page() {
                   <span className="text-uppercase" style={{ color: "#f7d95d", fontSize: "12px", fontWeight: "700", letterSpacing: ".12em" }}>{"Founder & All India Chairman"}</span>
                   <h3 className="m-t-10">Samuga Sastha, Dr. S. Allahuddeen, BA</h3>
                   <p className="m-b-0">
-                    Founder of MARWANN CHARITABLE TRUST, established in 2019 in Vellore, Tamil Nadu.
+                    Founder of MARWANN CHARITABLE TRUST, established in 2016 in Vellore, Tamil Nadu.
                   </p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function Page() {
                 </div>
                 <div className="text">
                   <p>
-                    Dr. S. Allahuddeen is the founder and All-India Chairman of MARWANN CHARITABLE TRUST. Since establishing the Trust in 2019, he has guided its work in education, healthcare and disaster relief for underserved communities.
+                    Dr. S. Allahuddeen is the founder and All-India Chairman of MARWANN CHARITABLE TRUST. Since establishing the Trust in 2016, he has guided its work in education, healthcare and disaster relief for underserved communities.
                   </p>
                   <p>
                     Under his leadership, the Trust's work includes literacy campaigns, women's empowerment programmes and emergency aid projects. His stated commitment is to community-focused service and to creating opportunities for people in need.
