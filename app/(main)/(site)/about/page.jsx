@@ -53,7 +53,7 @@ export default function Page() {
                     <i className="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
                   </div>
                   <div className="about-visual-copy">
-                    <span className="since">Established in 2019 · Vellore, Tamil Nadu</span>
+                    <span className="since">Established in 2016 · Vellore, Tamil Nadu</span>
                     <h3>Serving Humanity with Compassion</h3>
                     <p>Education, healthcare, social welfare and humanitarian support.</p>
                   </div>
