@@ -1,0 +1,92 @@
+[
+  {
+    "id": "g01",
+    "title": "Child Orphanage Support",
+    "description": "Charitable assistance to support children in orphanages.",
+    "category": "community",
+    "image": "/assets/img/gallery/child-orphanage-support.webp",
+    "alt": "Child Orphanage Support",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "g02",
+    "title": "COVID-19 Food Distribution",
+    "description": "Food distribution to support communities during the pandemic.",
+    "category": "community",
+    "image": "/assets/img/gallery/covid-food-distribution.webp",
+    "alt": "COVID-19 Food Distribution",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "g03",
+    "title": "Nilavembu Kasayam Distribution",
+    "description": "Distribution in communities and public institutions.",
+    "category": "health",
+    "image": "/assets/img/gallery/nilavembu-kasayam-distribution.webp",
+    "alt": "Nilavembu Kasayam Distribution",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "g04",
+    "title": "Eye Camps",
+    "description": "Eye camps organised as part of the trust's healthcare activities.",
+    "category": "health",
+    "image": "/assets/img/gallery/eye-camp.webp",
+    "alt": "Eye Camps",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "g05",
+    "title": "Rice Bag Distribution",
+    "description": "Food assistance activity documented in the trust's available photograph.",
+    "category": "community",
+    "image": "/assets/img/gallery/rice-bag.webp",
+    "alt": "Trust members presenting charitable food and essential supplies",
+    "date": "2019-12-13",
+    "visible": true
+  },
+  {
+    "id": "g06",
+    "title": "Independence Day & Flood Relief",
+    "description": "Community activities and flood relief assistance.",
+    "category": "community",
+    "image": "/assets/img/gallery/flood.webp",
+    "alt": "Independence Day and Flood Relief",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "g07",
+    "title": "Old Age Home Support",
+    "description": "Charitable support for residents of old age homes.",
+    "category": "community",
+    "image": "/assets/img/gallery/old-age.webp",
+    "alt": "Old Age Home Support",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "g08",
+    "title": "Medical Assistance",
+    "description": "Medical support activity captured in an available trust photograph.",
+    "category": "health",
+    "image": "/assets/img/gallery/medical-assistance.webp",
+    "alt": "Healthcare professional providing assistance to a child",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "g09",
+    "title": "Women's Tailoring Classes",
+    "description": "Tailoring classes to develop practical skills among women.",
+    "category": "education",
+    "image": "/assets/img/gallery/tailoring.webp",
+    "alt": "Women's Tailoring Classes",
+    "date": "",
+    "visible": true
+  }
+]

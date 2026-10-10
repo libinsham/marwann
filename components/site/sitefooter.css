@@ -1,0 +1,558 @@
+
+/* ==========================================================
+   MARWANN CHARITABLE TRUST
+   SITE FOOTER — COMPLETE RESPONSIVE STYLESHEET
+========================================================== */
+
+.footer-section-2 {
+  --footer-bg: #004b43;
+  --footer-text: #ffffff;
+  --footer-muted: #e4efec;
+  --footer-gold: #e5bd50;
+  --footer-bottom-bg: rgba(255, 255, 255, 0.1);
+
+  position: relative;
+  width: 100%;
+  padding: 65px 0 22px;
+  overflow: hidden;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: inherit;
+  line-height: 1.7;
+}
+
+.footer-section-2,
+.footer-section-2 * {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   MAIN CONTAINER
+========================================================== */
+
+.footer-section-2 .site-footer-container {
+  width: calc(100% - 80px);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   MAIN FIVE-COLUMN GRID
+========================================================== */
+
+.footer-section-2 .site-footer-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(0, 0.9fr)
+    minmax(0, 0.9fr)
+    minmax(0, 0.9fr)
+    minmax(0, 1.45fr);
+  align-items: start;
+  gap: 30px;
+  width: 100%;
+}
+
+.footer-section-2 .site-footer-about,
+.footer-section-2 .site-footer-links,
+.footer-section-2 .site-footer-contact {
+  min-width: 0;
+}
+
+/* ==========================================================
+   LOGO AND TRUST INFORMATION
+========================================================== */
+
+.footer-section-2 .site-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 0 22px;
+  text-decoration: none;
+}
+
+.footer-section-2 .site-footer-logo img {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-section-2 .site-footer-description {
+  margin: 0 0 18px;
+  color: var(--footer-muted);
+  font-size: 15px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.footer-section-2 .site-footer-motto {
+  margin: 0;
+  color: var(--footer-text);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   COLUMN HEADINGS
+========================================================== */
+
+.footer-section-2 .site-footer-grid > nav > h3,
+.footer-section-2 .site-footer-contact > h3 {
+  margin: 0 0 23px;
+  color: var(--footer-text) !important;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ==========================================================
+   QUICK LINKS, OUR WORK, GET INVOLVED
+========================================================== */
+
+.footer-section-2 .site-footer-links ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section-2 .site-footer-links li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section-2 .site-footer-links li::before {
+  content: none !important;
+  display: none !important;
+}
+
+.footer-section-2 .site-footer-links a {
+  display: inline-block;
+  max-width: 100%;
+  color: var(--footer-muted) !important;
+  font-size: 14px;
+  line-height: 1.75;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.footer-section-2 .site-footer-links a:hover,
+.footer-section-2 .site-footer-links a:focus-visible {
+  color: var(--footer-gold) !important;
+}
+
+/* ==========================================================
+   CONTACT DETAILS
+========================================================== */
+
+.footer-section-2 .get-in-touch {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section-2 .footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section-2 .footer-contact-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section-2 .footer-contact-heading svg {
+  display: block;
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  fill: var(--footer-gold);
+  color: var(--footer-gold);
+}
+
+.footer-section-2 .footer-contact-heading h4 {
+  margin: 0;
+  padding: 0;
+  color: var(--footer-text) !important;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.footer-section-2 .footer-contact-value {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--footer-muted) !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  transition: color 0.2s ease;
+}
+
+.footer-section-2 .footer-contact-value:hover,
+.footer-section-2 .footer-contact-value:focus-visible {
+  color: var(--footer-gold) !important;
+}
+
+/* ==========================================================
+   FOOTER BOTTOM BAR
+========================================================== */
+
+
+
+/* Bottom footer bar */
+.footer-section-2 .footer-bottom {
+  width: 100%;
+  margin-top: 48px;
+  padding: 0;
+}
+
+.footer-section-2 .footer-bottom-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+
+  width: 100%;
+  box-sizing: border-box;
+  padding: 22px 24px;
+
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 18px;
+}
+
+/* Copyright */
+.footer-section-2 .footer-copyright {
+  margin: 0;
+  flex: 1 1 300px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* Legal links container */
+.footer-section-2 .footer-bottom-menu {
+  margin-left: auto;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.footer-section-2 .footer-bottom-menu ul {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 28px !important;
+
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 15px !important;
+}
+
+.footer-section-2 .footer-bottom-menu li {
+  display: block !important;
+  flex: 0 0 auto;
+  margin: 0 !important;
+  padding: 15px !important;
+  list-style: none !important;
+}
+
+.footer-section-2 .footer-bottom-menu li a {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 4px 0;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.6;
+  transition: color 0.2s ease;
+}
+
+.footer-section-2 .footer-bottom-menu li a:hover {
+  color: #f2c14e;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .footer-section-2 .footer-bottom-layout {
+    gap: 16px 24px;
+  }
+
+  .footer-section-2 .footer-copyright {
+    flex-basis: 100%;
+  }
+
+  .footer-section-2 .footer-bottom-menu {
+    margin-left: 0;
+  }
+
+  .footer-section-2 .footer-bottom-menu ul {
+    justify-content: flex-start;
+    gap: 12px 24px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer-section-2 .footer-bottom-layout {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .footer-section-2 .footer-bottom-menu ul {
+    gap: 10px 18px !important;
+  }
+
+  .footer-section-2 .footer-bottom-menu li a {
+    white-space: normal;
+  }
+}
+
+
+
+
+
+/* ==========================================================
+   LARGE LAPTOPS
+========================================================== */
+
+@media (max-width: 1399px) {
+  .footer-section-2 .site-footer-container {
+    width: calc(100% - 60px);
+  }
+
+  .footer-section-2 .site-footer-grid {
+    grid-template-columns:
+      minmax(0, 1.35fr)
+      minmax(0, 0.85fr)
+      minmax(0, 0.85fr)
+      minmax(0, 0.85fr)
+      minmax(0, 1.3fr);
+    gap: 23px;
+  }
+
+  .footer-section-2 .site-footer-grid > nav > h3,
+  .footer-section-2 .site-footer-contact > h3 {
+    font-size: 19px;
+  }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1050px) {
+  .footer-section-2 {
+    padding-top: 50px;
+  }
+
+  .footer-section-2 .site-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px 26px;
+  }
+
+  .footer-section-2 .site-footer-about,
+  .footer-section-2 .site-footer-contact {
+    grid-column: span 2;
+  }
+
+  .footer-section-2 .footer-bottom {
+    margin-top: 35px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767px) {
+  .footer-section-2 {
+    padding: 42px 0 18px;
+  }
+
+  .footer-section-2 .site-footer-container {
+    width: calc(100% - 36px);
+  }
+
+  .footer-section-2 .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 29px 20px;
+  }
+
+  .footer-section-2 .site-footer-about,
+  .footer-section-2 .site-footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .footer-section-2 .site-footer-logo {
+    margin-bottom: 17px;
+  }
+
+  .footer-section-2 .site-footer-logo img {
+    width: 175px;
+  }
+
+  .footer-section-2 .site-footer-description {
+    font-size: 14px;
+  }
+
+  .footer-section-2 .site-footer-grid > nav > h3,
+  .footer-section-2 .site-footer-contact > h3 {
+    margin-bottom: 16px;
+    font-size: 19px;
+  }
+
+  .footer-section-2 .site-footer-links ul {
+    gap: 9px;
+  }
+
+  .footer-section-2 .site-footer-links a {
+    font-size: 13px;
+  }
+
+  .footer-section-2 .get-in-touch {
+    gap: 16px;
+  }
+
+  .footer-section-2 .footer-contact-value {
+    font-size: 13px;
+  }
+
+  .footer-section-2 .footer-bottom {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .footer-section-2 .footer-bottom .footer-bottom-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-section-2 .footer-bottom .footer-copyright {
+    flex: 0 1 auto;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .footer-section-2 .footer-bottom .footer-bottom-menu {
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-section-2 .footer-bottom .footer-bottom-menu ul {
+    justify-content: flex-start;
+    column-gap: 18px !important;
+    row-gap: 9px !important;
+  }
+
+  .footer-section-2 .footer-bottom .footer-bottom-menu ul li a {
+    font-size: 12px;
+    white-space: normal;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+  .footer-section-2 .site-footer-container {
+    width: calc(100% - 28px);
+  }
+
+  .footer-section-2 .site-footer-grid {
+    column-gap: 14px;
+  }
+
+  .footer-section-2 .site-footer-grid > nav > h3,
+  .footer-section-2 .site-footer-contact > h3 {
+    font-size: 18px;
+  }
+
+  .footer-section-2 .site-footer-links a {
+    font-size: 12px;
+  }
+
+  .footer-section-2 .footer-bottom .footer-bottom-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px !important;
+    padding: 15px;
+  }
+
+  .footer-section-2 .footer-bottom .footer-bottom-menu ul li a {
+    white-space: normal;
+  }
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-section-2 *,
+  .footer-section-2 *::before,
+  .footer-section-2 *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+.footer-section-2 .footer-bottom-menu ul {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+
+.footer-section-2 .footer-bottom-menu li {
+  margin: 0 0 0 24px !important;
+  padding: 0 !important;
+}
+
+.footer-section-2 .footer-bottom-menu li:first-child {
+  margin-left: 0 !important;
+}
+
+.footer-section-2 .footer-bottom-menu li a {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 4px 0 !important;
+}

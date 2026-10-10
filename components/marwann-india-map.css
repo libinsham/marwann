@@ -1,0 +1,339 @@
+
+/* =========================================
+   MARWANN CHARITABLE TRUST
+   Interactive India Map
+========================================= */
+
+.marwann-india-map-wrap {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 345px;
+  padding: 58px 18px 48px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Map container */
+
+.marwann-india-map-stage {
+   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(125%, 672px);
+  min-width: 0;
+  margin: 0 auto;
+  line-height: 0;
+  padding-bottom: 20px;
+
+}
+
+/* SVG map */
+
+.marwann-india-map-svg {
+  display: block;
+  width: 120%;
+  max-width: 648px;
+  max-height: 520px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Individual states */
+
+.marwann-india-map-location {
+  cursor: pointer;
+  opacity: 1;
+  stroke-width: 1.15px;
+  vector-effect: non-scaling-stroke;
+  outline: none;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+  transition: fill 0.15s ease;
+}
+
+/* Prevent map movement on hover */
+
+.marwann-india-map-location:hover,
+.marwann-india-map-location:focus,
+.marwann-india-map-location:focus-visible {
+  transform: none !important;
+  filter: none !important;
+  stroke-width: 1.15px;
+}
+
+.marwann-india-map-location:focus-visible {
+  outline: none;
+  stroke: #c8a85b !important;
+  stroke-width: 2px;
+}
+
+/* Selected state */
+
+.marwann-india-map-location.is-selected {
+  stroke-width: 1.15px;
+}
+
+/* =========================================
+   FIXED HOVER TOOLTIP
+========================================= */
+
+.marwann-india-map-tooltip {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  z-index: 10;
+
+  width: min(250px, calc(100% - 24px));
+  min-height: 48px;
+  padding: 9px 13px;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  background: #101827;
+  color: #fff;
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(7, 18, 32, 0.18);
+
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.12s ease,
+    visibility 0.12s ease;
+}
+
+.marwann-india-map-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.marwann-india-map-tooltip strong {
+  display: block;
+  margin: 0 0 3px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.marwann-india-map-tooltip > span {
+  display: block;
+  margin: 0;
+  color: #d9e2ec;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Tooltip arrow */
+
+.marwann-india-map-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  background: #101827;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* =========================================
+   SELECTED STATE STATUS BAR
+========================================= */
+
+.marwann-india-map-status {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 9px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  min-height: 32px;
+  padding: 7px 12px;
+
+  box-sizing: border-box;
+  border: 1px solid #dfeae6;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.98);
+  color: #71807d;
+
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: center;
+
+  box-shadow: 0 6px 18px rgba(7, 93, 86, 0.05);
+}
+
+.marwann-india-map-status > span:first-child {
+  color: #08776e;
+  font-weight: 700;
+}
+
+.marwann-india-map-status .status-dot {
+  color: #b5c9c3;
+}
+
+.marwann-india-map-status strong {
+  color: #075d56;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   EXISTING MAP AREA
+========================================= */
+
+.marwann-reach-section .marwann-live-map-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 345px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.marwann-reach-section
+.marwann-live-map-area
+.marwann-map-dots,
+.marwann-reach-section
+.marwann-live-map-area
+.marwann-map-placeholder {
+  display: none !important;
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+  .marwann-india-map-svg {
+    max-width: 560px;
+    max-height: 365px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991.98px) {
+  .marwann-india-map-wrap {
+    min-height: 320px;
+    padding: 54px 14px 46px;
+  }
+
+  .marwann-india-map-svg {
+    max-width: 510px;
+    max-height: 335px;
+  }
+
+  .marwann-india-map-status {
+    left: 12px;
+    right: 12px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575.98px) {
+  .marwann-india-map-wrap {
+    min-height: 270px;
+    padding: 52px 8px 46px;
+  }
+
+  .marwann-reach-section .marwann-live-map-area {
+    min-height: 270px;
+  }
+
+  .marwann-india-map-stage {
+    width: 100%;
+  }
+
+  .marwann-india-map-svg {
+    width: 100%;
+    max-width: 420px;
+    max-height: 270px;
+  }
+
+  .marwann-india-map-tooltip {
+    top: 8px;
+    width: min(205px, calc(100% - 20px));
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+
+  .marwann-india-map-tooltip strong {
+    font-size: 11px;
+  }
+
+  .marwann-india-map-tooltip > span {
+    font-size: 9px;
+  }
+
+  .marwann-india-map-status {
+    left: 10px;
+    right: 10px;
+    bottom: 7px;
+    gap: 5px;
+    padding: 7px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .marwann-india-map-wrap {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .marwann-india-map-status {
+    left: 6px;
+    right: 6px;
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .marwann-india-map-location,
+  .marwann-india-map-tooltip {
+    transition: none !important;
+    animation: none !important;
+  }
+}

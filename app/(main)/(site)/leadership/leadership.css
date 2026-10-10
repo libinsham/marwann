@@ -1,0 +1,725 @@
+
+/* =====================================================
+   MARWANN CHARITABLE TRUST
+   LEADERSHIP PAGE - COMPLETE RESPONSIVE STYLESHEET
+   ===================================================== */
+
+.leadership-page {
+  --mct-green: #064e46;
+  --mct-dark-green: #003f38;
+  --mct-gold: #ffdf70;
+  --mct-text: #17211e;
+  --mct-muted: #747d78;
+  --mct-light: #f8f7ef;
+
+  width: 100%;
+  max-width: 100%;
+  color: var(--mct-text);
+  background: #fff;
+  overflow-x: clip;
+}
+
+.leadership-page,
+.leadership-page *,
+.leadership-page *::before,
+.leadership-page *::after {
+  box-sizing: border-box;
+}
+
+.leadership-page img {
+  max-width: 100%;
+}
+
+.leadership-page a {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* =====================================================
+   1. HERO BANNER
+   Green panel LEFT | Photograph RIGHT
+   ===================================================== */
+
+.leadership-page .breadcrumb-section {
+  display: block;
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.leadership-page .leadership-hero-container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.leadership-page .leadership-hero-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-auto-flow: row;
+  align-items: stretch;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Reset Bootstrap column widths specifically for this hero */
+.leadership-page .leadership-hero-row > .leadership-hero-left,
+.leadership-page .leadership-hero-row > .leadership-hero-right {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: initial !important;
+}
+
+/* Green panel */
+.leadership-page .breadcrumb-content {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  padding: 44px 48px;
+  overflow: hidden;
+
+  background-color: var(--mct-green);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border: 0;
+  border-right: 12px solid var(--mct-gold);
+  border-radius: 12px 0 0 12px;
+}
+
+/* Dark green overlay */
+.leadership-page .breadcrumb-content::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    115deg,
+    rgba(0, 77, 68, 0.91),
+    rgba(0, 64, 56, 0.88)
+  );
+  content: "";
+  pointer-events: none;
+}
+
+/* Breadcrumb navigation */
+.leadership-page .breadcrumb-nav {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 0 28px;
+}
+
+.leadership-page .breadcrumb-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.leadership-page .breadcrumb-nav li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.leadership-page .breadcrumb-nav li + li::before {
+  content: "→";
+  color: #fff;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.leadership-page .breadcrumb-nav a,
+.leadership-page .breadcrumb-nav span {
+  color: #fff;
+  text-decoration: none;
+}
+
+.leadership-page .breadcrumb-nav a:hover {
+  color: var(--mct-gold);
+}
+
+/* Hero heading */
+.leadership-page .breadcrumb-title {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+}
+
+.leadership-page .breadcrumb-title h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(40px, 4vw, 68px);
+  font-weight: 800;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+/* Decorative artwork */
+.leadership-page .breadcrumb-content .shape-1 {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.leadership-page .breadcrumb-content .shape-1 img {
+  position: absolute;
+  bottom: -5%;
+  left: 0;
+  display: block;
+  width: 58%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: left bottom;
+  opacity: 0.17;
+}
+
+/* Photograph column */
+.leadership-page .breadcrumb-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #e8efeb;
+  border-radius: 0 12px 12px 0;
+}
+
+.leadership-page .breadcrumb-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =====================================================
+   2. TRUSTEES SECTION
+   ===================================================== */
+
+.leadership-page .leadership-trustees-section {
+  position: relative;
+  width: 100%;
+  padding: 90px 0;
+  background-color: #fff;
+  background-position: center bottom, center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.leadership-page .leadership-trustees-section > .container {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+/* Section introduction */
+.leadership-page .leadership-intro {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.leadership-page .common-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #7a817e;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.leadership-page .leadership-intro .common-subtitle {
+  justify-content: center;
+}
+
+.leadership-page .common-subtitle img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  object-fit: contain;
+}
+
+.leadership-page .common-title {
+  width: 100%;
+}
+
+.leadership-page .common-title h2 {
+  margin: 0 0 20px;
+  color: var(--mct-dark-green);
+  font-size: clamp(32px, 3.5vw, 58px);
+  font-weight: 800;
+  line-height: 1.16;
+  overflow-wrap: anywhere;
+}
+
+.leadership-page .leadership-intro > p {
+  margin: 0;
+  color: var(--mct-muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* Four equally sized cards on desktop */
+.leadership-page .leadership-trustee-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leadership-page .trustee-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 240px;
+  height: 100%;
+  margin: 0;
+  padding: 30px 20px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5ece9;
+  border-radius: 20px;
+  box-shadow: 0 10px 32px rgba(12, 59, 49, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.leadership-page .trustee-profile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(12, 59, 49, 0.11);
+}
+
+/* Circular trustee photos */
+.leadership-page .trustee-photo {
+  display: block;
+  flex: 0 0 88px;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  background: #e8f1ef;
+  border-radius: 50%;
+}
+
+.leadership-page .trustee-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+}
+
+.leadership-page .trustee-profile h3 {
+  margin: 0 0 12px;
+  color: #17211e;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.leadership-page .trustee-profile p {
+  margin: 0;
+  color: var(--mct-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   3. FOUNDER PROFILE
+   ===================================================== */
+
+.leadership-page .leadership-founder-section {
+  width: 100%;
+  padding: 80px 0 90px;
+  background: var(--mct-light);
+}
+
+.leadership-page .leadership-founder-section > .container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.leadership-page .trustee-founder-photo {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  overflow: hidden;
+  background: var(--mct-green);
+  border-radius: 22px;
+}
+
+.leadership-page .trustee-founder-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  max-height: 480px;
+  margin: 0;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 22px;
+}
+
+.leadership-page .leadership-founder-section .common-subtitle {
+  margin-bottom: 18px;
+}
+
+.leadership-page .leadership-founder-section .common-title h2 {
+  margin: 0 0 24px;
+  color: var(--mct-dark-green);
+  font-size: clamp(36px, 3.5vw, 60px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.leadership-page .leadership-founder-text p {
+  margin: 0 0 18px;
+  color: var(--mct-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Read Our Story button */
+.leadership-page .leadership-story-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  max-width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px 10px 26px;
+  color: var(--mct-dark-green);
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  background: var(--mct-gold);
+  border-radius: 40px;
+}
+
+.leadership-page .leadership-story-button:hover {
+  color: var(--mct-dark-green);
+  background: #f5d45c;
+}
+
+.leadership-page .leadership-story-arrow {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  color: #fff;
+  font-size: 25px;
+  background: var(--mct-green);
+  border-radius: 50%;
+}
+
+/* =====================================================
+   4. TRUST MOTTO
+   ===================================================== */
+
+.leadership-page .leadership-motto-section {
+  width: 100%;
+  padding: 60px 0 80px;
+  background: #fff;
+}
+
+.leadership-page .leadership-motto-section > .container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.leadership-page .quote-panel {
+  padding: 28px 30px;
+  background: var(--mct-light);
+  border-left: 5px solid var(--mct-gold);
+  border-radius: 0 16px 16px 0;
+}
+
+.leadership-page .quote-panel p {
+  margin: 0 0 10px;
+  color: var(--mct-dark-green);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.leadership-page .quote-panel span {
+  color: var(--mct-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   5. TABLET
+   ===================================================== */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .leadership-page .breadcrumb-content {
+    min-height: 320px;
+    padding: 30px;
+  }
+
+  .leadership-page .breadcrumb-thumb,
+  .leadership-page .breadcrumb-thumb img {
+    min-height: 320px;
+  }
+
+  .leadership-page .breadcrumb-title h1 {
+    font-size: clamp(36px, 4vw, 48px);
+  }
+
+  .leadership-page .breadcrumb-nav li {
+    font-size: 14px;
+  }
+
+  .leadership-page .leadership-trustee-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* =====================================================
+   6. MOBILE
+   ===================================================== */
+
+@media (max-width: 767px) {
+  .leadership-page .leadership-hero-container {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  /* Stack hero panels only on mobile */
+  .leadership-page .leadership-hero-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    border-radius: 12px;
+  }
+
+  .leadership-page .leadership-hero-row > .leadership-hero-left,
+  .leadership-page .leadership-hero-row > .leadership-hero-right {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .leadership-page .breadcrumb-content {
+    min-height: 230px;
+    padding: 26px 22px;
+    border-right: 0;
+    border-bottom: 8px solid var(--mct-gold);
+    border-radius: 12px 12px 0 0;
+  }
+
+  .leadership-page .breadcrumb-nav {
+    margin-bottom: 20px;
+  }
+
+  .leadership-page .breadcrumb-nav ul {
+    gap: 6px;
+  }
+
+  .leadership-page .breadcrumb-nav li {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .leadership-page .breadcrumb-title h1 {
+    font-size: clamp(34px, 8vw, 44px);
+  }
+
+  .leadership-page .breadcrumb-thumb {
+    height: 240px;
+    min-height: 240px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .leadership-page .breadcrumb-thumb img {
+    height: 240px;
+    min-height: 240px;
+  }
+
+  .leadership-page .leadership-trustees-section {
+    padding: 55px 0;
+  }
+
+  .leadership-page .leadership-trustees-section > .container,
+  .leadership-page .leadership-founder-section > .container,
+  .leadership-page .leadership-motto-section > .container {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .leadership-page .leadership-intro {
+    margin-bottom: 28px;
+  }
+
+  .leadership-page .common-title h2 {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  .leadership-page .leadership-intro > p {
+    font-size: 15px;
+  }
+
+  .leadership-page .leadership-trustee-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .leadership-page .trustee-profile {
+    min-height: 220px;
+    padding: 24px 12px;
+    border-radius: 15px;
+  }
+
+  .leadership-page .trustee-photo {
+    flex-basis: 72px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .leadership-page .trustee-profile h3 {
+    font-size: 16px;
+  }
+
+  .leadership-page .trustee-profile p {
+    font-size: 13px;
+  }
+
+  .leadership-page .leadership-founder-section {
+    padding: 55px 0 60px;
+  }
+
+  .leadership-page .trustee-founder-photo,
+  .leadership-page .trustee-founder-photo img {
+    min-height: 280px;
+  }
+
+  .leadership-page .trustee-founder-photo img {
+    max-height: 380px;
+  }
+
+  .leadership-page .leadership-founder-section .common-title h2 {
+    margin-bottom: 18px;
+    font-size: 36px;
+  }
+
+  .leadership-page .leadership-founder-text p {
+    font-size: 15px;
+  }
+
+  .leadership-page .leadership-motto-section {
+    padding: 45px 0 55px;
+  }
+
+  .leadership-page .quote-panel {
+    padding: 22px 18px;
+  }
+
+  .leadership-page .quote-panel p {
+    font-size: 20px;
+  }
+}
+
+/* =====================================================
+   7. SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 420px) {
+  .leadership-page .breadcrumb-content {
+    min-height: 210px;
+    padding: 22px 18px;
+  }
+
+  .leadership-page .breadcrumb-title h1 {
+    font-size: 34px;
+  }
+
+  .leadership-page .leadership-trustee-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .leadership-page .trustee-profile {
+    min-height: 0;
+    padding: 24px 18px;
+  }
+
+  .leadership-page .trustee-profile h3 {
+    font-size: 18px;
+  }
+
+  .leadership-page .trustee-profile p {
+    font-size: 14px;
+  }
+
+  .leadership-page .quote-panel p {
+    font-size: 18px;
+  }
+}
+
+/* =====================================================
+   8. ACCESSIBILITY
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .leadership-page *,
+  .leadership-page *::before,
+  .leadership-page *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

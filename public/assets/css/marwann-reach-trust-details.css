@@ -1,0 +1,494 @@
+
+/* ==========================================================
+   MARWANN CHARITABLE TRUST
+   REACH SECTION — STATE DETAIL PANEL
+   Complete refined responsive stylesheet
+========================================================== */
+
+/* ----------------------------------------------------------
+   1. GROUND CENTRES AND COORDINATOR CARDS
+---------------------------------------------------------- */
+
+.marwann-reach-section .marwann-ground-centres-box,
+.marwann-reach-section .marwann-coordinator-box {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #dfeae6;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+/* ----------------------------------------------------------
+   2. GROUND CENTRES HEADING
+---------------------------------------------------------- */
+
+.marwann-reach-section .marwann-ground-centres-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  color: #075d56;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.marwann-reach-section .marwann-ground-centres-title i {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: #f29a18;
+}
+
+/* ----------------------------------------------------------
+   3. GROUND CENTRES LIST
+---------------------------------------------------------- */
+
+.marwann-reach-section .marwann-ground-centres-list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.marwann-reach-section .marwann-ground-centres-list > span {
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  border: 1px solid #e2ebe8;
+  border-radius: 9px;
+  background: #f7fbf9;
+  color: #52645f;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.marwann-reach-section .marwann-ground-centres-list > span i {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+  color: #0b8b68;
+  font-size: 11px;
+}
+
+/* Empty or pending centre data */
+.marwann-reach-section
+.marwann-ground-centres-list > span:only-child {
+  max-width: 100%;
+}
+
+/* ----------------------------------------------------------
+   4. COORDINATOR CARD
+---------------------------------------------------------- */
+
+.marwann-reach-section .marwann-coordinator-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.marwann-reach-section .marwann-coordinator-box > i {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+  color: #0b8b68;
+}
+
+.marwann-reach-section .marwann-coordinator-box > div {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.marwann-reach-section .marwann-coordinator-box strong {
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  color: #17212b;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.marwann-reach-section .marwann-coordinator-box span {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: #71807d;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* ----------------------------------------------------------
+   5. OPTIONAL COORDINATOR PARAGRAPH
+   Supports .marwann-coordinator if used elsewhere.
+---------------------------------------------------------- */
+
+.marwann-reach-section .marwann-coordinator {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 7px;
+  min-width: 0;
+  margin: 12px 0 0;
+  padding: 0;
+  color: #71807d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.marwann-reach-section .marwann-coordinator strong {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: #17212b;
+  font-weight: 700;
+}
+
+.marwann-reach-section .marwann-coordinator span {
+  display: inline;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ----------------------------------------------------------
+   6. STATE STATISTICS GRID
+---------------------------------------------------------- */
+
+.marwann-reach-section .reach-state-panel .reach-state-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.marwann-reach-section .reach-state-panel .reach-state-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 78px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.marwann-reach-section .reach-state-panel .reach-state-stat > div {
+  min-width: 0;
+}
+
+.marwann-reach-section .reach-state-panel .reach-state-stat > div:last-child {
+  flex: 1 1 0;
+}
+
+.marwann-reach-section .reach-state-panel .reach-state-stat span {
+  display: block;
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.marwann-reach-section .reach-state-panel .reach-state-stat h4 {
+  margin: 5px 0 0;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* ----------------------------------------------------------
+   7. GENERAL TEXT AND BOX SIZING
+---------------------------------------------------------- */
+
+.marwann-reach-section .reach-state-panel,
+.marwann-reach-section .reach-state-panel *,
+.marwann-reach-section .marwann-ground-centres-box,
+.marwann-reach-section .marwann-ground-centres-box *,
+.marwann-reach-section .marwann-coordinator-box,
+.marwann-reach-section .marwann-coordinator-box * {
+  box-sizing: border-box;
+}
+
+.marwann-reach-section .reach-state-panel p {
+  overflow-wrap: anywhere;
+}
+
+/* ----------------------------------------------------------
+   8. TABLET
+---------------------------------------------------------- */
+
+@media (max-width: 991.98px) {
+  .marwann-reach-section .marwann-ground-centres-box,
+  .marwann-reach-section .marwann-coordinator-box {
+    padding: 12px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-list {
+    gap: 7px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-list > span {
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+}
+
+/* ----------------------------------------------------------
+   9. MOBILE
+---------------------------------------------------------- */
+
+@media (max-width: 575.98px) {
+  .marwann-reach-section .reach-state-panel .reach-state-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .marwann-reach-section .reach-state-panel .reach-state-stat {
+    min-height: 64px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-box,
+  .marwann-reach-section .marwann-coordinator-box {
+    margin-top: 12px;
+    padding: 12px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-title {
+    gap: 7px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-list {
+    gap: 7px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-list > span {
+    padding: 6px 9px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .marwann-reach-section .marwann-coordinator-box {
+    gap: 8px;
+  }
+
+  .marwann-reach-section .marwann-coordinator-box strong {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .marwann-reach-section .marwann-coordinator-box span {
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .marwann-reach-section .marwann-coordinator {
+    gap: 3px 6px;
+    font-size: 12px;
+  }
+}
+
+/* ----------------------------------------------------------
+   10. VERY SMALL MOBILE
+---------------------------------------------------------- */
+
+@media (max-width: 360px) {
+  .marwann-reach-section .marwann-ground-centres-box,
+  .marwann-reach-section .marwann-coordinator-box {
+    padding: 10px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-list {
+    gap: 6px;
+  }
+
+  .marwann-reach-section .marwann-ground-centres-list > span {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .marwann-reach-section .marwann-coordinator-box {
+    align-items: flex-start;
+  }
+}
+
+/* ----------------------------------------------------------
+   11. REDUCED MOTION
+---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .marwann-reach-section .marwann-ground-centres-list > span {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+
+/* ==========================================
+   REACH PANEL — FINAL SPACING FIX
+========================================== */
+
+.marwann-reach-section .marwann-ground-centres-box,
+.marwann-reach-section .marwann-coordinator-box {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.marwann-reach-section .marwann-ground-centres-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.marwann-reach-section .marwann-ground-centres-title i {
+  flex: 0 0 auto;
+}
+
+/* Ground centres: each centre is an individual item */
+.marwann-reach-section .marwann-ground-centres-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.marwann-reach-section .marwann-ground-centres-list
+.marwann-ground-centre-item {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 7px;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 5px 9px;
+  border: 1px solid #e2ebe8;
+  border-radius: 8px;
+  background: #f7fbf9;
+  color: #52645f;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.marwann-reach-section .marwann-ground-centre-item > i {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: #0b8b68;
+}
+
+.marwann-reach-section .marwann-ground-centre-empty {
+  display: block;
+  margin: 0;
+  color: #71807d;
+}
+
+/* Coordinator layout */
+.marwann-reach-section .marwann-coordinator-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #dfeae6;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.marwann-reach-section .marwann-coordinator-box > i {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: #0b8b68;
+}
+
+.marwann-reach-section .marwann-coordinator-content {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.marwann-reach-section .marwann-coordinator-content strong {
+  display: block;
+  margin: 0 0 7px;
+  color: #17212b;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.marwann-reach-section .marwann-coordinator-name {
+  display: block;
+  margin: 0 0 3px;
+  color: #52645f;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.marwann-reach-section .marwann-coordinator-role {
+  display: block;
+  margin: 0;
+  color: #71807d;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .marwann-reach-section .marwann-ground-centres-list {
+    gap: 7px;
+  }
+
+  .marwann-reach-section .marwann-ground-centre-item {
+    font-size: 12px;
+  }
+
+  .marwann-reach-section .marwann-coordinator-box {
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .marwann-reach-section .marwann-coordinator-content strong {
+    font-size: 13px;
+  }
+}

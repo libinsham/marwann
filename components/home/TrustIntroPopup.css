@@ -1,0 +1,635 @@
+/* =========================================
+   MARWAN CHARITY TRUST
+   CENTERED SOCIAL MEDIA INTRO POPUP
+========================================= */
+
+/* Overlay */
+.mct-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  overflow-y: auto;
+
+  background: rgba(15, 18, 22, 0.48);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  animation: mct-overlay-in 0.3s ease;
+}
+
+/* Modal */
+.mct-intro-modal {
+  position: relative;
+
+  width: min(1210px, 100%);
+  max-height: calc(100vh - 40px);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+  animation: mct-modal-in 0.35s ease;
+}
+
+/* Close button */
+.mct-intro-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-size: 27px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mct-intro-close:hover {
+  background: #f3f4f6;
+  transform: rotate(90deg);
+}
+
+/* Keyboard focus */
+.mct-intro-close:focus-visible,
+.mct-continue-button:focus-visible,
+.mct-social-button:focus-visible {
+  outline: 3px solid #c8a85b;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   WELCOME BANNER
+========================================= */
+
+.mct-intro-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 215px;
+  padding: 38px 60px 28px;
+
+  text-align: center;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      #39785b 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      #102b21,
+      #07150f 65%,
+      #284d36
+    );
+
+  border-bottom: 4px solid #c8a85b;
+}
+
+.mct-banner-label {
+  margin-bottom: 12px;
+
+  color: #e8cf88;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.mct-intro-banner h1 {
+  max-width: 850px;
+  margin: 0;
+
+  color: #f5e4ad;
+
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.mct-intro-banner p {
+  margin: 12px 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+.mct-banner-date {
+  color: #e6e7e4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.mct-intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 25px 30px 22px;
+
+  text-align: center;
+  background: #ffffff;
+}
+
+.mct-intro-content h2 {
+  margin: 0 0 8px;
+
+  color: #174d38;
+
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.mct-intro-description {
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto 24px;
+
+  color: #626b66;
+
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* =========================================
+   SOCIAL MEDIA GRID
+   THREE CARDS CENTERED AS ONE GROUP
+========================================= */
+
+.mct-social-grid {
+  display: grid;
+
+  /* Exactly three equal-width cards */
+  grid-template-columns: repeat(3, minmax(0, 225px));
+
+  /* Center the entire three-card group */
+  justify-content: center;
+  justify-items: stretch;
+  align-items: stretch;
+
+  gap: 16px;
+
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* =========================================
+   SOCIAL MEDIA CARD
+========================================= */
+
+.mct-social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 180px;
+
+  padding: 17px 12px 12px;
+
+  text-align: center;
+
+  border: 1px solid #e6e9e6;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow: 0 4px 15px rgba(25, 55, 38, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mct-social-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(25, 55, 38, 0.12);
+}
+
+/* Social icon */
+.mct-social-icon {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 44px;
+
+  width: 44px;
+  height: 44px;
+
+  margin-bottom: 10px;
+
+  border-radius: 11px;
+
+  background: var(--social-color);
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Card heading */
+.mct-social-card h3 {
+  width: 100%;
+  margin: 0 0 7px;
+
+  color: #202821;
+
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+/* Card description */
+.mct-social-card .mct-social-description {
+  width: 100%;
+
+  flex: 1 0 auto;
+
+  margin: 0 0 14px;
+
+  color: #737b75;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Social button */
+.mct-social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  width: 100%;
+  min-height: 38px;
+
+  margin-top: auto;
+  padding: 9px 8px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: var(--social-color);
+  color: #ffffff !important;
+
+  text-align: center;
+  text-decoration: none !important;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mct-social-button:hover {
+  color: #ffffff !important;
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   POPUP FOOTER
+========================================= */
+
+.mct-intro-footer {
+  margin: 20px 0 12px;
+
+  color: #66736a;
+
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Continue button */
+.mct-continue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 12px 25px;
+
+  border: 0;
+  border-radius: 30px;
+
+  background: #174d38;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mct-continue-button:hover {
+  background: #23684b;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes mct-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mct-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .mct-intro-modal {
+    width: min(760px, 100%);
+  }
+
+  .mct-intro-banner {
+    min-height: 180px;
+    padding: 35px 45px 25px;
+  }
+
+  .mct-intro-banner h1 {
+    font-size: clamp(25px, 4vw, 32px);
+  }
+
+  .mct-intro-content {
+    padding: 23px 20px 20px;
+  }
+
+  .mct-intro-content h2 {
+    font-size: 25px;
+  }
+
+  .mct-intro-description {
+    max-width: 650px;
+    font-size: 13px;
+  }
+
+  .mct-social-grid {
+    grid-template-columns: repeat(3, minmax(0, 210px));
+    gap: 13px;
+  }
+
+  .mct-social-card {
+    min-height: 175px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .mct-intro-overlay {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .mct-intro-modal {
+    width: 100%;
+    max-height: calc(100dvh - 20px);
+
+    border-radius: 14px;
+  }
+
+  .mct-intro-close {
+    top: 8px;
+    right: 8px;
+
+    width: 34px;
+    height: 34px;
+
+    font-size: 23px;
+  }
+
+  .mct-intro-banner {
+    min-height: 160px;
+    padding: 43px 18px 22px;
+  }
+
+  .mct-banner-label {
+    margin-bottom: 10px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .mct-intro-banner h1 {
+    font-size: clamp(21px, 6vw, 27px);
+  }
+
+  .mct-intro-banner p {
+    margin: 9px 0;
+    font-size: 12px;
+  }
+
+  .mct-banner-date {
+    font-size: 10px;
+  }
+
+  .mct-intro-content {
+    padding: 20px 13px 17px;
+  }
+
+  .mct-intro-content h2 {
+    font-size: 22px;
+  }
+
+  .mct-intro-description {
+    margin-bottom: 19px;
+    font-size: 12px;
+  }
+
+  /* Two centered columns on mobile */
+  .mct-social-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    gap: 11px;
+    max-width: 440px;
+    margin-inline: auto;
+  }
+
+  .mct-social-card {
+    min-height: 170px;
+    padding: 14px 9px 10px;
+  }
+
+  .mct-social-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .mct-social-card h3 {
+    font-size: 12px;
+  }
+
+  .mct-social-card .mct-social-description {
+    font-size: 10px;
+  }
+
+  .mct-social-button {
+    min-height: 34px;
+    padding: 8px 5px;
+    font-size: 10px;
+  }
+
+  .mct-intro-footer {
+    margin-top: 17px;
+    font-size: 11px;
+  }
+
+  .mct-continue-button {
+    min-height: 41px;
+    padding: 10px 19px;
+    font-size: 12px;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 360px) {
+  .mct-intro-banner h1 {
+    font-size: 20px;
+  }
+
+  .mct-intro-content {
+    padding-inline: 12px;
+  }
+
+  .mct-social-grid {
+    grid-template-columns: minmax(0, 280px);
+    justify-content: center;
+  }
+
+  .mct-social-card {
+    min-height: 155px;
+    padding: 14px;
+  }
+}
+
+/* Short screens */
+@media (max-height: 650px) and (min-width: 601px) {
+  .mct-intro-overlay {
+    align-items: flex-start;
+  }
+
+  .mct-intro-banner {
+    min-height: 155px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+  }
+
+  .mct-intro-content {
+    padding-top: 18px;
+    padding-bottom: 16px;
+  }
+
+  .mct-intro-description {
+    margin-bottom: 16px;
+  }
+
+  .mct-social-card {
+    min-height: 160px;
+    padding-top: 12px;
+  }
+
+  .mct-intro-footer {
+    margin-top: 14px;
+  }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .mct-intro-overlay,
+  .mct-intro-modal,
+  .mct-social-card,
+  .mct-social-button,
+  .mct-intro-close,
+  .mct-continue-button {
+    animation: none;
+    transition: none;
+  }
+}
