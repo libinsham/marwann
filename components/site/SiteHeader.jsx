@@ -127,7 +127,7 @@ const NAV_ITEMS = [
     href: '/about',
     children: [
       { label: 'About the Trust', href: '/about' },
-      { label: 'our-story', href: '/Our Story' },
+      { label: 'Our-Story', href: '/Our Story' },
       { label: 'Founder Profile', href: '/founder' },
       { label: 'Trustees', href: '/trustees' },
     ],
@@ -145,24 +145,14 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: 'Impact',
-    href: '/impact',
+    label: 'Engage',
+    href: '/Engage',
     children: [
       { label: 'Our Impact', href: '/impact' },
       { label: 'Reports', href: '/reports' },
     ],
   },
-  {
-    label: 'Get Involved',
-    href: '/get-involved',
-    children: [
-      { label: 'Volunteer', href: '/get-involved/volunteer' },
-      {
-        label: 'Partner With Us',
-        href: '/get-involved/partners',
-      },
-    ],
-  },
+
   {
     label: 'Contact',
     href: '/contact',
