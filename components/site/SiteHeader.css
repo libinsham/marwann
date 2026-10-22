@@ -1,17 +1,19 @@
 
-/* =========================================
-   MARWANN CHARITABLE TRUST
-   Responsive Site Header
-========================================= */
+/* =========================================================
+   MAARWANN CHARITABLE TRUST — SiteHeader.css
+   White & Green Responsive Header
+   ========================================================= */
 
 .mct-announcement,
 .mct-site-header {
-  --mct-green: #004c45;
-  --mct-deep-green: #00483f;
-  --mct-gold: #ffdf62;
+  --mct-green: #087443;
+  --mct-deep-green: #064e3b;
+  --mct-soft-green: #e8f5e9;
+  --mct-gold: #d4a63d;
   --mct-white: #ffffff;
-  --mct-dark: #073f38;
-  --mct-border: rgba(255, 255, 255, 0.2);
+  --mct-text: #103f31;
+  --mct-muted: #5c7168;
+
   box-sizing: border-box;
 }
 
@@ -24,117 +26,194 @@
   box-sizing: border-box;
 }
 
-/* Announcement bar */
+/* =========================================================
+   TOP ANNOUNCEMENT BAR
+   ========================================================= */
 
 .mct-announcement {
   position: relative;
   z-index: 1002;
   width: 100%;
-  min-height: 40px;
-  padding: 5px 20px;
+  padding: 8px 24px;
   background: var(--mct-green);
   color: var(--mct-white);
 }
 
 .mct-announcement-inner {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  max-width: 1500px;
-  min-height: 30px;
+  gap: 12px 24px;
+  max-width: 1740px;
+  min-height: 34px;
   margin: 0 auto;
 }
 
-.mct-announcement-inner p {
+.mct-announcement-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin: 0;
   color: var(--mct-white);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   text-align: center;
 }
 
-.mct-announcement-inner p span {
-  margin-right: 7px;
+.mct-announcement-message strong {
+  font-weight: 750;
+}
+
+.mct-book-icon {
+  font-size: 22px;
+  line-height: 1;
 }
 
 .mct-announcement-donate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 30px;
-  padding: 5px 15px;
-  border-radius: 9px;
-  background: var(--mct-gold);
-  color: var(--mct-dark);
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--mct-green);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 750;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.2s ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .mct-announcement-donate:hover {
-  background: #f2cc42;
-  color: var(--mct-dark);
+  color: var(--mct-deep-green);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
 }
 
-/* Main header */
+/* =========================================================
+   LANGUAGE SELECTOR
+   ========================================================= */
+
+.mct-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  color: #ffffff;
+}
+
+.mct-language-globe {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.mct-language select {
+  max-width: 190px;
+  min-height: 34px;
+  padding: 5px 28px 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 8px;
+  outline-offset: 3px;
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mct-language select option {
+  background: #ffffff;
+  color: #123d30;
+}
+
+.mct-google-translate {
+  display: none !important;
+}
+
+.mct-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   MAIN HEADER
+   ========================================================= */
 
 .mct-site-header {
-  position: absolute;
-  top: 40px;
-  left: 0;
+  position: relative;
   z-index: 1001;
   width: 100%;
-  background: transparent;
-  color: var(--mct-white);
+  color: var(--mct-text);
+  background: #ffffff;
 }
 
 .mct-header-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
-  width: calc(100% - 70px);
-  max-width: 1750px;
-  min-height: 100px;
+  gap: clamp(12px, 1.4vw, 28px);
+
+  width: calc(100% - 48px);
+  max-width: 1840px;
+  min-height: 118px;
+
   margin: 0 auto;
-  padding: 12px 22px;
-  border: 1px solid var(--mct-border);
-  border-radius: 0 0 22px 22px;
-  background: rgba(12, 35, 29, 0.28);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 16px clamp(16px, 2vw, 36px);
+
+  border: 1px solid #edf2ee;
+  border-top: 0;
+  border-radius: 0 0 30px 30px;
+
+  background: #ffffff;
+  box-shadow: 0 18px 38px rgba(17, 55, 39, 0.08);
 }
 
-/* Logo */
+/* =========================================================
+   BRAND LOGO
+   ========================================================= */
 
 .mct-brand {
   display: flex;
   align-items: center;
-  flex: 0 0 245px;
-  min-width: 0;
+  flex: 0 1 330px;
+  min-width: 170px;
   text-decoration: none;
 }
 
 .mct-brand img {
   display: block;
-  width: 225px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 330px;
+  max-height: 82px;
   height: auto;
   object-fit: contain;
+  object-position: left center;
 }
 
-/* Desktop navigation */
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
 
 .mct-desktop-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
-  gap: 7px;
+  gap: clamp(1px, 0.35vw, 7px);
   min-width: 0;
 }
 
@@ -144,188 +223,291 @@
 }
 
 .mct-nav-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 8px;
+
   min-height: 48px;
-  padding: 0 13px;
-  border-radius: 30px;
-  color: var(--mct-white);
-  font-size: 16px;
-  font-weight: 600;
+  padding: 0 clamp(9px, 0.9vw, 17px);
+
+  border-radius: 999px;
+
+  color: var(--mct-text);
+  font-size: clamp(13px, 0.95vw, 16px);
+  font-weight: 650;
+  line-height: 1;
   text-decoration: none;
   white-space: nowrap;
+
   transition:
-    color 0.2s ease,
-    background 0.2s ease;
+    color 180ms ease,
+    background-color 180ms ease;
 }
 
-.mct-nav-link:hover,
+.mct-nav-link:hover {
+  background: var(--mct-soft-green);
+  color: var(--mct-green);
+}
+
+/* Home stays simple: no pill and no decorative dot. */
+
 .mct-nav-link.is-home {
-  background: rgba(255, 255, 255, 0.13);
-  color: var(--mct-white);
+  background: transparent;
+  color: var(--mct-text);
 }
 
-.mct-dropdown-arrow {
-  font-size: 12px;
+.mct-nav-link.is-home::after {
+  display: none !important;
+  content: none !important;
 }
 
-/* Desktop dropdown */
+.mct-nav-link.is-home:hover {
+  background: transparent;
+  color: var(--mct-green);
+}
+
+/* =========================================================
+   DROPDOWN CHEVRONS
+   ========================================================= */
+
+.mct-chevron {
+  display: block;
+  width: 11px;
+  height: 8px;
+  flex: 0 0 11px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.mct-nav-item:hover .mct-chevron,
+.mct-nav-item:focus-within .mct-chevron {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   DESKTOP DROPDOWNS
+   Delayed opening and closing
+   ========================================================= */
 
 .mct-dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
   z-index: 1005;
+
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  width: 225px;
-  padding: 8px;
-  border: 1px solid rgba(0, 76, 69, 0.1);
-  border-radius: 12px;
+  gap: 3px;
+
+  width: 250px;
+  padding: 10px;
+
+  border: 1px solid #e4eee7;
+  border-radius: 14px;
+
   background: #ffffff;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 16px 36px rgba(13, 61, 41, 0.15);
+
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
+  pointer-events: none;
+
+  transform: translateY(7px);
+
+  /*
+   * Closed state:
+   * Keep the dropdown mounted and invisible briefly
+   * so the pointer can cross into the dropdown area.
+   */
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    visibility 0.2s ease;
+    opacity 180ms ease 250ms,
+    transform 180ms ease 250ms,
+    visibility 0s linear 430ms;
 }
 
+/*
+ * The dropdown begins directly beneath the menu item's
+ * full hover area. This avoids a gap between the link
+ * and the dropdown.
+ */
 .mct-nav-item:hover .mct-dropdown,
 .mct-nav-item:focus-within .mct-dropdown {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
+
   transform: translateY(0);
+
+  /* Opening delay: 180ms */
+  transition:
+    opacity 180ms ease 180ms,
+    transform 180ms ease 180ms,
+    visibility 0s linear 0s;
 }
+
+/* Dropdown links */
 
 .mct-dropdown a {
   display: block;
-  padding: 10px 12px;
-  border-radius: 7px;
-  color: #174d43;
-  font-size: 14px;
+  padding: 12px 14px;
+
+  border-radius: 8px;
+
+  color: var(--mct-text);
+  font-size: 15px;
   line-height: 1.45;
   text-decoration: none;
-  overflow-wrap: anywhere;
+
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
 }
 
 .mct-dropdown a:hover {
-  background: #edf6f2;
+  background: var(--mct-soft-green);
   color: var(--mct-green);
 }
 
-/* Header action area */
+/* =========================================================
+   SIGN IN BUTTON
+   ========================================================= */
 
 .mct-header-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex: 0 0 auto;
-  gap: 16px;
+  gap: 12px;
 }
 
-/* Contact shortcut */
-
-.mct-contact-shortcut {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--mct-white);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.mct-contact-shortcut:hover {
-  color: var(--mct-gold);
-}
-
-.mct-contact-icon {
-  display: flex;
+.mct-signin {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  color: var(--mct-gold);
-  font-size: 22px;
+  gap: 9px;
+
+  min-height: 48px;
+  padding: 0 18px;
+
+  border: 1px solid #b9ddc8;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: var(--mct-text);
+
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
 }
 
-.mct-contact-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+.mct-signin:hover {
+  border-color: var(--mct-green);
+  background: var(--mct-soft-green);
+  color: var(--mct-green);
 }
 
-.mct-contact-text small {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 12px;
+.mct-signin svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  fill: currentColor;
 }
 
-.mct-contact-text strong {
-  color: var(--mct-white);
-  font-size: 14px;
-}
-
-/* Main donate button */
+/* =========================================================
+   DONATE NOW BUTTON
+   ========================================================= */
 
 .mct-header-donate {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  min-width: 195px;
-  min-height: 60px;
+  gap: 14px;
+
+  min-width: 184px;
+  min-height: 58px;
   padding: 5px 6px 5px 22px;
-  border-radius: 40px;
-  background: var(--mct-gold);
-  color: var(--mct-dark);
-  font-size: 16px;
-  font-weight: 700;
+
+  border-radius: 999px;
+
+  background: linear-gradient(110deg, #0b8050, #159b5c);
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.2s ease;
+
+  box-shadow: 0 8px 18px rgba(8, 116, 67, 0.12);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .mct-header-donate:hover {
-  background: #f2cc42;
-  color: var(--mct-dark);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(8, 116, 67, 0.22);
+  transform: translateY(-1px);
 }
 
 .mct-donate-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
+
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+
   border-radius: 50%;
-  background: var(--mct-green);
-  color: var(--mct-white);
+  background: rgba(0, 76, 48, 0.55);
+
+  color: #ffffff;
   font-size: 26px;
   line-height: 1;
 }
 
-/* One mobile hamburger only */
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
 
 .mct-mobile-menu-button {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
+
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border: 1px solid #c9e3d3;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--mct-white);
+
+  background: #ffffff;
+  color: var(--mct-green);
+
   cursor: pointer;
 }
 
@@ -335,18 +517,20 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 23px;
+  width: 21px;
 }
 
 .mct-menu-icon span {
   display: block;
-  width: 23px;
+  width: 21px;
   height: 2px;
+
   border-radius: 2px;
   background: currentColor;
+
   transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
+    transform 180ms ease,
+    opacity 180ms ease;
 }
 
 .mct-menu-icon.is-open span:first-child {
@@ -361,141 +545,170 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile navigation panel */
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
 
 .mct-mobile-nav {
   display: none;
 }
 
-/* Keyboard focus */
+.mct-mobile-signin,
+.mct-mobile-donate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  margin-top: 10px;
+  padding: 12px;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mct-mobile-signin {
+  border: 1px solid #b9ddc8;
+  color: var(--mct-green);
+}
+
+.mct-mobile-donate {
+  background: var(--mct-green);
+  color: #ffffff;
+}
+
+.mct-mobile-donate:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   ACCESSIBILITY / KEYBOARD FOCUS
+   ========================================================= */
 
 .mct-site-header a:focus-visible,
 .mct-site-header button:focus-visible,
-.mct-announcement a:focus-visible {
+.mct-announcement a:focus-visible,
+.mct-language select:focus-visible {
   outline: 3px solid var(--mct-gold);
   outline-offset: 3px;
 }
 
-/* =========================================
-   SMALL DESKTOP / LAPTOP
-========================================= */
+/* =========================================================
+   LAPTOP RESPONSIVENESS
+   ========================================================= */
 
-@media (max-width: 1450px) {
+@media (max-width: 1500px) {
   .mct-header-inner {
-    width: calc(100% - 40px);
-    gap: 14px;
-    padding-right: 16px;
-    padding-left: 16px;
+    width: calc(100% - 32px);
+    gap: 12px;
+    padding-right: 18px;
+    padding-left: 18px;
   }
 
   .mct-brand {
-    flex-basis: 205px;
-  }
-
-  .mct-brand img {
-    width: 195px;
-  }
-
-  .mct-desktop-nav {
-    gap: 2px;
+    flex-basis: 245px;
   }
 
   .mct-nav-link {
+    gap: 7px;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: 15px;
   }
 
   .mct-header-actions {
-    gap: 10px;
+    gap: 8px;
+  }
+
+  .mct-signin {
+    padding: 0 13px;
   }
 
   .mct-header-donate {
-    min-width: 165px;
+    min-width: 158px;
     padding-left: 16px;
-    font-size: 14px;
   }
 
-  .mct-contact-icon {
+  .mct-donate-arrow {
     width: 42px;
     height: 42px;
     flex-basis: 42px;
   }
 }
 
-/* =========================================
-   TABLET AND MOBILE
-========================================= */
+/* =========================================================
+   TABLET NAVIGATION
+   ========================================================= */
 
 @media (max-width: 1199px) {
-  .mct-site-header {
-    top: 40px;
+  .mct-announcement-inner {
+    gap: 8px 14px;
+  }
+
+  .mct-announcement-message {
+    font-size: 13px;
   }
 
   .mct-header-inner {
     width: 100%;
-    min-height: 86px;
+    min-height: 92px;
     padding: 12px 22px;
-    border-radius: 0;
-    border-right: 0;
-    border-left: 0;
-    background: rgba(10, 38, 31, 0.34);
+    border-radius: 0 0 20px 20px;
   }
 
   .mct-brand {
-    flex: 0 1 210px;
+    flex: 0 1 260px;
   }
 
   .mct-brand img {
-    width: 200px;
+    max-width: 250px;
+    max-height: 68px;
   }
 
-  .mct-desktop-nav {
-    display: none !important;
-  }
-
-  .mct-contact-shortcut {
+  .mct-desktop-nav,
+  .mct-header-actions > .mct-signin,
+  .mct-header-actions > .mct-header-donate {
     display: none;
   }
 
-  .mct-header-donate {
-    min-width: 160px;
-    min-height: 52px;
-    padding-left: 17px;
-  }
-
-  .mct-donate-arrow {
-    width: 40px;
-    height: 40px;
-    flex-basis: 40px;
+  .mct-header-actions {
+    gap: 9px;
   }
 
   .mct-mobile-menu-button {
-    display: flex !important;
+    display: inline-flex;
   }
 
   .mct-mobile-nav {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 8px);
     right: 16px;
     left: 16px;
     z-index: 1006;
+
     display: block;
+
     max-height: calc(100dvh - 150px);
     overflow-y: auto;
     padding: 12px;
-    border: 1px solid rgba(0, 76, 69, 0.12);
-    border-radius: 14px;
+
+    border: 1px solid #e1eee5;
+    border-radius: 16px;
+
     background: #ffffff;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
+
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(-8px);
+
+    transform: translateY(-7px);
+
     transition:
-      opacity 0.2s ease,
-      transform 0.2s ease,
-      visibility 0.2s ease;
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms ease;
   }
 
   .mct-mobile-nav.is-open {
@@ -505,8 +718,12 @@
     transform: translateY(0);
   }
 
+  .mct-mobile-nav[aria-hidden="true"] {
+    pointer-events: none;
+  }
+
   .mct-mobile-nav-item {
-    border-bottom: 1px solid #edf1ee;
+    border-bottom: 1px solid #edf2ee;
   }
 
   .mct-mobile-nav-row {
@@ -520,9 +737,10 @@
     display: block;
     flex: 1;
     padding: 13px 10px;
-    color: #174d43;
+
+    color: var(--mct-text);
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 650;
     text-decoration: none;
   }
 
@@ -530,13 +748,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 38px;
     height: 38px;
     flex: 0 0 38px;
+
     border: 0;
     border-radius: 8px;
-    background: #edf6f2;
+
+    background: var(--mct-soft-green);
     color: var(--mct-green);
+
     font-size: 22px;
     cursor: pointer;
   }
@@ -549,100 +771,77 @@
 
   .mct-mobile-submenu a {
     padding: 10px;
-    color: #42645a;
+    color: var(--mct-muted);
     font-size: 14px;
     text-decoration: none;
   }
 
   .mct-mobile-submenu a:hover,
   .mct-mobile-nav-row > a:hover {
-    color: #b38a24;
-  }
-
-  .mct-mobile-donate {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 46px;
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 10px;
-    background: var(--mct-gold);
-    color: var(--mct-dark);
-    font-weight: 700;
-    text-decoration: none;
+    color: var(--mct-green);
   }
 }
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+   ========================================================= */
 
 @media (max-width: 575px) {
   .mct-announcement {
-    padding: 6px 10px;
+    padding: 7px 10px;
   }
 
   .mct-announcement-inner {
-    gap: 5px 8px;
+    gap: 7px 10px;
   }
 
-  .mct-announcement-inner p {
+  .mct-announcement-message {
+    flex: 1 1 100%;
+    gap: 6px;
     font-size: 11px;
     line-height: 1.35;
   }
 
-  .mct-announcement-inner p span {
-    margin-right: 3px;
+  .mct-book-icon {
+    font-size: 17px;
   }
 
   .mct-announcement-donate {
-    min-height: 25px;
-    padding: 4px 10px;
+    min-height: 30px;
+    padding: 5px 11px;
     font-size: 11px;
   }
 
-  .mct-site-header {
-    top: 0;
-    position: relative;
-    z-index: 1001;
-    margin-bottom: -86px;
+  .mct-language {
+    gap: 5px;
+  }
+
+  .mct-language-globe {
+    font-size: 16px;
+  }
+
+  .mct-language select {
+    max-width: 145px;
+    min-height: 30px;
+    padding: 4px 5px;
+    font-size: 11px;
   }
 
   .mct-header-inner {
-    min-height: 86px;
+    min-height: 78px;
     gap: 8px;
-    padding: 12px 12px;
+    padding: 10px 12px;
   }
 
   .mct-brand {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 190px;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 220px;
   }
 
   .mct-brand img {
-    width: 100%;
-    max-width: 180px;
-  }
-
-  .mct-header-actions {
-    gap: 8px;
-  }
-
-  .mct-header-donate {
-    min-width: 0;
-    min-height: 42px;
-    gap: 8px;
-    padding: 4px 5px 4px 12px;
-    font-size: 12px;
-  }
-
-  .mct-donate-arrow {
-    width: 32px;
-    height: 32px;
-    flex-basis: 32px;
-    font-size: 20px;
+    max-width: 100%;
+    max-height: 56px;
   }
 
   .mct-mobile-menu-button {
@@ -651,19 +850,16 @@
     flex-basis: 40px;
   }
 
-  .mct-menu-icon,
-  .mct-menu-icon span {
-    width: 20px;
-  }
-
   .mct-mobile-nav {
     right: 10px;
     left: 10px;
-    max-height: calc(100dvh - 115px);
+    max-height: calc(100dvh - 120px);
   }
 }
 
-/* Reduced motion */
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .mct-announcement *,
@@ -676,4 +872,25 @@
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* =========================================================
+   GOOGLE TRANSLATE TOOLBAR CLEANUP
+   ========================================================= */
+
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.skiptranslate > iframe {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: none !important;
 }

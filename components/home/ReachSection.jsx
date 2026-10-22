@@ -168,18 +168,7 @@ export default function ReachSection() {
                 </div>
 
                 {/* Centres */}
-                <div className="reach-state-stat">
-
-                  <div className="reach-stat-icon">
-                    <i className="fa-regular fa-building" />
-                  </div>
-
-                  <div>
-                    <span>Digital / Approved Centres</span>
-                    <h4>{selected.centres}</h4>
-                  </div>
-
-                </div>
+               
 
                 {/* Districts */}
                 <div className="reach-state-stat">
@@ -196,18 +185,7 @@ export default function ReachSection() {
                 </div>
 
                 {/* Compliance */}
-                <div className="reach-state-stat">
-
-                  <div className="reach-stat-icon">
-                    <i className="fa-regular fa-badge-check" />
-                  </div>
-
-                  <div>
-                    <span>Compliance</span>
-                    <h4>To be verified</h4>
-                  </div>
-
-                </div>
+             
 
               </div>
 
@@ -215,47 +193,11 @@ export default function ReachSection() {
                   ACTIVE GROUND CENTRES
               ================================================= */}
             {/* ACTIVE GROUND CENTRES */}
-<div className="marwann-ground-centres-box">
-  <div className="marwann-ground-centres-title">
-    <i className="fa-regular fa-building" aria-hidden="true" />
-    <strong>Active Ground Centres</strong>
-  </div>
 
-  <div className="marwann-ground-centres-list">
-    {selected.groundCentres?.length > 0 ? (
-      selected.groundCentres.map((centre) => (
-        <span className="marwann-ground-centre-item" key={centre}>
-          <i className="fa-solid fa-check" aria-hidden="true" />
-          <span>{centre}</span>
-        </span>
-      ))
-    ) : (
-      <span className="marwann-ground-centre-empty">
-        Data pending
-      </span>
-    )}
-  </div>
-</div>
 
 {/* COORDINATOR */}
-<div className="marwann-coordinator-box">
-  <i
-    className="fa-regular fa-circle-check"
-    aria-hidden="true"
-  />
 
-  <div className="marwann-coordinator-content">
-    <strong>Appointed Regional Coordinator</strong>
 
-    <p className="marwann-coordinator-name">
-      {selected.coordinator}
-    </p>
-
-    <span className="marwann-coordinator-role">
-      {selected.coordinatorRole}
-    </span>
-  </div>
-</div>
               {/* =================================================
                   COORDINATOR
               ================================================= */}

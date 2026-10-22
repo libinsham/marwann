@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
-
+import OurStorySection from '@/components/our-story/OurStorySection'
 export const metadata = {
   "title": "Our Story | MARWANN CHARITABLE TRUST",
   "description": "Discover the story and service commitment of MARWANN CHARITABLE TRUST, established in 2016 in Vellore, Tamil Nadu."
@@ -50,43 +50,13 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <section className="p-t-100 p-b-100 p-t-xs-80 p-b-xs-80" style={{ backgroundImage: "url(/assets/img/bg/why-us-bg.webp),url(/assets/img/bg/who-we-are-bg.webp)" }}>
-          <div className="container">
-            <div className="row align-items-center row-gap-4">
-              <div className="col-xl-5 col-lg-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div className="story-highlight">
-                  <span className="eyebrow">Our beginning · 2019</span>
-                  <h3>A journey rooted in service</h3>
-                  <p>MARWANN CHARITABLE TRUST · Vellore, Tamil Nadu</p>
-                </div>
-              </div>
-              <div className="col-xl-7 col-lg-7" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <div className="common-subtitle">
-                  <img src="/assets/img/icons/icon-2.svg" alt="" />
-                  <span>Our Story</span>
-                </div>
-                <div className="common-title text-start">
-                  <h2>Serving Humanity with Compassion and Dedication</h2>
-                </div>
-                <div className="text">
-                  <p>
-                    MARWANN CHARITABLE TRUST is a non-profit charitable organization committed to serving humanity with compassion, integrity and dedication. Guided by the belief that service to others is a meaningful expression of faith, the Trust works to uplift underprivileged individuals and communities.
-                  </p>
-                  <p>
-                    Established in 2019 in Vellore, Tamil Nadu, the Trust's work encompasses social welfare, education, healthcare and humanitarian support. Its activities include educational assistance, medical help, food and essential supplies, emergency relief, support for senior citizens and skill development opportunities for women.
-                  </p>
-                  <p>
-                    The Trust believes that every act of kindness can make a difference. It seeks to work alongside volunteers, donors, institutions and community leaders to support people in need and contribute to a more inclusive society.
-                  </p>
-                </div>
-                <div className="quote-panel m-t-25">
-                  <p>“We Serve God by Serving Others.”</p>
-                  <span>Our guiding motto</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+
+     <OurStorySection />
+
+
+
+        
         <section className="p-t-90 p-b-100 p-t-xs-70 p-b-xs-80" style={{ backgroundColor: "#f8f7f0" }}>
           <div className="container">
             <div className="text-center subpage-intro m-b-50" data-aos="fade-up" data-aos-duration="1000">

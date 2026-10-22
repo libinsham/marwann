@@ -1,0 +1,308 @@
+
+/* =====================================================
+   MARWANN CHARITABLE TRUST
+   Impact Statistics Section
+   ===================================================== */
+
+.marwann-impact-section {
+  --impact-green: #07564f;
+  --impact-green-light: #0b7665;
+  --impact-text: #102f43;
+  --impact-muted: #64748b;
+  --impact-cream: #f8f8f2;
+  --impact-border: #e3ece8;
+
+  width: 100%;
+  padding: 0 24px 54px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.marwann-impact-section *,
+.marwann-impact-section *::before,
+.marwann-impact-section *::after {
+  box-sizing: border-box;
+}
+
+.marwann-impact-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 34px 26px 54px;
+  border-radius: 0 0 2px 2px;
+  background: var(--impact-cream);
+}
+
+/* =========================
+   HEADING
+   ========================= */
+
+.marwann-impact-heading {
+  width: 100%;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.marwann-impact-eyebrow {
+  margin-bottom: 8px;
+  color: var(--impact-green-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  line-height: 1.5;
+}
+
+.marwann-impact-heading h2 {
+  margin: 0;
+  color: var(--impact-green);
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.marwann-impact-intro {
+  max-width: 720px;
+  margin: 8px auto 0;
+  color: var(--impact-muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* =========================
+   STATISTIC GROUPS
+   ========================= */
+
+.marwann-impact-group {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.marwann-impact-group h3 {
+  margin: 0 0 14px;
+  color: var(--impact-green);
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-style: italic;
+  font-weight: 750;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE STATISTICS GRID
+   ========================= */
+
+.marwann-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+/* =========================
+   STATISTIC CARDS
+   ========================= */
+
+.marwann-impact-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 0;
+  min-height: 94px;
+  padding: 14px 10px;
+
+  border: 1px solid var(--impact-border);
+  border-radius: 15px;
+
+  background: #ffffff;
+  box-shadow: 0 9px 22px rgba(22, 65, 52, 0.045);
+
+  text-align: center;
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.marwann-impact-card:hover {
+  border-color: #b9dbcf;
+  box-shadow: 0 13px 26px rgba(22, 65, 52, 0.09);
+  transform: translateY(-3px);
+}
+
+/* Animated numerical value */
+
+.marwann-impact-number {
+  display: block;
+  max-width: 100%;
+  color: var(--impact-green);
+  font-size: clamp(25px, 2.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.8px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Description below the number */
+
+.marwann-impact-card > span {
+  display: block;
+  max-width: 100%;
+  color: var(--impact-text);
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+  .marwann-impact-section {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .marwann-impact-container {
+    padding: 30px 20px 40px;
+  }
+
+  .marwann-impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .marwann-impact-card {
+    min-height: 105px;
+  }
+
+  .marwann-impact-number {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .marwann-impact-card > span {
+    font-size: 10px;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 575px) {
+  .marwann-impact-section {
+    padding: 0 12px 32px;
+  }
+
+  .marwann-impact-container {
+    padding: 26px 12px 32px;
+  }
+
+  .marwann-impact-heading {
+    margin-bottom: 26px;
+  }
+
+  .marwann-impact-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.9px;
+  }
+
+  .marwann-impact-heading h2 {
+    font-size: clamp(23px, 6vw, 29px);
+    letter-spacing: -0.5px;
+  }
+
+  .marwann-impact-intro {
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .marwann-impact-group {
+    margin-top: 25px;
+  }
+
+  .marwann-impact-group h3 {
+    margin-bottom: 13px;
+    font-size: 14px;
+  }
+
+  .marwann-impact-grid {
+    gap: 10px;
+  }
+
+  .marwann-impact-card {
+    min-height: 94px;
+    padding: 12px 6px;
+    gap: 6px;
+    border-radius: 12px;
+  }
+
+  .marwann-impact-number {
+    font-size: clamp(23px, 6vw, 31px);
+    letter-spacing: -0.6px;
+  }
+
+  .marwann-impact-card > span {
+    font-size: 8px;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+}
+
+/* =========================
+   EXTRA-SMALL MOBILE
+   ========================= */
+
+@media (max-width: 360px) {
+  .marwann-impact-section {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .marwann-impact-container {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .marwann-impact-grid {
+    gap: 8px;
+  }
+
+  .marwann-impact-card {
+    min-height: 86px;
+    padding: 10px 4px;
+  }
+
+  .marwann-impact-number {
+    font-size: 22px;
+  }
+
+  .marwann-impact-card > span {
+    font-size: 7px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION ACCESSIBILITY
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .marwann-impact-card {
+    transition: none;
+  }
+
+  .marwann-impact-card:hover {
+    transform: none;
+  }
+}

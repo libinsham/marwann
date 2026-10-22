@@ -1,0 +1,325 @@
+
+/* ==========================================
+   MARWANN CHARITABLE TRUST — OUR STORY
+   ========================================== */
+
+.our-story-section {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  background-color: #ffffff;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  background-size: cover, cover;
+}
+
+.our-story-section *,
+.our-story-section *::before,
+.our-story-section *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   LEFT STORY IMAGE BLOCK
+   ========================================== */
+
+.our-story-section .story-highlight-image {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  width: 100%;
+  min-height: 560px;
+  padding: 38px;
+
+  overflow: hidden;
+  border-radius: 24px;
+
+  background-color: #075b43;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  box-shadow: 0 20px 50px rgba(6, 78, 59, 0.14);
+
+  transition: box-shadow 300ms ease;
+}
+
+.our-story-section .story-highlight-image:hover {
+  box-shadow: 0 24px 55px rgba(6, 78, 59, 0.2);
+}
+
+/* Optional decorative glow */
+
+.our-story-section .story-highlight-image::before {
+  position: absolute;
+  z-index: -1;
+  top: -110px;
+  right: -100px;
+
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  content: "";
+  pointer-events: none;
+}
+
+/* Image text */
+
+.our-story-section .story-highlight-image .eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: #ffdf62;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.our-story-section .story-highlight-image h3 {
+  max-width: 460px;
+  margin: 0 0 16px;
+
+  color: #ffffff;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+
+.our-story-section .story-highlight-image p {
+  max-width: 420px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   RIGHT STORY CONTENT
+   ========================================== */
+
+.our-story-section .common-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.our-story-section .common-subtitle img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.our-story-section .common-subtitle span {
+  color: #087443;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.our-story-section .common-title {
+  margin-bottom: 22px;
+}
+
+.our-story-section .common-title h2 {
+  margin: 0;
+
+  color: #07564f;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+}
+
+/* Story paragraphs */
+
+.our-story-section .our-story-text {
+  color: #667085;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.our-story-section .our-story-text p {
+  margin: 0 0 18px;
+}
+
+.our-story-section .our-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   GUIDING QUOTE PANEL
+   ========================================== */
+
+.our-story-section .quote-panel {
+  position: relative;
+
+  margin-top: 25px;
+  padding: 24px 28px;
+
+  border-left: 4px solid #f5d447;
+  border-radius: 0 16px 16px 0;
+
+  background: #f8f7f0;
+}
+
+.our-story-section .quote-panel p {
+  margin: 0 0 10px;
+
+  color: #07564f;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.65;
+}
+
+.our-story-section .quote-panel span {
+  display: block;
+
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 991px) {
+  .our-story-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .our-story-section .story-highlight-image {
+    min-height: 420px;
+    padding: 30px;
+  }
+
+  .our-story-section .common-title h2 {
+    font-size: 32px;
+  }
+
+  .our-story-section .our-story-text {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 575px) {
+  .our-story-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .our-story-section .story-highlight-image {
+    min-height: 340px;
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .our-story-section .story-highlight-image .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .our-story-section .story-highlight-image h3 {
+    font-size: 29px;
+  }
+
+  .our-story-section .story-highlight-image p {
+    font-size: 13px;
+  }
+
+  .our-story-section .common-title {
+    margin-bottom: 17px;
+  }
+
+  .our-story-section .common-title h2 {
+    font-size: 28px;
+    letter-spacing: -0.4px;
+  }
+
+  .our-story-section .our-story-text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .our-story-section .our-story-text p {
+    margin-bottom: 15px;
+  }
+
+  .our-story-section .quote-panel {
+    margin-top: 20px;
+    padding: 19px 20px;
+  }
+
+  .our-story-section .quote-panel p {
+    font-size: 16px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .our-story-section .story-highlight-image {
+    transition: none;
+  }
+}
+
+
+.story-highlight-image {
+  width: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #075b43;
+}
+
+.story-highlight-photo {
+  display: block;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  transition: transform 0.5s ease;
+}
+
+.story-highlight-image:hover .story-highlight-photo {
+  transform: scale(1.03);
+}
+
+@media (max-width: 991px) {
+  .story-highlight-image,
+  .story-highlight-photo {
+    min-height: 420px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 575px) {
+  .story-highlight-image,
+  .story-highlight-photo {
+    min-height: 340px;
+    height: 340px;
+  }
+}
