@@ -6,442 +6,327 @@ import Link from "next/link";
 export const metadata = {
   title: "Our Timeline | MARWANN CHARITABLE TRUST",
   description:
-    "Explore the establishment and documented activity history of MARWANN CHARITABLE TRUST.",
+    "Explore the establishment and community service activities of MARWANN CHARITABLE TRUST.",
 };
 
-const css0 = `
-.about-intro-visual {
-  min-height: 470px;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  padding: 36px;
-  background:
-    radial-gradient(circle at 20% 15%, rgba(255,255,255,.16), transparent 32%),
-    linear-gradient(145deg, #075d56 0%, #073b38 58%, #092b2b 100%);
-}
-.about-intro-visual:before,
-.about-intro-visual:after {
-  content: "";
-  position: absolute;
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.about-intro-visual:before {
-  width: 360px;
-  height: 360px;
-  top: -110px;
-  right: -95px;
-}
-.about-intro-visual:after {
-  width: 250px;
-  height: 250px;
-  top: -55px;
-  right: -40px;
-}
-.about-visual-icon {
-  position: absolute;
-  top: 45px;
-  left: 42px;
-  width: 86px;
-  height: 86px;
-  display: grid;
-  place-items: center;
-  color: #0a544f;
-  background: #f7d95d;
-  border-radius: 50%;
-  font-size: 34px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.15);
-}
-.about-visual-copy {
-  position: relative;
-  z-index: 1;
-  max-width: 360px;
-  color: #fff;
-}
-.about-visual-copy .since {
-  display: inline-block;
-  color: #f7d95d;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.about-visual-copy h3 {
-  color: #fff;
-  font-size: clamp(28px, 3vw, 40px);
-  line-height: 1.15;
-  margin: 0 0 14px;
-}
-.about-visual-copy p {
-  color: rgba(255,255,255,.82);
-  margin: 0;
-}
-.about-motto {
-  border-left: 4px solid #f4d44e;
-  background: #f8f7f0;
-  padding: 20px 24px;
-  border-radius: 0 12px 12px 0;
-  margin-top: 26px;
-}
-.about-motto p {
-  margin: 0;
-  font-weight: 700;
-  color: #064f49;
-  font-size: 18px;
-}
-.about-motto span {
-  display: block;
-  color: #69716f;
-  font-size: 13px;
-  margin-top: 5px;
-}
-.about-purpose-card {
-  height: 100%;
-  padding: 34px;
-  border-radius: 16px;
-  background: #fff;
-  border: 1px solid rgba(6,79,73,.10);
-  box-shadow: 0 12px 35px rgba(13,48,43,.06);
-}
-.about-purpose-card .purpose-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #f8f3d8;
-  color: #075d56;
-  font-size: 23px;
-  margin-bottom: 20px;
-}
-.about-purpose-card h3 {
-  margin-bottom: 14px;
-}
-.about-purpose-card p {
-  margin-bottom: 0;
-}
-.about-mission-list {
-  list-style: none;
-  padding: 0;
-  margin: 18px 0 0;
-}
-.about-mission-list li {
-  position: relative;
-  padding: 0 0 12px 27px;
-  color: #555f5d;
-}
-.about-mission-list li:last-child {
-  padding-bottom: 0;
-}
-.about-mission-list li i {
-  position: absolute;
-  left: 0;
-  top: 5px;
-  color: #08776e;
-}
-.about-value-card {
-  height: 100%;
-  padding: 24px;
-  background: #fff;
-  border: 1px solid rgba(6,79,73,.10);
-  border-radius: 14px;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.about-value-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(13,48,43,.08);
-}
-.about-value-card .value-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  background: #f8f3d8;
-  color: #075d56;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-.about-value-card h5 {
-  margin-bottom: 8px;
-}
-.about-value-card p {
-  color: #69716f;
-  margin: 0;
-  font-size: 14px;
-}
-.about-founder-panel {
-  padding: 38px;
-  background: #073f3b;
-  border-radius: 18px;
-  color: #fff;
-}
-.about-founder-panel h3,
-.about-founder-panel h5 {
-  color: #fff;
-}
-.about-founder-panel p {
-  color: rgba(255,255,255,.82);
-}
-.about-founder-mark {
-  width: 86px;
-  height: 86px;
-  display: grid;
-  place-items: center;
-  background: #f7d95d;
-  color: #064f49;
-  border-radius: 50%;
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-.trustee-card {
-  height: 100%;
-  padding: 25px 20px;
-  border-radius: 14px;
-  background: #fff;
-  border: 1px solid rgba(6,79,73,.10);
-  text-align: center;
-}
-.trustee-initial {
-  width: 58px;
-  height: 58px;
-  margin: 0 auto 14px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #e8f1ef;
-  color: #075d56;
-  font-weight: 800;
-  font-size: 17px;
-}
-.trustee-card h5 {
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-.trustee-card p {
-  margin: 0;
-  color: #69716f;
-  font-size: 13px;
-}
-@media (max-width: 767.98px) {
-  .about-intro-visual {
-    min-height: 330px;
-    padding: 25px;
-  }
-  .about-visual-icon {
-    top: 28px;
-    left: 28px;
-    width: 68px;
-    height: 68px;
-    font-size: 27px;
-  }
-  .about-purpose-card,
-  .about-founder-panel {
-    padding: 26px;
-  }
-}
-`;
+const timelineActivities = [
+  {
+    number: "01",
+    label: "26 SEP 2016",
+    title: "MARWANN CHARITABLE TRUST Founded",
+    description:
+      "MARWANN CHARITABLE TRUST was founded on 26 September 2016 in Vellore, Tamil Nadu, under the leadership of Dr. S. Allahuddeen.",
+    featured: true,
+  },
+  {
+    number: "02",
+    label: "Community Welfare",
+    title: "Corona Food Distribution",
+    description:
+      "Food distribution to support people and families affected by the COVID-19 pandemic.",
+  },
+  {
+    number: "03",
+    label: "Health Awareness",
+    title: "Nilavembu Kasayam Distribution",
+    description:
+      "Nilavembu Kasayam distribution activities at schools, courts and police stations.",
+  },
+  {
+    number: "04",
+    label: "Healthcare",
+    title: "Polio Vaccination",
+    description:
+      "Polio vaccination activities to support child health and public health awareness.",
+  },
+  {
+    number: "05",
+    label: "Community Support",
+    title: "Rice Bag Distribution",
+    description:
+      "Distribution of rice bags to provide essential food support to people and families in need.",
+  },
+  {
+    number: "06",
+    label: "Healthcare",
+    title: "Eye Camps",
+    description:
+      "Eye camp initiatives to promote eye health awareness and access to eye care services.",
+  },
+  {
+    number: "07",
+    label: "Medical Assistance",
+    title: "Medical Help",
+    description:
+      "Medical assistance for people facing healthcare difficulties and financial challenges.",
+  },
+  {
+    number: "08",
+    label: "Child Welfare",
+    title: "Child Orphanage Support",
+    description:
+      "Support activities for children living in orphanages and care institutions.",
+  },
+  {
+    number: "09",
+    label: "Community Service",
+    title: "Independence Day & Flood Relief",
+    description:
+      "Independence Day activities and flood-related relief efforts to support affected communities.",
+  },
+  {
+    number: "10",
+    label: "Elderly Care",
+    title: "Old Age Home Support",
+    description:
+      "Welfare and support activities for senior citizens in old age homes.",
+  },
+  {
+    number: "11",
+    label: "Women Empowerment",
+    title: "Tailoring Classes for Women",
+    description:
+      "Tailoring classes to encourage practical skills, self-reliance and livelihood opportunities for women.",
+  },
+  {
+    number: "12",
+    label: "Student Wellbeing",
+    title: "Students' Yoga Event",
+    description:
+      "Yoga activities for students to encourage physical wellbeing and awareness of healthy habits.",
+  },
+];
 
-const css1 = `
-.subpage-intro {
+const timelineCss = `
+.timeline-page {
+  color: #29443d;
+}
+
+.timeline-page .timeline-section {
+  position: relative;
+  background-color: #fbfcf9;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.timeline-page .subpage-intro {
   max-width: 850px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
-.subpage-panel {
-  height: 100%;
-  padding: 30px;
-  border-radius: 16px;
-  background: #fff;
-  border: 1px solid rgba(6,79,73,.10);
-  box-shadow: 0 12px 35px rgba(13,48,43,.05);
+
+.timeline-page .subpage-intro > p {
+  color: #697771;
+  font-size: 16px;
+  line-height: 1.8;
 }
-.subpage-panel h3,
-.subpage-panel h4 {
-  margin-bottom: 12px;
-}
-.subpage-panel p:last-child {
-  margin-bottom: 0;
-}
-.subpage-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: #f8f3d8;
-  color: #075d56;
-  font-size: 22px;
-  margin-bottom: 18px;
-}
-.story-highlight {
-  height: 100%;
-  min-height: 330px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 34px;
-  border-radius: 18px;
-  color: #fff;
-  background: linear-gradient(145deg, #075d56 0%, #073b38 58%, #092b2b 100%);
+
+.timeline-page .timeline-list {
   position: relative;
-  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 38px;
 }
-.story-highlight:before,
-.story-highlight:after {
+
+.timeline-page .timeline-list::before {
   content: "";
   position: absolute;
-  border: 1px solid rgba(255,255,255,.17);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.story-highlight:before {
-  width: 330px;
-  height: 330px;
-  right: -100px;
-  top: -130px;
-}
-.story-highlight:after {
-  width: 230px;
-  height: 230px;
-  right: -50px;
-  top: -80px;
-}
-.story-highlight > * {
-  position: relative;
-  z-index: 1;
-}
-.story-highlight .eyebrow {
-  color: #f7d95d;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .14em;
-  font-weight: 700;
-}
-.story-highlight h3 {
-  color: #fff;
-  font-size: clamp(26px,3vw,38px);
-  line-height: 1.2;
-  margin: 12px 0;
-}
-.story-highlight p {
-  color: rgba(255,255,255,.82);
-  margin: 0;
-}
-.quote-panel {
-  border-left: 4px solid #f4d44e;
-  background: #f8f7f0;
-  padding: 22px 26px;
-  border-radius: 0 12px 12px 0;
-}
-.quote-panel p {
-  color: #064f49;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0;
-}
-.quote-panel span {
-  display: block;
-  margin-top: 6px;
-  color: #69716f;
-  font-size: 13px;
-}
-.trustee-profile {
-  height: 100%;
-  padding: 30px 22px;
-  border: 1px solid rgba(6,79,73,.10);
-  background: #fff;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 10px 28px rgba(13,48,43,.04);
-}
-.trustee-profile .initial {
-  display: grid;
-  place-items: center;
-  width: 74px;
-  height: 74px;
-  margin: 0 auto 18px;
-  border-radius: 50%;
-  background: #e8f1ef;
-  color: #075d56;
-  font-size: 21px;
-  font-weight: 800;
-}
-.trustee-profile h4 {
-  font-size: 18px;
-  margin-bottom: 7px;
-}
-.trustee-profile p {
-  color: #69716f;
-  margin: 0;
-  font-size: 14px;
-}
-.timeline-list {
-  position: relative;
-  max-width: 940px;
-  margin: 0 auto;
-  padding-left: 34px;
-}
-.timeline-list:before {
-  content: "";
-  position: absolute;
+  top: 10px;
+  bottom: 10px;
   left: 10px;
-  top: 8px;
-  bottom: 8px;
   width: 2px;
-  background: #d8e5e1;
+  background: linear-gradient(
+    to bottom,
+    #08776e,
+    #b8d8c3,
+    #08776e
+  );
 }
-.timeline-entry {
+
+.timeline-page .timeline-entry {
   position: relative;
   padding: 0 0 30px 20px;
 }
-.timeline-entry:last-child {
+
+.timeline-page .timeline-entry:last-child {
   padding-bottom: 0;
 }
-.timeline-entry:before {
+
+.timeline-page .timeline-entry::before {
   content: "";
   position: absolute;
-  left: -30px;
   top: 7px;
+  left: -35px;
   width: 18px;
   height: 18px;
+  border: 4px solid #e8f3eb;
   border-radius: 50%;
   background: #08776e;
-  border: 4px solid #e8f1ef;
   box-shadow: 0 0 0 2px #08776e;
 }
-.timeline-year {
+
+.timeline-page .timeline-year {
   display: inline-block;
+  margin-bottom: 10px;
   color: #08776e;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: .05em;
-  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
-.document-note {
-  padding: 28px;
+
+.timeline-page .timeline-card {
+  position: relative;
+  padding: 28px 30px;
+  border: 1px solid rgba(6, 79, 73, 0.12);
   border-radius: 16px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 12px 32px rgba(13, 48, 43, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.timeline-page .timeline-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(8, 119, 110, 0.3);
+  box-shadow: 0 18px 38px rgba(13, 48, 43, 0.09);
+}
+
+.timeline-page .timeline-card-featured {
+  border-left: 5px solid #08776e;
+  background: linear-gradient(120deg, #ffffff, #f0f8f1);
+}
+
+.timeline-page .timeline-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.timeline-page .timeline-number {
+  display: inline-flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: #e8f3eb;
+  color: #08776e;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.timeline-page .timeline-card h3 {
+  margin: 0 0 10px;
+  color: #073f38;
+  font-size: 22px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.timeline-page .timeline-card p {
+  margin: 0;
+  color: #687771;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.timeline-page .timeline-motto {
+  max-width: 960px;
+  margin: 45px auto 0;
+  padding: 28px 30px;
+  border-left: 5px solid #f4d44e;
+  border-radius: 0 14px 14px 0;
   background: #f8f7f0;
-  border: 1px dashed rgba(6,79,73,.3);
 }
-.document-note p:last-child {
-  margin-bottom: 0;
+
+.timeline-page .timeline-motto p {
+  margin: 0;
+  color: #064f49;
+  font-size: 22px;
+  font-weight: 750;
+  line-height: 1.5;
 }
+
+.timeline-page .timeline-motto span {
+  display: block;
+  margin-top: 8px;
+  color: #697771;
+  font-size: 14px;
+}
+
 @media (max-width: 767.98px) {
-  .subpage-panel {
-    padding: 24px;
+  .timeline-page .timeline-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
   }
-  .story-highlight {
-    min-height: 290px;
-    padding: 26px;
+
+  .timeline-page .subpage-intro {
+    margin-bottom: 35px;
   }
-  .quote-panel p {
-    font-size: 18px;
+
+  .timeline-page .timeline-list {
+    padding-left: 25px;
+  }
+
+  .timeline-page .timeline-list::before {
+    left: 6px;
+  }
+
+  .timeline-page .timeline-entry {
+    padding-left: 14px;
+    padding-bottom: 24px;
+  }
+
+  .timeline-page .timeline-entry::before {
+    left: -25px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-page .timeline-card {
+    padding: 22px 18px;
+  }
+
+  .timeline-page .timeline-card-top {
+    gap: 13px;
+  }
+
+  .timeline-page .timeline-number {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .timeline-page .timeline-card h3 {
+    font-size: 19px;
+  }
+
+  .timeline-page .timeline-card p {
+    font-size: 14px;
+  }
+
+  .timeline-page .timeline-motto {
+    margin-top: 32px;
+    padding: 22px;
+  }
+
+  .timeline-page .timeline-motto p {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-page .timeline-card {
+    transition: none;
+  }
+
+  .timeline-page .timeline-card:hover {
+    transform: none;
   }
 }
 `;
@@ -449,11 +334,10 @@ const css1 = `
 export default function Page() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: css0 }} />
-      <style dangerouslySetInnerHTML={{ __html: css1 }} />
+      <style dangerouslySetInnerHTML={{ __html: timelineCss }} />
 
-      <main>
-        {/* Breadcrumb */}
+      <main className="timeline-page">
+        {/* Breadcrumb banner */}
         <section className="breadcrumb-section">
           <div className="container-fluid">
             <div className="row g-0">
@@ -479,7 +363,9 @@ export default function Page() {
                         <Link href="/about">About</Link>
                       </li>
                       <li>
-                        <span aria-current="page">Our Timeline</span>
+                        <span aria-current="page">
+                          Our Timeline
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -493,7 +379,7 @@ export default function Page() {
                     <h2>Our Timeline</h2>
                   </div>
 
-                  <div className="shape-1">
+                  <div className="shape-1" aria-hidden="true">
                     <img
                       src="/assets/img/shapes/shape-1.webp"
                       alt=""
@@ -506,7 +392,8 @@ export default function Page() {
                 <div className="breadcrumb-thumb">
                   <img
                     src="/assets/img/thumbs/thumb-1.webp"
-                    alt="Community service"
+                    alt="MARWANN CHARITABLE TRUST community service"
+                    fetchPriority="high"
                   />
                 </div>
               </div>
@@ -514,17 +401,18 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Timeline */}
+        {/* Full timeline */}
         <section
-          className="p-t-100 p-b-100 p-t-xs-80 p-b-xs-80"
+          className="timeline-section p-t-100 p-b-100 p-t-xs-80 p-b-xs-80"
           style={{
             backgroundImage:
-              "url(/assets/img/bg/why-us-bg.webp),url(/assets/img/bg/who-we-are-bg.webp)",
+              "url(/assets/img/bg/why-us-bg.webp), url(/assets/img/bg/who-we-are-bg.webp)",
           }}
         >
           <div className="container">
+            {/* Heading */}
             <div
-              className="text-center subpage-intro m-b-50"
+              className="text-center subpage-intro"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
@@ -538,67 +426,61 @@ export default function Page() {
               </div>
 
               <p>
-                A timeline of the Trust&apos;s establishment and
-                documented areas of activity. Additional dated
-                milestones can be added as records are verified.
+                From our establishment in 2016 to our community
+                welfare initiatives, explore the activities
+                associated with MARWANN CHARITABLE TRUST.
               </p>
             </div>
 
-            <div
-              className="timeline-list"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              {/* Founding milestone */}
-              <div className="timeline-entry">
-                <span className="timeline-year">2016</span>
+            {/* Twelve timeline milestones */}
+            <div className="timeline-list">
+              {timelineActivities.map((activity, index) => (
+                <article
+                  className="timeline-entry"
+                  key={activity.number}
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay={Math.min((index % 3) * 100, 200)}
+                >
+                  <span className="timeline-year">
+                    {activity.label}
+                  </span>
 
-                <div className="subpage-panel">
-                  <h3>MARWANN CHARITABLE TRUST Founded</h3>
+                  <div
+                    className={`timeline-card ${
+                      activity.featured
+                        ? "timeline-card-featured"
+                        : ""
+                    }`}
+                  >
+                    <div className="timeline-card-top">
+                      <span
+                        className="timeline-number"
+                        aria-hidden="true"
+                      >
+                        {activity.number}
+                      </span>
 
-                  <p>
-                    MARWANN CHARITABLE TRUST was founded on
-                    26 September 2016 in Vellore, Tamil Nadu,
-                    under the leadership of its founder,
-                    Dr. S. Allahuddeen.
-                  </p>
-                </div>
-              </div>
-
-              {/* Programs and activities */}
-              <div className="timeline-entry">
-                <span className="timeline-year">
-                  Documented activities · Dates not specified
-                </span>
-
-                <div className="subpage-panel">
-                  <h3>Charitable &amp; Community Activities</h3>
-
-                  <p>
-                    The Trust&apos;s provided activity list includes
-                    child orphanage support, COVID-19 food
-                    distribution, Nilavembu Kasayam distribution,
-                    eye camps, rice bag distribution, Independence
-                    Day and flood relief, old age home support,
-                    medical assistance and women&apos;s tailoring
-                    classes.
-                  </p>
-                </div>
-              </div>
+                      <div>
+                        <h3>{activity.title}</h3>
+                        <p>{activity.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
 
-            {/* Timeline note */}
+            {/* Guiding motto */}
             <div
-              className="m-t-50 document-note"
+              className="timeline-motto"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              <p>
-                <strong>Timeline update:</strong>{" "}
-                Specific programme dates, locations and milestones
-                will be added when supporting activity records
-                are available.
-              </p>
+              <p>“We Serve God by Serving Others.”</p>
+              <span>
+                MARWANN CHARITABLE TRUST — Our guiding motto
+              </span>
             </div>
           </div>
         </section>

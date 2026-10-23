@@ -135,7 +135,7 @@ const NAV_ITEMS = [
       { label: 'About the Trust', href: '/about' },
       { label: 'Our Story', href: '/our-story' },
       { label: 'Leadership', href: '/leadership' },
-      { label: 'Timeline', href: '/trustees' },
+      { label: 'Timeline', href: '/timeline' },
       { label: 'Legal & Recognition', href: '/legal-recognition' },
     ],
   },
@@ -145,7 +145,7 @@ const NAV_ITEMS = [
     children: [
       {
         label: 'Program Areas',
-        href: '/our-work/education',
+        href: '/program-areas',
       },
       {
         label: 'Active Campaigns',

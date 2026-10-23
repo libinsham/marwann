@@ -50,72 +50,171 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <section className="p-t-100 p-b-100 p-t-xs-80 p-b-xs-80" style={{ backgroundImage: "url(/assets/img/bg/why-us-bg.webp),url(/assets/img/bg/who-we-are-bg.webp)" }}>
-          <div className="container">
-            <div className="text-center subpage-intro m-b-50" data-aos="fade-up" data-aos-duration="1000">
-              <div className="common-subtitle">
-                <img src="/assets/img/icons/icon-2.svg" alt="" />
-                <span>{"Legal & Recognition"}</span>
-              </div>
-              <div className="common-title">
-                <h2>{"Governance, Documents & Recognition"}</h2>
-              </div>
-              <p>
-                This page is intended to provide access to the Trust's verified legal and recognition documents.
-              </p>
+        
+        
+      
+{/* Legal & Recognition Details */}
+<section
+  className="p-t-100 p-b-100 p-t-xs-80 p-b-xs-80"
+  style={{
+    backgroundImage:
+      "url(/assets/img/bg/why-us-bg.webp), url(/assets/img/bg/who-we-are-bg.webp)",
+  }}
+>
+  <div className="container">
+    <div
+      className="text-center subpage-intro m-b-50"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div className="common-subtitle">
+        <img src="/assets/img/icons/icon-2.svg" alt="" />
+        <span>Legal & Recognition</span>
+      </div>
+
+      <div className="common-title">
+        <h2>Legal Registration & Certifications</h2>
+      </div>
+
+      <p>
+        Registration details, certificates and compliance
+        information of MARWANN CHARITABLE TRUST.
+      </p>
+    </div>
+
+    <div className="row row-gap-4">
+      {/* Trust Registration */}
+      <div
+        className="col-xl-6 col-lg-6"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div className="subpage-panel">
+          <div className="subpage-icon">
+            <i className="fa-light fa-file-certificate" aria-hidden="true"></i>
+          </div>
+
+          <h3>Trust Registration</h3>
+
+          <div className="legal-details-table">
+            <div>
+              <span>Name of the Trust</span>
+              <strong>MARWANN CHARITABLE TRUST</strong>
             </div>
-            <div className="row row-gap-4">
-              <div className="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div className="subpage-panel">
-                  <div className="subpage-icon">
-                    <i className="fa-light fa-file-certificate" aria-hidden="true"></i>
-                  </div>
-                  <h3>Trust Registration</h3>
-                  <p>
-                    Official registration details and the relevant registration document can be published here after verification.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div className="subpage-panel">
-                  <div className="subpage-icon">
-                    <i className="fa-light fa-scale-balanced" aria-hidden="true"></i>
-                  </div>
-                  <h3>{"Legal & Governance"}</h3>
-                  <p>
-                    Verified governance, statutory and compliance documents may be added here where applicable.
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div className="subpage-panel">
-                  <div className="subpage-icon">
-                    <i className="fa-light fa-award" aria-hidden="true"></i>
-                  </div>
-                  <h3>{"Recognition & Awards"}</h3>
-                  <p>
-                    Only confirmed certificates, awards and recognitions will be displayed on this page.
-                  </p>
-                </div>
-              </div>
+            <div>
+              <span>Trust Registration</span>
+              <strong>Govt Reg No: 190/BK4-2016</strong>
             </div>
-            <div className="m-t-50 document-note" data-aos="fade-up" data-aos-duration="1000">
-              <h3>Document availability</h3>
-              <p>
-                Registration numbers, certificates and award details have not been supplied for this page yet. No unverified legal status or recognition is stated here. Please contact the Trust for document-related enquiries.
-              </p>
-              <a href="mailto:marwanncharitabletrust2001@gmail.com" className="e-primary-btn has-icon">
-                Contact the Trust
-                <span className="icon-wrap">
-                  <span className="icon">
-                    <i className="fa-regular fa-arrow-right"></i>
-                    <i className="fa-regular fa-arrow-right"></i>
-                  </span>
-                </span>
-              </a>
+            <div>
+              <span>Date of Registration</span>
+              <strong>26.09.2016</strong>
+            </div>
+            <div>
+              <span>80G Certificate No.</span>
+              <strong>AAETM6807B/05/17-18/T-0475/80G</strong>
+            </div>
+            <div>
+              <span>12AA Certificate No.</span>
+              <strong>AAETM6807B/05/17-18/T-0475</strong>
+            </div>
+            <div>
+              <span>Trust & Trustees PAN</span>
+              <strong>AAETM6807B</strong>
+            </div>
+            <div>
+              <span>NITI AAYOG / DARPAN ID</span>
+              <strong>TN/2019/0223928</strong>
+            </div>
+            <div>
+              <span>CSR Registration No.</span>
+              <strong>CSR00020692</strong>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+
+      {/* Additional Registrations */}
+      <div
+        className="col-xl-6 col-lg-6"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div className="subpage-panel">
+          <div className="subpage-icon">
+            <i className="fa-light fa-scale-balanced" aria-hidden="true"></i>
+          </div>
+
+          <h3>Additional Registrations & Recognition</h3>
+
+          <div className="legal-details-table">
+            <div>
+              <span>Disabilities Certificate</span>
+              <strong>
+                Section 34(1), 51(2) of the Rights of Persons
+                with Disabilities Act, 2016; 80G(5)(i)(a),
+                U/S 12A, U/S 12AA(1)(b), U/S 10(23C),
+                10(23C)(vi), 34(1), 51(2), CSR, FCRA, etc.
+              </strong>
+            </div>
+
+            <div>
+              <span>FCRA Registration No.</span>
+              <strong>075980335</strong>
+            </div>
+
+            <div>
+              <span>FCRA File No.</span>
+              <strong>II/21022/67/(0193)/2019-FCRA-II</strong>
+            </div>
+
+            <div>
+              <span>DARPAN ID</span>
+              <strong>TN/2019/0223928</strong>
+            </div>
+          </div>
+
+          <div className="legal-bank-details">
+            <h4>FCRA Bank Details</h4>
+            <p>
+              <strong>Bank:</strong> State Bank of India
+            </p>
+            <p>
+              <strong>A/C No:</strong> 40102563471
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Document verification note */}
+    <div
+      className="m-t-50 document-note"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <h3>Certificates & Official Documents</h3>
+      <p>
+        For official verification, please contact MARWANN
+        CHARITABLE TRUST to request copies of the relevant
+        registration certificates and supporting documents.
+      </p>
+
+      <a
+        href="mailto:marwanncharitabletrust2001@gmail.com"
+        className="e-primary-btn has-icon"
+      >
+        Contact the Trust
+        <span className="icon-wrap">
+          <span className="icon">
+            <i className="fa-regular fa-arrow-right"></i>
+            <i className="fa-regular fa-arrow-right"></i>
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
       </main>
     </>
   )

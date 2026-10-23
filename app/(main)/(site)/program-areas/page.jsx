@@ -134,7 +134,7 @@ export default function Page() {
                       <span className="marwann-program-pill">Food Assistance</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="programs/covid-food-distribution">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
@@ -173,7 +173,7 @@ export default function Page() {
                       <span className="marwann-program-pill">Health Activity</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="/programs/nilavembu-kasayam-distribution">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
@@ -184,6 +184,8 @@ export default function Page() {
                   </div>
                 </article>
               </div>
+
+
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="health" data-aos="fade-up" data-aos-duration="800">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-health">
@@ -210,7 +212,7 @@ export default function Page() {
                       <span className="marwann-program-pill">Eye Care</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="/programs/eye-camps">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
@@ -249,7 +251,7 @@ export default function Page() {
                       <span className="marwann-program-pill">Food Assistance</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="/programs/rice-bag-distribution">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
@@ -288,7 +290,7 @@ export default function Page() {
                       <span className="marwann-program-pill">{"Relief & Support"}</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="/programs/independence-day-flood-relief">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
@@ -325,7 +327,7 @@ export default function Page() {
                       <span className="marwann-program-pill">Senior Care</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="/programs/old-age-home-support">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
@@ -362,7 +364,7 @@ export default function Page() {
                       <span className="marwann-program-pill">Medical Support</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="/programs/medical-assistance">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
@@ -399,7 +401,7 @@ export default function Page() {
                       <span className="marwann-program-pill">Skill Development</span>
                     </div>
                     <div className="marwann-program-actions">
-                      <Link className="program-primary" href="/gallery">
+                      <Link className="program-primary" href="/programs/womens-tailoring-classes">
                         View Program
                         {" "}
                         <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
