@@ -128,19 +128,18 @@ const NAV_ITEMS = [
     children: [
       { label: 'About the Trust', href: '/about' },
       { label: 'Our-Story', href: '/Our Story' },
-      { label: 'Founder Profile', href: '/founder' },
-      { label: 'Trustees', href: '/trustees' },
+      { label: 'Leadership', href: '/founder' },
+      { label: 'Timeline', href: '/trustees' },
+       { label: 'Legal & Recognition', href: '/trustees' },
     ],
   },
   {
     label: 'Our Work',
     href: '/our-work',
     children: [
-      { label: 'Education', href: '/our-work/education' },
-      { label: 'Healthcare', href: '/our-work/healthcare' },
-      {
-        label: 'Community Support',
-        href: '/our-work/community-support',
+      { label: 'Program Areas', href: '/our-work/education' },
+      { label: 'Active Campaigns', href: '/our-work/healthcare' },
+      { label: ' Gallery', href: '/our-work/community-support',
       },
     ],
   },
@@ -148,8 +147,10 @@ const NAV_ITEMS = [
     label: 'Engage',
     href: '/Engage',
     children: [
-      { label: 'Our Impact', href: '/impact' },
-      { label: 'Reports', href: '/reports' },
+      { label: 'Donate', href: '/impact' },
+      { label: 'Crowdfunding', href: '/reports' },
+        { label: 'Volunteer', href: '/impact' },
+      { label: 'Events', href: '/reports' },
     ],
   },
 
