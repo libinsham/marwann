@@ -1,9 +1,9 @@
 
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import './SiteHeader.css'
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import './SiteHeader.css';
 
 const LANGS = [
   { code: 'en', label: 'English' },
@@ -12,54 +12,57 @@ const LANGS = [
   { code: 'te', label: 'తెలుగు (Telugu)' },
   { code: 'kn', label: 'ಕನ್ನಡ (Kannada)' },
   { code: 'hi', label: 'हिन्दी (Hindi)' },
-]
+];
 
 function getCurrentLanguage() {
-  if (typeof document === 'undefined') return 'en'
+  if (typeof document === 'undefined') return 'en';
 
   const match = document.cookie.match(
     /(?:^|;\s*)googtrans=\/[^/]+\/([a-z-]+)/i
-  )
+  );
 
-  const code = match?.[1]?.toLowerCase()
+  const code = match?.[1]?.toLowerCase();
 
-  return LANGS.some((lang) => lang.code === code) ? code : 'en'
+  return LANGS.some((lang) => lang.code === code)
+    ? code
+    : 'en';
 }
 
 function setLanguage(code) {
-  const host = window.location.hostname
-  const expire = 'Thu, 01 Jan 1970 00:00:00 GMT'
+  const host = window.location.hostname;
+  const expire = 'Thu, 01 Jan 1970 00:00:00 GMT';
 
   const clearCookie = (domain) => {
-    document.cookie = `googtrans=; expires=${expire}; path=/${
-      domain ? `; domain=${domain}` : ''
-    }`
-  }
+    document.cookie =
+      `googtrans=; expires=${expire}; path=/` +
+      (domain ? `; domain=${domain}` : '');
+  };
 
-  clearCookie()
-  clearCookie(host)
+  clearCookie();
+  clearCookie(host);
 
   if (code !== 'en') {
-    const value = `/en/${code}`
+    const value = `/en/${code}`;
 
-    document.cookie = `googtrans=${value}; path=/; SameSite=Lax`
+    document.cookie = `googtrans=${value}; path=/; SameSite=Lax`;
 
     if (host.includes('.')) {
-      document.cookie = `googtrans=${value}; path=/; domain=${host}; SameSite=Lax`
+      document.cookie =
+        `googtrans=${value}; path=/; domain=${host}; SameSite=Lax`;
     }
   }
 
-  window.location.reload()
+  window.location.reload();
 }
 
 function LanguageSwitcher() {
-  const [current, setCurrent] = useState('en')
+  const [current, setCurrent] = useState('en');
 
   useEffect(() => {
-    setCurrent(getCurrentLanguage())
+    setCurrent(getCurrentLanguage());
 
     window.googleTranslateElementInit = () => {
-      if (!window.google?.translate?.TranslateElement) return
+      if (!window.google?.translate?.TranslateElement) return;
 
       new window.google.translate.TranslateElement(
         {
@@ -68,22 +71,22 @@ function LanguageSwitcher() {
           autoDisplay: false,
         },
         'google_translate_element'
-      )
-    }
+      );
+    };
 
     if (!document.getElementById('google-translate-script')) {
-      const script = document.createElement('script')
+      const script = document.createElement('script');
 
-      script.id = 'google-translate-script'
+      script.id = 'google-translate-script';
       script.src =
-        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-      script.async = true
+        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
 
-      document.body.appendChild(script)
+      document.body.appendChild(script);
     } else if (window.google?.translate?.TranslateElement) {
-      window.googleTranslateElementInit?.()
+      window.googleTranslateElementInit?.();
     }
-  }, [])
+  }, []);
 
   return (
     <div className="mct-language notranslate" translate="no">
@@ -91,7 +94,10 @@ function LanguageSwitcher() {
         ◎
       </span>
 
-      <label className="mct-sr-only" htmlFor="mct-language-select">
+      <label
+        className="mct-sr-only"
+        htmlFor="mct-language-select"
+      >
         Select language
       </label>
 
@@ -113,7 +119,7 @@ function LanguageSwitcher() {
         className="mct-google-translate"
       />
     </div>
-  )
+  );
 }
 
 const NAV_ITEMS = [
@@ -127,38 +133,45 @@ const NAV_ITEMS = [
     href: '/about',
     children: [
       { label: 'About the Trust', href: '/about' },
-      { label: 'Our-Story', href: '/Our Story' },
-      { label: 'Leadership', href: '/founder' },
+      { label: 'Our Story', href: '/our-story' },
+      { label: 'Leadership', href: '/leadership' },
       { label: 'Timeline', href: '/trustees' },
-       { label: 'Legal & Recognition', href: '/trustees' },
+      { label: 'Legal & Recognition', href: '/legal-recognition' },
     ],
   },
   {
     label: 'Our Work',
     href: '/our-work',
     children: [
-      { label: 'Program Areas', href: '/our-work/education' },
-      { label: 'Active Campaigns', href: '/our-work/healthcare' },
-      { label: ' Gallery', href: '/our-work/community-support',
+      {
+        label: 'Program Areas',
+        href: '/our-work/education',
+      },
+      {
+        label: 'Active Campaigns',
+        href: '/our-work/healthcare',
+      },
+      {
+        label: 'Gallery',
+        href: '/our-work/community-support',
       },
     ],
   },
   {
     label: 'Engage',
-    href: '/Engage',
+    href: '/engage',
     children: [
-      { label: 'Donate', href: '/impact' },
+      { label: 'Donate', href: '/donate' },
       { label: 'Crowdfunding', href: '/reports' },
-        { label: 'Volunteer', href: '/impact' },
-      { label: 'Events', href: '/reports' },
+      { label: 'Volunteer', href: '/volunteer' },
+      { label: 'Events', href: '/events' },
     ],
   },
-
   {
     label: 'Contact',
     href: '/contact',
   },
-]
+];
 
 function ChevronIcon() {
   return (
@@ -169,7 +182,7 @@ function ChevronIcon() {
     >
       <path d="m1.5 1.5 4.5 4.5 4.5-4.5" />
     </svg>
-  )
+  );
 }
 
 export default function SiteHeader({
@@ -177,14 +190,14 @@ export default function SiteHeader({
   donateHref = '/donate',
   signInHref = '/admin/login',
 }) {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [expandedMobile, setExpandedMobile] = useState(null)
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [expandedMobile, setExpandedMobile] = useState(null);
 
   useEffect(() => {
     if (!mobileOpen) {
-      setExpandedMobile(null)
+      setExpandedMobile(null);
     }
-  }, [mobileOpen])
+  }, [mobileOpen]);
 
   return (
     <>
@@ -192,10 +205,7 @@ export default function SiteHeader({
       <div className="mct-announcement">
         <div className="mct-announcement-inner">
           <p className="mct-announcement-message">
-            <span
-              className="mct-book-icon"
-              aria-hidden="true"
-            >
+            <span className="mct-book-icon" aria-hidden="true">
               ♧
             </span>
 
@@ -261,7 +271,7 @@ export default function SiteHeader({
                     {item.children.map((child) => (
                       <Link
                         href={child.href}
-                        key={child.href}
+                        key={`${item.label}-${child.label}-${child.href}`}
                       >
                         {child.label}
                       </Link>
@@ -313,9 +323,7 @@ export default function SiteHeader({
               }
               aria-expanded={mobileOpen}
               aria-controls="mct-mobile-nav"
-              onClick={() =>
-                setMobileOpen((open) => !open)
-              }
+              onClick={() => setMobileOpen((open) => !open)}
             >
               <span
                 className={`mct-menu-icon${
@@ -384,7 +392,7 @@ export default function SiteHeader({
                       {item.children.map((child) => (
                         <Link
                           href={child.href}
-                          key={child.href}
+                          key={`${item.label}-${child.label}-${child.href}`}
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -414,5 +422,5 @@ export default function SiteHeader({
         </div>
       </header>
     </>
-  )
+  );
 }

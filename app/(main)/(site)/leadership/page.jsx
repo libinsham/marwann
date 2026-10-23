@@ -107,61 +107,7 @@ export default function Page() {
       </section>
 
       {/* Leadership heading and trustee cards */}
-      <section
-        className="leadership-trustees-section"
-        style={{
-          backgroundImage:
-            "url(/assets/img/bg/why-us-bg.webp), url(/assets/img/bg/who-we-are-bg.webp)",
-        }}
-      >
-        <div className="container">
-          <div
-            className="leadership-intro"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <div className="common-subtitle">
-              <img
-                src="/assets/img/icons/icon-2.svg"
-                alt=""
-              />
-              <span>Leadership</span>
-            </div>
-
-            <div className="common-title">
-              <h2>Trustees of MARWANN CHARITABLE TRUST</h2>
-            </div>
-
-            <p>
-              The Trust&apos;s leadership team includes its
-              founder and trustees, serving in the roles
-              listed below.
-            </p>
-          </div>
-
-          <div className="leadership-trustee-grid">
-            {trustees.map((trustee, index) => (
-              <article
-                className="trustee-profile"
-                data-aos="fade-up"
-                data-aos-delay={(index + 1) * 100}
-                key={trustee.name}
-              >
-                <div className="trustee-photo">
-                  <img
-                    src={trustee.image}
-                    alt={trustee.name}
-                    loading="lazy"
-                  />
-                </div>
-
-                <h3>{trustee.name}</h3>
-                <p>{trustee.role}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Founder profile */}
       <section className="leadership-founder-section">
@@ -219,13 +165,69 @@ export default function Page() {
                 href="/our-story"
                 className="leadership-story-button"
               >
-                <span>Read Our Story</span>
+                <span>We Serve God by Serving Others.</span>
 
                 <span className="leadership-story-arrow">
                   →
                 </span>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+ <section
+        className="leadership-trustees-section"
+        style={{
+          backgroundImage:
+            "url(/assets/img/bg/why-us-bg.webp), url(/assets/img/bg/who-we-are-bg.webp)",
+        }}
+      >
+        <div className="container">
+          <div
+            className="leadership-intro"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div className="common-subtitle">
+              <img
+                src="/assets/img/icons/icon-2.svg"
+                alt=""
+              />
+              <span>Leadership</span>
+            </div>
+
+            <div className="common-title">
+              <h2>Trustees of MARWANN CHARITABLE TRUST</h2>
+            </div>
+
+            <p>
+              The Trust&apos;s leadership team includes its
+              founder and trustees, serving in the roles
+              listed below.
+            </p>
+          </div>
+
+          <div className="leadership-trustee-grid">
+            {trustees.map((trustee, index) => (
+              <article
+                className="trustee-profile"
+                data-aos="fade-up"
+                data-aos-delay={(index + 1) * 100}
+                key={trustee.name}
+              >
+                <div className="trustee-photo">
+                  <img
+                    src={trustee.image}
+                    alt={trustee.name}
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3>{trustee.name}</h3>
+                <p>{trustee.role}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
