@@ -56,10 +56,21 @@ export default function Page() {
               <div className="col-xl-7 col-lg-7">
                 <div className="donate-panel">
                   <form id="marwann-donation-form" className="donate-form" noValidate>
-                    <div className="donate-panel-title">
-                      <span className="step">1</span>
-                      <h2>Choose Donation Type</h2>
-                    </div>
+                    
+                    
+                 
+<div className="donate-panel-title">
+  <span className="step">1</span>
+  <h2>Choose Donation Type</h2>
+</div>
+
+<p className="donate-help donate-section-note">
+  This donation will be considered under section 354 (2)
+  [formerly known as 80G] of Income Tax India.
+</p>
+
+
+
                     <div className="donate-frequency" role="radiogroup" aria-label="Donation frequency">
                       <label>
                         <input type="radio" name="frequency" value="one-time" defaultChecked />

@@ -19781,3 +19781,21 @@ label {
   top: 16px;
   right: 16px;
 }
+
+
+/* Paragraph below the donation heading */
+.donate-section-note {
+  display: block;
+  margin: -10px 0 22px 46px;
+  color: #64716d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 575px) {
+  .donate-section-note {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 12px;
+  }
+}

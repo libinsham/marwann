@@ -71,7 +71,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
                     <a className="marwann-program-photo-link" href="/programs/child-orphanage-support" data-fancybox="marwann-program-gallery" data-caption="Child Orphanage Support" aria-label="Open photo: Child Orphanage Support">
-                      <img src="/assets/img/gallery/child-orphanage-support.webp" alt="Child Orphanage Support" loading="lazy" />
+                      <img src="/assets/img/programs/programs-child.webp" alt="Child Orphanage Support" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>
@@ -110,7 +110,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
                     <a className="marwann-program-photo-link" href="/programs/covid-food-distribution" data-fancybox="marwann-program-gallery" data-caption="COVID-19 Food Distribution" aria-label="Open photo: COVID-19 Food Distribution">
-                      <img src="/assets/img/gallery/covid-food-distribution.webp" alt="COVID-19 Food Distribution" loading="lazy" />
+                      <img src="/assets/img/programs/programs-covid.jpg" alt="COVID-19 Food Distribution" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>
@@ -149,7 +149,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-health">
                     <a className="marwann-program-photo-link" href="/programs/nilavembu-kasayam-distribution" data-fancybox="marwann-program-gallery" data-caption="Nilavembu Kasayam Distribution" aria-label="Open photo: Nilavembu Kasayam Distribution">
-                      <img src="/assets/img/gallery/nilavembu-kasayam-distribution.webp" alt="Nilavembu Kasayam Distribution" loading="lazy" />
+                      <img src="/assets/img/programs/programs-nilavembu.jpg" alt="Nilavembu Kasayam Distribution" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>
@@ -190,7 +190,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-health">
                     <a className="marwann-program-photo-link" href="/programs/eye-camps" data-fancybox="marwann-program-gallery" data-caption="Eye Camps" aria-label="Open photo: Eye Camps">
-                      <img src="/assets/img/gallery/eye-camp.webp" alt="Eye Camps" loading="lazy" />
+                      <img src="/assets/img/programs/programs-eye-camp.jpg" alt="Eye Camps" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>
@@ -227,7 +227,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
                     <a className="marwann-program-photo-link" href="/programs/rice-bag-distribution" data-fancybox="marwann-program-gallery" data-caption="Rice Bag Distribution" aria-label="Open photo: Rice Bag Distribution">
-                      <img src="/assets/img/gallery/rice-bag.webp" alt="Rice Bag Distribution" loading="lazy" />
+                      <img src="/assets/img/programs/programs-rice-bag.jpg" alt="Rice Bag Distribution" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>
@@ -266,7 +266,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
                     <a className="marwann-program-photo-link" href="/programs/independence-day-flood-relief" data-fancybox="marwann-program-gallery" data-caption="Independence Day and Flood Relief" aria-label="Open photo: Independence Day and Flood Relief">
-                      <img src="/assets/img/gallery/flood.webp" alt="Independence Day and Flood Relief" loading="lazy" />
+                      <img src="/assets/img/programs/programs-independent.jpg" alt="Independence Day and Flood Relief" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>
@@ -305,7 +305,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
                     <a className="marwann-program-photo-link" href="/programs/old-age-home-support" data-fancybox="marwann-program-gallery" data-caption="Old Age Home Support" aria-label="Open photo: Old Age Home Support">
-                      <img src="/assets/img/gallery/old-age.webp" alt="Old Age Home Support" loading="lazy" />
+                      <img src="/assets/img/programs/programs-old-age.jpeg" alt="Old Age Home Support" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>
@@ -342,7 +342,7 @@ export default function Page() {
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-health">
                     <a className="marwann-program-photo-link" href="/programs/medical-assistance" data-fancybox="marwann-program-gallery" data-caption="Medical Assistance" aria-label="Open photo: Medical Assistance">
-                      <img src="/assets/img/gallery/medical-assistance.webp" alt="Medical Assistance" loading="lazy" />
+                      <img src="/assets/img/programs/programs-medical.jpg" alt="Medical Assistance" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
                         <i className="fa-regular fa-magnifying-glass-plus"></i>

@@ -1,0 +1,1073 @@
+
+/* ==========================================
+   MARWANN CHARITABLE TRUST
+   PROGRAM PHOTO SLIDER
+   ========================================== */
+
+.mct-program-gallery-panel {
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 22px;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #e7e7e7;
+}
+
+.mct-program-gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mct-program-gallery-heading {
+  min-width: 0;
+}
+
+.mct-program-gallery-category {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #075b43;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mct-program-gallery-title {
+  margin: 0;
+  color: #078047;
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 800;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.mct-program-gallery-description {
+  margin: 8px 0 0;
+  color: #59645e;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.mct-program-gallery-count {
+  flex-shrink: 0;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #fff;
+  color: #075b43;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* Slider layout */
+
+.mct-program-gallery-stage {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.mct-program-gallery-arrow {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #202820;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.mct-program-gallery-arrow span {
+  display: block;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.mct-program-gallery-arrow:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.8);
+  color: #078047;
+}
+
+.mct-program-gallery-arrow:focus-visible {
+  outline: 3px solid #078047;
+  outline-offset: 2px;
+}
+
+.mct-program-gallery-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Previous, active, next images */
+
+.mct-program-gallery-slides {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.82fr)
+    minmax(0, 1.35fr)
+    minmax(0, 0.82fr);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  animation: mct-gallery-slide-in 220ms ease both;
+}
+
+@keyframes mct-gallery-slide-in {
+  from {
+    opacity: 0.78;
+    transform: translateX(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mct-program-gallery-slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 170px;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 5px;
+  background: #d5d5d5;
+  cursor: pointer;
+  opacity: 0.94;
+  transform: scale(0.96);
+  transition:
+    opacity 250ms ease,
+    transform 300ms ease,
+    box-shadow 250ms ease;
+}
+
+.mct-program-gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+}
+
+.mct-program-gallery-slide.is-active {
+  z-index: 1;
+  height: 205px;
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mct-program-gallery-slide.is-previous:hover,
+.mct-program-gallery-slide.is-next:hover {
+  opacity: 1;
+  transform: scale(0.99);
+}
+
+.mct-program-gallery-slide:focus-visible {
+  outline: 3px solid #078047;
+  outline-offset: -3px;
+}
+
+.mct-program-gallery-index {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mct-program-gallery-caption {
+  margin: 14px 54px 0;
+  color: #53635b;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Thumbnail navigation */
+
+.mct-program-gallery-thumbnails {
+  display: flex;
+  gap: 8px;
+  margin-top: 17px;
+  padding: 2px 2px 5px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.mct-program-gallery-thumbnail {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 44px;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.mct-program-gallery-thumbnail.is-active {
+  border-color: #078047;
+}
+
+.mct-program-gallery-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Empty state */
+
+.mct-program-gallery-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 160px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  color: #65736d;
+  font-size: 14px;
+}
+
+.mct-program-gallery-empty i {
+  color: #078047;
+  font-size: 24px;
+}
+
+/* Two-photo galleries */
+
+.mct-program-gallery-slides[data-count="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mct-program-gallery-slides[data-count="2"] .mct-program-gallery-slide {
+  height: 190px;
+}
+
+.mct-program-gallery-slides[data-count="2"] .mct-program-gallery-slide.is-active {
+  height: 205px;
+}
+
+/* One-photo galleries */
+
+.mct-program-gallery-slides[data-count="1"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.mct-program-gallery-slides[data-count="1"] .mct-program-gallery-slide {
+  height: 230px;
+  cursor: default;
+  opacity: 1;
+  transform: none;
+}
+
+/* Tablet */
+
+@media (max-width: 991px) {
+  .mct-program-gallery-panel {
+    padding: 18px;
+  }
+
+  .mct-program-gallery-stage {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    gap: 8px;
+  }
+
+  .mct-program-gallery-arrow {
+    width: 34px;
+  }
+
+  .mct-program-gallery-arrow span {
+    font-size: 36px;
+  }
+
+  .mct-program-gallery-slides {
+    gap: 8px;
+  }
+
+  .mct-program-gallery-slide {
+    height: 145px;
+  }
+
+  .mct-program-gallery-slide.is-active {
+    height: 180px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 575px) {
+  .mct-program-gallery-panel {
+    padding: 14px 9px 16px;
+    border-radius: 13px;
+  }
+
+  .mct-program-gallery-header {
+    gap: 8px;
+    margin: 0 5px 14px;
+  }
+
+  .mct-program-gallery-title {
+    font-size: 17px;
+  }
+
+  .mct-program-gallery-description {
+    font-size: 12px;
+  }
+
+  .mct-program-gallery-count {
+    padding: 5px 7px;
+    font-size: 10px;
+  }
+
+  .mct-program-gallery-stage {
+    grid-template-columns: 23px minmax(0, 1fr) 23px;
+    gap: 4px;
+  }
+
+  .mct-program-gallery-arrow {
+    width: 23px;
+    height: 42px;
+  }
+
+  .mct-program-gallery-arrow span {
+    font-size: 30px;
+  }
+
+  .mct-program-gallery-slides {
+    gap: 5px;
+    grid-template-columns:
+      minmax(0, 0.8fr)
+      minmax(0, 1.3fr)
+      minmax(0, 0.8fr);
+  }
+
+  .mct-program-gallery-slide {
+    height: 105px;
+  }
+
+  .mct-program-gallery-slide.is-active {
+    height: 145px;
+  }
+
+  .mct-program-gallery-index {
+    right: 4px;
+    bottom: 4px;
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+
+  .mct-program-gallery-caption {
+    margin: 12px 25px 0;
+    font-size: 12px;
+  }
+
+  .mct-program-gallery-thumbnails {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .mct-program-gallery-thumbnail {
+    flex-basis: 48px;
+    width: 48px;
+    height: 37px;
+  }
+
+  .mct-program-gallery-slides[data-count="2"] .mct-program-gallery-slide {
+    height: 145px;
+  }
+
+  .mct-program-gallery-slides[data-count="2"] .mct-program-gallery-slide.is-active {
+    height: 160px;
+  }
+
+  .mct-program-gallery-slides[data-count="1"] .mct-program-gallery-slide {
+    height: 180px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .mct-program-gallery-slides {
+    animation: none;
+  }
+
+  .mct-program-gallery-slide,
+  .mct-program-gallery-arrow {
+    transition: none;
+  }
+}
+
+
+
+/* ==========================================
+   PROFESSIONAL PROGRAM GALLERY SLIDER
+   Taller center image + 75% side-image opacity
+   ========================================== */
+
+/* Give each gallery panel more breathing room */
+.mct-program-gallery-panel {
+  padding: 24px 24px 28px;
+}
+
+/* Increase slider spacing and overall height */
+.mct-program-gallery-stage {
+  gap: 16px;
+}
+
+/* Three-image layout */
+.mct-program-gallery-slides {
+  gap: 16px;
+  align-items: center;
+}
+
+/* Left and right preview images */
+.mct-program-gallery-slide.is-previous,
+.mct-program-gallery-slide.is-next {
+  height: 210px;
+  opacity: 0.75;
+  transform: scale(0.96);
+  filter: saturate(0.85);
+  transition:
+    opacity 350ms ease,
+    transform 350ms ease,
+    filter 350ms ease,
+    box-shadow 350ms ease;
+}
+
+/* Center image */
+.mct-program-gallery-slide.is-active {
+  height: 280px;
+  opacity: 1;
+  filter: none;
+  transform: scale(1);
+  z-index: 2;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth visual change when a preview is clicked */
+.mct-program-gallery-slide.is-previous:hover,
+.mct-program-gallery-slide.is-next:hover {
+  opacity: 0.9;
+  filter: saturate(0.95);
+  transform: scale(0.98);
+}
+
+/* Larger navigation arrows */
+.mct-program-gallery-arrow {
+  height: 64px;
+}
+
+.mct-program-gallery-arrow span {
+  font-size: 48px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .mct-program-gallery-panel {
+    padding: 20px 16px 24px;
+  }
+
+  .mct-program-gallery-slides {
+    gap: 10px;
+  }
+
+  .mct-program-gallery-slide.is-previous,
+  .mct-program-gallery-slide.is-next {
+    height: 165px;
+  }
+
+  .mct-program-gallery-slide.is-active {
+    height: 220px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .mct-program-gallery-panel {
+    padding: 16px 10px 20px;
+  }
+
+  .mct-program-gallery-stage {
+    gap: 5px;
+  }
+
+  .mct-program-gallery-slides {
+    gap: 5px;
+  }
+
+  .mct-program-gallery-slide.is-previous,
+  .mct-program-gallery-slide.is-next {
+    height: 115px;
+    opacity: 0.75;
+  }
+
+  .mct-program-gallery-slide.is-active {
+    height: 260px;
+  }
+
+  .mct-program-gallery-arrow span {
+    font-size: 32px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .mct-program-gallery-slide,
+  .mct-program-gallery-arrow {
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================
+   SHOW COMPLETE PHOTOS — NO CROPPING
+   ========================================== */
+
+/* Keep the slider aligned and centered */
+.mct-program-gallery-slides {
+  align-items: center;
+}
+
+/* All images: preserve the complete original photo */
+.mct-program-gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center center;
+}
+
+/* Neutral background for photos with different aspect ratios */
+.mct-program-gallery-slide {
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+/* Center image */
+.mct-program-gallery-slide.is-active {
+  height: 280px;
+  opacity: 1;
+  transform: scale(1);
+  background: #f1f1f1;
+}
+
+/* Left and right previews */
+.mct-program-gallery-slide.is-previous,
+.mct-program-gallery-slide.is-next {
+  height: 210px;
+  opacity: 0.75;
+  background: #f1f1f1;
+  filter: none;
+}
+
+/* Preserve settings on tablet */
+@media (max-width: 991px) {
+  .mct-program-gallery-slide.is-active {
+    height: 220px;
+  }
+
+  .mct-program-gallery-slide.is-previous,
+  .mct-program-gallery-slide.is-next {
+    height: 165px;
+  }
+}
+
+/* Preserve settings on mobile */
+@media (max-width: 575px) {
+  .mct-program-gallery-slide.is-active {
+    height: 160px;
+  }
+
+  .mct-program-gallery-slide.is-previous,
+  .mct-program-gallery-slide.is-next {
+    height: 115px;
+  }
+}
+
+
+/* Black background behind complete, uncropped photographs */
+
+.mct-program-gallery-slide {
+  background-color: #000000 !important;
+  overflow: hidden;
+}
+
+/* Preserve the complete original image */
+.mct-program-gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center center;
+  background-color: #000000;
+}
+
+/* Larger center image */
+.mct-program-gallery-slide.is-active {
+  background-color: #000000 !important;
+  opacity: 1;
+}
+
+/* Dark background behind side previews; retain 75% opacity */
+.mct-program-gallery-slide.is-previous,
+.mct-program-gallery-slide.is-next {
+  background-color: #000000 !important;
+  opacity: 0.75;
+}
+
+/* Keep black backgrounds on smaller screens */
+@media (max-width: 575px) {
+  .mct-program-gallery-slide,
+  .mct-program-gallery-slide img {
+    background-color: #000000 !important;
+  }
+}
+
+
+
+/* ==========================================
+   MOUSE DRAG AND TOUCH SWIPE
+   ========================================== */
+
+.mct-program-gallery-slides {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.mct-program-gallery-slides.is-dragging {
+  cursor: grabbing;
+}
+
+.mct-program-gallery-slides.is-dragging .mct-program-gallery-slide {
+  pointer-events: none;
+}
+
+.mct-program-gallery-slide img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* ==========================================
+   FULL-SCREEN LIGHTBOX
+   ========================================== */
+
+.mct-photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 64px;
+  grid-template-rows: 56px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 24px 20px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.96);
+  color: #fff;
+  animation: mct-lightbox-appear 180ms ease-out both;
+}
+
+@keyframes mct-lightbox-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.mct-photo-lightbox-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 0 24px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.72),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.mct-photo-lightbox-title {
+  min-width: 0;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mct-photo-lightbox-count {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.mct-photo-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 31px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.mct-photo-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mct-photo-lightbox-arrow {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.mct-photo-lightbox-arrow:hover:not(:disabled) {
+  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.mct-photo-lightbox-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.mct-photo-lightbox-content {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  gap: 12px;
+}
+
+.mct-photo-lightbox-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-width: 100%;
+  max-height: calc(100vh - 190px);
+  object-fit: contain;
+  object-position: center;
+  background: #000;
+  animation: mct-lightbox-image-appear 180ms ease-out both;
+}
+
+@keyframes mct-lightbox-image-appear {
+  from {
+    opacity: 0.65;
+    transform: scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mct-photo-lightbox-caption {
+  max-width: 900px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.mct-photo-lightbox-thumbnails {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  max-width: 100%;
+  padding: 10px 2px 2px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+
+.mct-photo-lightbox-thumbnail {
+  flex: 0 0 66px;
+  width: 66px;
+  height: 48px;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background: #111;
+  cursor: pointer;
+  opacity: 0.72;
+  transition:
+    opacity 180ms ease,
+    border-color 180ms ease;
+}
+
+.mct-photo-lightbox-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mct-photo-lightbox-thumbnail.is-active {
+  border-color: #13a66a;
+  opacity: 1;
+}
+
+.mct-photo-lightbox-thumbnail:hover {
+  opacity: 1;
+}
+
+.mct-photo-lightbox button:focus-visible {
+  outline: 3px solid #f7d95d;
+  outline-offset: 3px;
+}
+
+/* Medium screens */
+
+@media (max-width: 767px) {
+  .mct-photo-lightbox {
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    gap: 6px;
+    padding: 62px 8px 12px;
+  }
+
+  .mct-photo-lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .mct-photo-lightbox-topbar {
+    right: 55px;
+    min-height: 56px;
+    padding: 0 12px;
+  }
+
+  .mct-photo-lightbox-arrow {
+    width: 36px;
+    height: 54px;
+    font-size: 36px;
+  }
+
+  .mct-photo-lightbox-image {
+    max-height: calc(100vh - 200px);
+  }
+
+  .mct-photo-lightbox-thumbnail {
+    flex-basis: 54px;
+    width: 54px;
+    height: 42px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .mct-photo-lightbox,
+  .mct-photo-lightbox-image {
+    animation: none;
+  }
+
+  .mct-photo-lightbox *,
+  .mct-program-gallery-slides,
+  .mct-program-gallery-slide {
+    transition: none !important;
+  }
+}
+
+
+
+/* Smooth, cursor-following drag */
+.mct-program-gallery-viewport {
+  min-width: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mct-program-gallery-viewport:active {
+  cursor: grabbing;
+}
+
+.mct-program-gallery-slides {
+  will-change: transform;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: grab;
+}
+
+.mct-program-gallery-slides.is-dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.mct-program-gallery-slides .mct-program-gallery-slide {
+  -webkit-user-drag: none;
+}
+
+.mct-program-gallery-slides.is-dragging
+  .mct-program-gallery-slide {
+  pointer-events: none;
+}
+
+.mct-program-gallery-slide {
+  transition:
+    opacity 300ms ease,
+    height 300ms ease,
+    box-shadow 300ms ease;
+}
+
+/* Keep the active image prominent and previews slightly faded */
+.mct-program-gallery-slide.is-active {
+  opacity: 1;
+}
+
+.mct-program-gallery-slide.is-previous,
+.mct-program-gallery-slide.is-next {
+  opacity: 0.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mct-program-gallery-slides,
+  .mct-program-gallery-slide {
+    transition: none !important;
+  }
+}
+
+/* ==========================================
+   SMOOTH MOUSE DRAG AND PULL
+   ========================================== */
+
+.mct-program-gallery-viewport {
+  min-width: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mct-program-gallery-viewport:active {
+  cursor: grabbing;
+}
+
+.mct-program-gallery-slides {
+  will-change: transform;
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: grab;
+  animation: none !important;
+}
+
+.mct-program-gallery-slides.is-dragging {
+  transition: none !important;
+  cursor: grabbing;
+  animation: none !important;
+}
+
+.mct-program-gallery-slide img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.mct-program-gallery-slide.is-active {
+  opacity: 1;
+}
+
+.mct-program-gallery-slide.is-previous,
+.mct-program-gallery-slide.is-next {
+  opacity: 0.75;
+}
+
+/* Keep the existing black background and full image visible */
+.mct-program-gallery-slide,
+.mct-program-gallery-slide img {
+  background-color: #000;
+}
+
+.mct-program-gallery-slide img {
+  object-fit: contain !important;
+  object-position: center;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .mct-program-gallery-slides,
+  .mct-program-gallery-slide {
+    transition: none !important;
+  }
+}
