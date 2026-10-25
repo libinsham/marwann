@@ -391,7 +391,7 @@ export default function Page() {
               <div className="col-xl-6 col-lg-6 d-none d-lg-block">
                 <div className="breadcrumb-thumb">
                   <img
-                    src="/assets/img/thumbs/thumb-1.webp"
+                    src="/assets/img/thumbs/thumb-timeline.webp"
                     alt="MARWANN CHARITABLE TRUST community service"
                     fetchPriority="high"
                   />

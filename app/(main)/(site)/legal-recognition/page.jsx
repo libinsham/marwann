@@ -153,7 +153,7 @@ export default function Page() {
                 Section 34(1), 51(2) of the Rights of Persons
                 with Disabilities Act, 2016; 80G(5)(i)(a),
                 U/S 12A, U/S 12AA(1)(b), U/S 10(23C),
-                10(23C)(vi), 34(1), 51(2), CSR, FCRA, etc.
+                10(23C)(vi), 34(1), 51(2).
               </strong>
             </div>
 
@@ -174,12 +174,12 @@ export default function Page() {
           </div>
 
           <div className="legal-bank-details">
-            <h4>FCRA Bank Details</h4>
+         
             <p>
-              <strong>Bank:</strong> State Bank of India
+             
             </p>
             <p>
-              <strong>A/C No:</strong> 40102563471
+         
             </p>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function Page() {
         href="mailto:marwanncharitabletrust2001@gmail.com"
         className="e-primary-btn has-icon"
       >
-        Contact the Trust
+        View Documents
         <span className="icon-wrap">
           <span className="icon">
             <i className="fa-regular fa-arrow-right"></i>
