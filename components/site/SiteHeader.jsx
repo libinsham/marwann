@@ -149,11 +149,11 @@ const NAV_ITEMS = [
       },
       {
         label: 'Active Campaigns',
-        href: '/our-work/healthcare',
+        href: '/active-campaigns',
       },
       {
         label: 'Gallery',
-        href: '/our-work/community-support',
+        href: '/gallery',
       },
     ],
   },
@@ -162,7 +162,7 @@ const NAV_ITEMS = [
     href: '/engage',
     children: [
       { label: 'Donate', href: '/donate' },
-      { label: 'Crowdfunding', href: '/reports' },
+      { label: 'Crowdfunding', href: '/crowdfunding' },
       { label: 'Volunteer', href: '/volunteer' },
       { label: 'Events', href: '/events' },
     ],

@@ -1,3 +1,4 @@
+
 /* *********** TABLE OF CONTENTS ***************
 
  01 Open Sidebar JS
@@ -7,30 +8,29 @@
  05 Blog Social JS
  06 Contact Info JS
  07 Fancybox Video Popup JS
- 08 Hero Slider Active JS
- 09 Camping Slider Active JS
- 10 Completed Project Slider Active JS
- 11 Testimonial Slider Active JS
- 12 Blog Slider Active JS
- 13 What We Do Slider Active JS
- 14 Testimonial Slider Active JS
- 15 Gallery Slider Active JS
- 16 Service Slider Active JS
- 17 Recent Course Slider Active JS
- 18 Aos JS
+ 08 Hero Slider JS
+ 09 Camping Slider JS
+ 10 Completed Project Slider JS
+ 11 Testimonial Slider JS
+ 12 Blog Slider JS
+ 13 What We Do Slider JS
+ 14 Testimonial Slider JS
+ 15 Gallery Slider JS
+ 16 Service Slider JS
+ 17 Recent Course Slider JS
+ 18 AOS JS
  19 Counter JS
  20 Ajax Form JS
 
-************ TABLE OF CONTENTS ************** */
+************************************************ */
 
 (function ($) {
-
     'use strict';
 
     $(window).on('load', function () {
         $('#preloader').delay(350).fadeOut('slow');
-        $('body').delay(350).css({ 'overflow': 'visible' });
-    })
+        $('body').delay(350).css({ overflow: 'visible' });
+    });
 
     /*--------------------------------------------------------------
     01 Open Sidebar JS
@@ -63,7 +63,6 @@
         $('.off-canvas-menubar-body').removeClass('active');
     });
 
-
     /*--------------------------------------------------------------
     02 Mobile Dropdown JS
     --------------------------------------------------------------*/
@@ -78,29 +77,37 @@
     /*--------------------------------------------------------------
     03 Sticky Header JS
     --------------------------------------------------------------*/
+    const win = $(window);
+    const stickyId = $('.header-area');
 
-    let win = $(window);
-    let sticky_id = $(".header-area");
     win.on('scroll', function () {
-        let scroll = win.scrollTop();
+        const scroll = win.scrollTop();
+
         if (scroll < 245) {
-            sticky_id.removeClass("sticky-header");
+            stickyId.removeClass('sticky-header');
         } else {
-            sticky_id.addClass("sticky-header");
+            stickyId.addClass('sticky-header');
         }
     });
 
     /*--------------------------------------------------------------
     04 Data Background JS
     --------------------------------------------------------------*/
-    $("[data-background]").each(function () {
-        $(this).css("background-image", "url(" + $(this).attr("data-background") + ")")
+    $('[data-background]').each(function () {
+        const background = $(this).attr('data-background');
+
+        if (background) {
+            $(this).css('background-image', 'url("' + background + '")');
+        }
     });
 
-    $("[data-bg-color]").each(function () {
-        $(this).css("background", $(this).attr("data-bg-color"))
-    });
+    $('[data-bg-color]').each(function () {
+        const color = $(this).attr('data-bg-color');
 
+        if (color) {
+            $(this).css('background', color);
+        }
+    });
 
     /*--------------------------------------------------------------
     05 Blog Social JS
@@ -110,9 +117,10 @@
         $(this).parent().toggleClass('active');
     });
 
-    document.querySelectorAll('.blog-card').forEach(function(card) {
+    document.querySelectorAll('.blog-card').forEach(function (card) {
         card.addEventListener('mouseleave', function () {
             const shared = this.querySelector('.social-share');
+
             if (shared) {
                 shared.classList.remove('active');
             }
@@ -129,30 +137,36 @@
     /*--------------------------------------------------------------
     07 Fancybox Video Popup JS
     --------------------------------------------------------------*/
-    if (jQuery("[data-fancybox]").length > 0) {
-        Fancybox.bind('[data-fancybox]', {
-            Html: {
-                youtube: {
-                    controls: 0,
-                    rel: 0,
-                    fs: 0
-                }
-            }
-        });
-    }
+    // Bind only explicitly marked video links.
+    // React photo galleries can continue using Fancybox.show().
+    if (window.Fancybox) {
+        const videoSelector = 'a[data-fancybox="video"][href]';
 
+        if (document.querySelector(videoSelector)) {
+            window.Fancybox.bind(videoSelector, {
+                Html: {
+                    youtube: {
+                        controls: 0,
+                        rel: 0,
+                        fs: 0
+                    }
+                }
+            });
+        }
+    }
 
     /*--------------------------------------------------------------
     08 Hero Slider Active JS
     --------------------------------------------------------------*/
     function animateSwiperElements(selector, init) {
-        let animated = function () {
+        const animated = function () {
             $(selector + ' [data-animation]').each(function () {
-                let anim = $(this).data('animation');
-                let delay = $(this).data('delay');
-                let duration = $(this).data('duration');
+                const anim = $(this).data('animation');
+                const delay = $(this).data('delay');
+                const duration = $(this).data('duration');
 
-                $(this).removeClass('anim' + anim)
+                $(this)
+                    .removeClass('anim' + anim)
                     .addClass(anim + ' animate__animated')
                     .css({
                         webkitAnimationDelay: delay,
@@ -160,33 +174,32 @@
                         webkitAnimationDuration: duration,
                         animationDuration: duration
                     })
-                    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                        $(this).removeClass(anim + ' animate__animated');
-                    });
+                    .one(
+                        'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+                        function () {
+                            $(this).removeClass(anim + ' animate__animated');
+                        }
+                    );
             });
         };
 
-        // Initial animation
         animated();
 
-        // Remove animation classes on slide change start
         init.on('slideChange', function () {
             $(selector + ' [data-animation]').removeClass('animate__animated');
         });
 
-        // Animate on slide change complete
         init.on('slideChange', animated);
     }
 
-    if (jQuery(".hero-slider-active-1").length > 0) {
-        let sliderActive1 = '.hero-slider-active-1 .swiper';
-        let sliderInit1 = new Swiper(sliderActive1, {
+    if ($('.hero-slider-active-1').length > 0) {
+        const sliderActive1 = '.hero-slider-active-1 .swiper';
+        const sliderInit1 = new Swiper(sliderActive1, {
             slidesPerView: 1,
-            slidesPerColumn: 1,
             paginationClickable: true,
             loop: true,
             effect: 'fade',
-            fadeEffect: {crossFade: true},
+            fadeEffect: { crossFade: true },
             autoplay: {
                 delay: 5000,
                 waitForTransition: true,
@@ -194,11 +207,11 @@
             },
             pagination: {
                 el: '.hero-slider-pagination-1',
-                clickable: true,
+                clickable: true
             },
             navigation: {
                 nextEl: '.hero-slider-button-next-1',
-                prevEl: '.hero-slider-button-prev-1',
+                prevEl: '.hero-slider-button-prev-1'
             },
             a11y: false
         });
@@ -206,15 +219,14 @@
         animateSwiperElements(sliderActive1, sliderInit1);
     }
 
-    if (jQuery(".hero-slider-active-2").length > 0) {
-        let sliderActive2 = '.hero-slider-active-2 .swiper';
-        let sliderInit2 = new Swiper(sliderActive2, {
+    if ($('.hero-slider-active-2').length > 0) {
+        const sliderActive2 = '.hero-slider-active-2 .swiper';
+        const sliderInit2 = new Swiper(sliderActive2, {
             slidesPerView: 1,
-            slidesPerColumn: 1,
             paginationClickable: true,
             loop: true,
             effect: 'fade',
-            fadeEffect: {crossFade: true},
+            fadeEffect: { crossFade: true },
             autoplay: {
                 delay: 5000,
                 waitForTransition: true,
@@ -222,11 +234,11 @@
             },
             pagination: {
                 el: '.hero-slider-pagination-2',
-                clickable: true,
+                clickable: true
             },
             navigation: {
                 nextEl: '.hero-slider-button-next-2',
-                prevEl: '.hero-slider-button-prev-2',
+                prevEl: '.hero-slider-button-prev-2'
             },
             a11y: false
         });
@@ -234,15 +246,14 @@
         animateSwiperElements(sliderActive2, sliderInit2);
     }
 
-    if (jQuery(".hero-slider-active-3").length > 0) {
-        let sliderActive3 = '.hero-slider-active-3 .swiper';
-        let sliderInit3 = new Swiper(sliderActive3, {
+    if ($('.hero-slider-active-3').length > 0) {
+        const sliderActive3 = '.hero-slider-active-3 .swiper';
+        const sliderInit3 = new Swiper(sliderActive3, {
             slidesPerView: 1,
-            slidesPerColumn: 1,
             paginationClickable: true,
             loop: true,
             effect: 'fade',
-            fadeEffect: {crossFade: true},
+            fadeEffect: { crossFade: true },
             autoplay: {
                 delay: 5000,
                 waitForTransition: true,
@@ -252,12 +263,13 @@
                 el: '.hero-slider-pagination-3',
                 clickable: true,
                 renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + "</span>";
-                },
+                    return '<span class="' + className + '">' +
+                        (index + 1) + '</span>';
+                }
             },
             navigation: {
                 nextEl: '.hero-slider-button-next-3',
-                prevEl: '.hero-slider-button-prev-3',
+                prevEl: '.hero-slider-button-prev-3'
             },
             a11y: false
         });
@@ -265,600 +277,364 @@
         animateSwiperElements(sliderActive3, sliderInit3);
     }
 
-
     /*--------------------------------------------------------------
     09 Camping Slider Active JS
     --------------------------------------------------------------*/
-    if (jQuery(".camping-slider-active .swiper").length > 0) {
-        let campingSlider = new Swiper('.camping-slider-active .swiper', {
+    function initCampingSlider(selector, pagination, next, prev, extra = {}) {
+        if (!$(selector + ' .swiper').length) return;
+
+        return new Swiper(selector + ' .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 1,
-            slidesPerColumn: 1,
             paginationClickable: true,
             centeredSlides: true,
-
-            autoplay: {
-                delay: 3000,
-            },
-
+            autoplay: { delay: 3000 },
             pagination: {
-                el: '.camping-pagination',
-                clickable: true,
+                el: pagination,
+                clickable: true
             },
-
             navigation: {
-                nextEl: '.camping-button-next',
-                prevEl: '.camping-button-prev',
+                nextEl: next,
+                prevEl: prev
             },
-
             a11y: false,
-
             breakpoints: {
-                320: {
-                    slidesPerView: 1,centeredSlides: false,
-                },
-                768: {
-                    slidesPerView: 2,centeredSlides: false,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    centeredSlides: false,
-                },
-                1200: {
-                    slidesPerView: 3,
-                },
+                320: { slidesPerView: 1, centeredSlides: false },
+                768: { slidesPerView: 2, centeredSlides: false },
+                1024: { slidesPerView: 2, centeredSlides: false },
+                1200: { slidesPerView: 3 }
             },
-        })
+            ...extra
+        });
     }
 
-    if (jQuery(".camping-slider-active-2 .swiper").length > 0) {
-        let campingSlider2 = new Swiper('.camping-slider-active-2 .swiper', {
-            loop: true,
-            spaceBetween: 30,
-            slidesPerView: 1,
-            slidesPerColumn: 1,
-            paginationClickable: true,
-            centeredSlides: true,
+    initCampingSlider(
+        '.camping-slider-active',
+        '.camping-pagination',
+        '.camping-button-next',
+        '.camping-button-prev'
+    );
 
-            autoplay: {
-                delay: 3000,
-            },
+    initCampingSlider(
+        '.camping-slider-active-2',
+        '.camping-pagination-2',
+        '.camping-button-next-2',
+        '.camping-button-prev-2'
+    );
 
-            pagination: {
-                el: '.camping-pagination-2',
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: '.camping-button-next-2',
-                prevEl: '.camping-button-prev-2',
-            },
-
-            a11y: false,
-
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    centeredSlides: false,
-                    slidesPerView: 2,
-                },
-                1024: {
-                    centeredSlides: false,
-                    slidesPerView: 2,
-                },
-                1200: {
-                    slidesPerView: 3,
-                },
-            },
-        })
-    }
-
-    if (jQuery(".camping-slider-active-3 .swiper").length > 0) {
-        let campingSlider2 = new Swiper('.camping-slider-active-3 .swiper', {
-            loop: true,
-            spaceBetween: 30,
-            slidesPerView: 1,
-            slidesPerColumn: 1,
-            paginationClickable: true,
-
-            autoplay: {
-                delay: 3000,
-            },
-
-            pagination: {
-                el: '.camping-pagination-3',
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: '.camping-button-next-3',
-                prevEl: '.camping-button-prev-3',
-            },
-
-            a11y: false,
-
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 2,
-                },
-                1200: {
-                    slidesPerView: 3,
-                },
-            },
-        })
-    }
-
+    initCampingSlider(
+        '.camping-slider-active-3',
+        '.camping-pagination-3',
+        '.camping-button-next-3',
+        '.camping-button-prev-3'
+    );
 
     /*--------------------------------------------------------------
     10 Completed Project Slider Active JS
     --------------------------------------------------------------*/
-    if (jQuery(".completed-project-slider-active .swiper").length > 0) {
-        let completedProjectSlider = new Swiper('.completed-project-slider-active .swiper', {
+    function initCompletedProjectSlider(selector, pagination, next, prev) {
+        if (!$(selector + ' .swiper').length) return;
+
+        return new Swiper(selector + ' .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 1,
-            slidesPerColumn: 1,
             paginationClickable: true,
             centeredSlides: true,
             speed: 1000,
-
-            autoplay: {
-                delay: 3000,
-            },
-
+            autoplay: { delay: 3000 },
             pagination: {
-                el: '.completed-project-pagination',
-                clickable: true,
+                el: pagination,
+                clickable: true
             },
-
             navigation: {
-                nextEl: '.completed-project-button-next',
-                prevEl: '.completed-project-button-prev',
+                nextEl: next,
+                prevEl: prev
             },
-
             a11y: false,
-
             breakpoints: {
-                320: {
-                    slidesPerView: 1.05,
-                },
-                768: {
-                    slidesPerView: 1.5,
-                },
-                1024: {
-                    slidesPerView: 1.5,
-                },
-                1200: {
-                    slidesPerView: 2.5,
-                },
-            },
-        })
+                320: { slidesPerView: 1.05 },
+                768: { slidesPerView: 1.5 },
+                1024: { slidesPerView: 1.5 },
+                1200: { slidesPerView: 2.5 }
+            }
+        });
     }
 
-    if (jQuery(".completed-project-slider-active-2 .swiper").length > 0) {
-        let completedProjectSlider2 = new Swiper('.completed-project-slider-active-2 .swiper', {
-            loop: true,
-            spaceBetween: 30,
-            slidesPerView: 1,
-            slidesPerColumn: 1,
-            paginationClickable: true,
-            centeredSlides: true,
-            speed: 1000,
+    initCompletedProjectSlider(
+        '.completed-project-slider-active',
+        '.completed-project-pagination',
+        '.completed-project-button-next',
+        '.completed-project-button-prev'
+    );
 
-            autoplay: {
-                delay: 3000,
-            },
-
-            pagination: {
-                el: '.completed-project-pagination-2',
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: '.completed-project-button-next-2',
-                prevEl: '.completed-project-button-prev-2',
-            },
-
-            a11y: false,
-
-            breakpoints: {
-                320: {
-                    slidesPerView: 1.05,
-                },
-                768: {
-                    slidesPerView: 1.5,
-                },
-                1024: {
-                    slidesPerView: 1.5,
-                },
-                1200: {
-                    slidesPerView: 2.5,
-                },
-            },
-        })
-    }
-
+    initCompletedProjectSlider(
+        '.completed-project-slider-active-2',
+        '.completed-project-pagination-2',
+        '.completed-project-button-next-2',
+        '.completed-project-button-prev-2'
+    );
 
     /*--------------------------------------------------------------
     11 Testimonial Slider Active JS
     --------------------------------------------------------------*/
-    if (jQuery(".testimonial-slider-active .swiper").length > 0) {
-        let testimonialSlider = new Swiper('.testimonial-slider-active .swiper', {
+    if ($('.testimonial-slider-active .swiper').length > 0) {
+        new Swiper('.testimonial-slider-active .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 1.3,
-            slidesPerColumn: 1,
             paginationClickable: true,
             centeredSlides: true,
-
-            autoplay: {
-                delay: 3000,
-            },
-
+            autoplay: { delay: 3000 },
             pagination: {
                 el: '.testimonial-pagination',
-                clickable: true,
+                clickable: true
             },
-
             navigation: {
                 nextEl: '.testimonial-button-next',
-                prevEl: '.testimonial-button-prev',
+                prevEl: '.testimonial-button-prev'
             },
-
             a11y: false,
-
-            effect: "cards",
+            effect: 'cards',
             grabCursor: true,
-
             cardsEffect: {
-                slideShadows: false, // Optional: make it flatter like your image
-                perSlideOffset: 14,  // Slight horizontal separation
-                perSlideRotate: 0    // No rotation
+                slideShadows: false,
+                perSlideOffset: 14,
+                perSlideRotate: 0
             },
-
             breakpoints: {
                 320: {
                     slidesPerView: 1.07,
-                    cardsEffect: {
-                        perSlideOffset: 8,
-                    },
+                    cardsEffect: { perSlideOffset: 8 }
                 },
-                768: {
-                    slidesPerView: 1.3,
-                },
-                1024: {
-                    slidesPerView: 1.3,
-                },
-                1200: {
-                    slidesPerView: 1.3,
-                },
-            },
-        })
+                768: { slidesPerView: 1.3 },
+                1024: { slidesPerView: 1.3 },
+                1200: { slidesPerView: 1.3 }
+            }
+        });
     }
 
     /*--------------------------------------------------------------
-   12 Blog Slider Active JS
-   --------------------------------------------------------------*/
-    if (jQuery(".blog-slider-active .swiper").length > 0) {
-        let blogSlider = new Swiper('.blog-slider-active .swiper', {
+    12 Blog Slider Active JS
+    --------------------------------------------------------------*/
+    if ($('.blog-slider-active .swiper').length > 0) {
+        new Swiper('.blog-slider-active .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 2,
-            slidesPerColumn: 1,
             paginationClickable: true,
-            // autoplay: {
-            //     delay: 3000,
-            // },
-
             pagination: {
                 el: '.blog-pagination',
-                clickable: true,
+                clickable: true
             },
-
             navigation: {
                 nextEl: '.blog-button-next',
-                prevEl: '.blog-button-prev',
+                prevEl: '.blog-button-prev'
             },
-
             a11y: false,
-
             breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 1,
-                },
-                1024: {
-                    slidesPerView: 1,
-                },
-                1200: {
-                    slidesPerView: 2,
-                },
-                1440: {
-                    slidesPerView: 2.7,
-                },
-            },
-        })
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 1 },
+                1024: { slidesPerView: 1 },
+                1200: { slidesPerView: 2 },
+                1440: { slidesPerView: 2.7 }
+            }
+        });
     }
 
     /*--------------------------------------------------------------
-   13 What We Do Slider Active JS
-   --------------------------------------------------------------*/
-    if (jQuery(".whatwedo-slider-active .swiper").length > 0) {
-        let whatwedoSlider = new Swiper('.whatwedo-slider-active .swiper', {
+    13 What We Do Slider Active JS
+    --------------------------------------------------------------*/
+    if ($('.whatwedo-slider-active .swiper').length > 0) {
+        new Swiper('.whatwedo-slider-active .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 4,
-            slidesPerColumn: 1,
             paginationClickable: true,
-            autoplay: {
-                delay: 3000,
-            },
-
+            autoplay: { delay: 3000 },
             pagination: {
                 el: '.whatwedo-pagination',
-                clickable: true,
+                clickable: true
             },
-
             navigation: {
                 nextEl: '.whatwedo-button-next',
-                prevEl: '.whatwedo-button-prev',
+                prevEl: '.whatwedo-button-prev'
             },
-
             a11y: false,
-
             breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-                1200: {
-                    slidesPerView: 4,
-                },
-                1440: {
-                    slidesPerView: 4.7,
-                },
-            },
-        })
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1200: { slidesPerView: 4 },
+                1440: { slidesPerView: 4.7 }
+            }
+        });
     }
 
     /*--------------------------------------------------------------
-   14 Testimonial Slider Active JS
-   --------------------------------------------------------------*/
-    if (jQuery(".testimonial-slider-active-2 .swiper").length > 0) {
-        let testimonialSlider = new Swiper('.testimonial-slider-active-2 .swiper', {
+    14 Testimonial Slider Active JS
+    --------------------------------------------------------------*/
+    if ($('.testimonial-slider-active-2 .swiper').length > 0) {
+        new Swiper('.testimonial-slider-active-2 .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 3,
-            slidesPerColumn: 1,
             paginationClickable: true,
-            autoplay: {
-                delay: 3000,
-            },
-
+            autoplay: { delay: 3000 },
             pagination: {
                 el: '.testimonial-pagination-2',
-                clickable: true,
+                clickable: true
             },
-
             navigation: {
                 nextEl: '.testimonial-button-next-2',
-                prevEl: '.testimonial-button-prev-2',
+                prevEl: '.testimonial-button-prev-2'
             },
-
             a11y: false,
-
             breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 2,
-                },
-                1200: {
-                    slidesPerView: 3,
-                },
-            },
-        })
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 }
+            }
+        });
     }
 
     /*--------------------------------------------------------------
     15 Gallery Slider Active JS
     --------------------------------------------------------------*/
-    if (jQuery(".gallery-slider-active .swiper").length > 0) {
-        let gallerySlider = new Swiper('.gallery-slider-active .swiper', {
+    if ($('.gallery-slider-active .swiper').length > 0) {
+        new Swiper('.gallery-slider-active .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 1,
-            slidesPerColumn: 1,
             paginationClickable: true,
-            autoplay: {
-                delay: 3000,
-            },
-
+            autoplay: { delay: 3000 },
             pagination: {
                 el: '.gallery-pagination',
-                clickable: true,
+                clickable: true
             },
-
             navigation: {
                 nextEl: '.gallery-button-next',
-                prevEl: '.gallery-button-prev',
+                prevEl: '.gallery-button-prev'
             },
-
-            a11y: false,
-        })
+            a11y: false
+        });
     }
 
     /*--------------------------------------------------------------
-   16 Service Slider Active JS
-   --------------------------------------------------------------*/
-    if (jQuery(".service-slider-active .swiper").length > 0) {
-        let serviceSlider = new Swiper('.service-slider-active .swiper', {
+    16 Service Slider Active JS
+    --------------------------------------------------------------*/
+    if ($('.service-slider-active .swiper').length > 0) {
+        new Swiper('.service-slider-active .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 3,
-            slidesPerColumn: 1,
             paginationClickable: true,
-            // autoplay: {
-            //     delay: 3000,
-            // },
-
             pagination: {
                 el: '.service-pagination',
-                clickable: true,
+                clickable: true
             },
-
             navigation: {
                 nextEl: '.service-button-next',
-                prevEl: '.service-button-prev',
+                prevEl: '.service-button-prev'
             },
-
             a11y: false,
-
             breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 2,
-                },
-                1200: {
-                    slidesPerView: 3,
-                },
-            },
-        })
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 }
+            }
+        });
     }
 
     /*--------------------------------------------------------------
-   17 Recent Course Slider Active JS
-   --------------------------------------------------------------*/
-    if (jQuery(".recent-course-slider-active .swiper").length > 0) {
-        let courseSlider = new Swiper('.recent-course-slider-active .swiper', {
+    17 Recent Course Slider Active JS
+    --------------------------------------------------------------*/
+    if ($('.recent-course-slider-active .swiper').length > 0) {
+        new Swiper('.recent-course-slider-active .swiper', {
             loop: true,
             spaceBetween: 30,
             slidesPerView: 1,
-            slidesPerColumn: 1,
             paginationClickable: true,
-            autoplay: {
-                delay: 3000,
-            },
-
+            autoplay: { delay: 3000 },
             pagination: {
                 el: '.recent-course-pagination',
-                clickable: true,
+                clickable: true
             },
-
             navigation: {
                 nextEl: '.recent-course-button-next',
-                prevEl: '.recent-course-button-prev',
+                prevEl: '.recent-course-button-prev'
             },
-
-            a11y: false,
-        })
+            a11y: false
+        });
     }
 
     /*--------------------------------------------------------------
-   18 Aos JS
-   --------------------------------------------------------------*/
-    AOS.init({
-        // Global settings:
-        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-        initClassName: 'aos-init', // class applied after initialization
-        animatedClassName: 'aos-animate', // class applied on animation
-        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-
-        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 120, // offset (in px) from the original trigger point
-        delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 400, // values from 0 to 3000, with step 50ms
-        easing: 'ease', // default easing for AOS animations
-        once: true, // whether animation should happen only once - while scrolling down
-        mirror: false, // whether elements should animate out while scrolling past them
-        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-    });
+    18 AOS JS
+    --------------------------------------------------------------*/
+    if (window.AOS) {
+        window.AOS.init({
+            disable: false,
+            startEvent: 'DOMContentLoaded',
+            initClassName: 'aos-init',
+            animatedClassName: 'aos-animate',
+            useClassNames: false,
+            disableMutationObserver: false,
+            debounceDelay: 50,
+            throttleDelay: 99,
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: true,
+            mirror: false,
+            anchorPlacement: 'top-bottom'
+        });
+    }
 
     /*--------------------------------------------------------------
-    19 counter
+    19 Counter JS
     --------------------------------------------------------------*/
-    new PureCounter();
+    if (window.PureCounter) {
+        new PureCounter();
+    }
 
     /*--------------------------------------------------------------
-    20 Ajax Form
+    20 Ajax Form JS
     --------------------------------------------------------------*/
-    $(function() {
+    $(function () {
+        const form = $('#contact-form');
+        const formMessages = $('.form-message');
 
-        // Get the form.
-        var form = $('#contact-form');
-
-        // Get the messages div.
-        var formMessages = $('.form-message');
-
-        // Set up an event listener for the contact form.
-        $(form).submit(function(e) {
-            // Stop the browser from submitting the form.
+        form.on('submit', function (e) {
             e.preventDefault();
 
-            // Serialize the form data.
-            var formData = $(form).serialize();
+            const formData = form.serialize();
 
-            // Submit the form using AJAX.
             $.ajax({
                 type: 'POST',
-                url: $(form).attr('action'),
+                url: form.attr('action'),
                 data: formData
             })
-                .done(function(response) {
-                    // Make sure that the formMessages div has the 'success' class.
-                    $(formMessages).removeClass('error');
-                    $(formMessages).addClass('success');
-
-                    // Set the message text.
-                    $(formMessages).text(response);
-
-                    // Clear the form.
-                    $('#contact-form input,#contact-form textarea').val('');
+                .done(function (response) {
+                    formMessages.removeClass('error').addClass('success');
+                    formMessages.text(response);
+                    $('#contact-form input, #contact-form textarea').val('');
                 })
-                .fail(function(data) {
-                    // Make sure that the formMessages div has the 'error' class.
-                    $(formMessages).removeClass('success');
-                    $(formMessages).addClass('error');
+                .fail(function (data) {
+                    formMessages.removeClass('success').addClass('error');
 
-                    // Set the message text.
                     if (data.responseText !== '') {
-                        $(formMessages).text(data.responseText);
+                        formMessages.text(data.responseText);
                     } else {
-                        $(formMessages).text('Oops! An error occured and your message could not be sent.');
+                        formMessages.text(
+                            'Oops! An error occurred and your message could not be sent.'
+                        );
                     }
                 });
         });
-
     });
 
 })(jQuery);

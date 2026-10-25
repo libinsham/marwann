@@ -15,9 +15,9 @@ const programs = {
     image: "/assets/img/gallery/child-orphanage-support.webp",
 
     overview: [
-      "Every child deserves care, dignity, encouragement and opportunities for a better future. MARWANN CHARITABLE TRUST works to extend charitable assistance to children living in orphanages.",
-      "Through community participation and compassionate service, the trust aims to support children's wellbeing and contribute to an environment where they feel valued and cared for.",
-      "Our approach is centred on charitable assistance, community support and responding to the needs identified through our service activities.",
+      "MARWANN CHARITABLE TRUST is dedicated to supporting orphaned and underprivileged children by providing food, education, healthcare, clothing, and emotional care.",
+      " Our mission is to ensure every child grows up with dignity, hope, and the opportunity to build a brighter future through love, protection, and equal opportunities.",
+    ,
     ],
 
     purpose:
@@ -80,11 +80,13 @@ const programs = {
       "Food distribution to support communities during the COVID-19 pandemic.",
     image: "/assets/img/gallery/covid-food-distribution.webp",
 
-    overview: [
-      "The COVID-19 pandemic created difficult circumstances for families and communities. Food assistance became an important form of charitable support during this challenging period.",
-      "MARWANN CHARITABLE TRUST undertook food distribution activities to support communities affected by the pandemic.",
-      "This program represents the importance of community solidarity and responding to essential needs during emergencies.",
-    ],
+ overview: [
+  "During the COVID-19 pandemic, MARWANN CHARITABLE TRUST extended support to families facing hardship.",
+  "We distributed food packets and essential groceries to daily wage workers, senior citizens, and vulnerable communities.",
+  "Our volunteers worked tirelessly to reach those in need.",
+  "This initiative helped reduce hunger during a challenging time.",
+  "Together, we stood with humanity in the fight against the pandemic."
+],
 
     purpose:
       "To provide food assistance to communities facing difficulties during the COVID-19 pandemic.",
@@ -146,11 +148,41 @@ const programs = {
       "Distributing Nilavembu Kasayam in communities and public institutions.",
     image: "/assets/img/gallery/nilavembu-kasayam-distribution.webp",
 
-    overview: [
-      "Community outreach can help bring health-related activities closer to people. MARWANN CHARITABLE TRUST has undertaken Nilavembu Kasayam distribution activities in communities and public institutions.",
-      "This program reflects the trust's involvement in community health and wellness initiatives.",
-      "Activities should be undertaken responsibly, with appropriate guidance from qualified healthcare professionals wherever health advice or treatment is involved.",
-    ],
+    // General Distribution
+overview: [
+  "MARWANN CHARITABLE TRUST organized the distribution of Nilavembu Kasayam as part of a community health and wellness initiative.",
+  "The traditional herbal drink was distributed to members of the public to encourage awareness of preventive healthcare.",
+  "Thousands of people benefited from this public health initiative.",
+  "Volunteers worked together to promote health awareness and community participation.",
+  "The Trust remains committed to supporting healthier communities through public welfare initiatives."
+],
+
+// In School
+overview: [
+  "MARWANN CHARITABLE TRUST distributed Nilavembu Kasayam to students and school staff as part of a community health awareness initiative.",
+  "The program encouraged awareness of preventive healthcare and healthy habits among young people.",
+  "Teachers and volunteers shared information about personal hygiene, wellness, and healthy daily practices.",
+  "The initiative brought students, teachers, and volunteers together to promote health awareness.",
+  "The Trust remains committed to creating healthier school communities and supporting children's well-being."
+],
+
+// In Court
+overview: [
+  "MARWANN CHARITABLE TRUST organized the distribution of Nilavembu Kasayam at court premises for advocates, court staff, police personnel, and members of the public.",
+  "The initiative aimed to promote community health awareness in a busy public environment.",
+  "Volunteers coordinated the distribution and shared information about preventive healthcare practices.",
+  "The program encouraged public participation in community wellness activities.",
+  "The Trust remains committed to promoting health awareness and supporting community welfare."
+],
+
+// In Police Station
+overview: [
+  "MARWANN CHARITABLE TRUST distributed Nilavembu Kasayam to police officers and station staff in recognition of their dedicated public service.",
+  "The initiative provided an opportunity to promote health awareness among personnel serving the community.",
+  "Volunteers expressed appreciation for the commitment of police personnel to public safety and service.",
+  "The program also highlighted the importance of preventive healthcare and general wellness.",
+  "The Trust remains committed to supporting community welfare and recognizing those who serve society."
+],
 
     purpose:
       "To support community outreach activities focused on health and wellness.",
@@ -212,11 +244,13 @@ const programs = {
       "Organising eye camps as part of the trust's healthcare activities.",
     image: "/assets/img/gallery/eye-camp.webp",
 
-    overview: [
-      "Access to eye care is an important part of community wellbeing. MARWANN CHARITABLE TRUST includes eye camps among its healthcare-related charitable activities.",
-      "Eye camps can provide opportunities for people to seek information and access eye care services from qualified professionals.",
-      "The trust's program focuses on community-oriented healthcare activities and the importance of eye health.",
-    ],
+   overview: [
+  "The Trust conducted free eye camps for underprivileged individuals and senior citizens.",
+  "Qualified medical professionals provided eye examinations and consultations.",
+  "People received guidance on eye care and available treatment options.",
+  "Early detection helped identify potential vision problems and reduce the risk of avoidable vision loss.",
+  "MARWANN CHARITABLE TRUST strives to improve eye health and make eye care accessible to everyone."
+],
 
     purpose:
       "To support eye care awareness and community healthcare activities.",
@@ -252,7 +286,7 @@ const programs = {
 
     gallery: [
       {
-        src: "/assets/img/gallery/eye-camp.webp",
+        src: "/programs/eye-camps",
         alt: "Eye Camps program",
         caption: "Eye Camps",
       },
@@ -278,11 +312,13 @@ const programs = {
       "Providing rice bags as part of the trust's food assistance activities.",
     image: "/assets/img/gallery/rice-bag.webp",
 
-    overview: [
-      "Access to essential food is important for every household. Through its Rice Bag Distribution program, MARWANN CHARITABLE TRUST provides charitable food assistance as part of its community support work.",
-      "Food distribution initiatives can help bring community members and supporters together around a practical way to assist people experiencing hardship.",
-      "The program reflects the trust's commitment to charitable service and community wellbeing.",
-    ],
+   overview: [
+  "MARWANN CHARITABLE TRUST distributed rice bags to families facing financial difficulties.",
+  "The initiative helped provide essential food supplies to people in need.",
+  "We reached low-income households, widows, and elderly people through our food assistance activities.",
+  "Our efforts aimed to reduce hunger and support food security among vulnerable communities.",
+  "Every donation helped bring hope to a family and reflected our commitment to compassion and community welfare."
+],
 
     purpose:
       "To provide essential food assistance through charitable community support.",
@@ -344,11 +380,13 @@ const programs = {
       "Supporting Independence Day activities and providing flood relief assistance.",
     image: "/assets/img/gallery/flood.webp",
 
-    overview: [
-      "Community participation and humanitarian assistance are important parts of charitable service. MARWANN CHARITABLE TRUST supports Independence Day activities and has undertaken flood relief assistance.",
-      "Flooding can disrupt everyday life and create urgent needs for affected communities. Relief initiatives help bring attention and support to people facing these challenges.",
-      "This program brings together community activities and charitable assistance during difficult circumstances.",
-    ],
+  overview: [
+  "MARWANN CHARITABLE TRUST combines national service with humanitarian action.",
+  "While celebrating Independence Day, the Trust extends flood relief support to communities affected by natural disasters.",
+  "Food, clothing, medicines, and essential supplies are distributed to families in need.",
+  "Our dedicated volunteers work together with compassion and commitment to support affected communities.",
+  "Our mission is to serve the nation by serving its people and bringing hope to families during difficult times."
+],
 
     purpose:
       "To contribute to community activities and provide assistance during flood-related hardships.",
@@ -410,11 +448,13 @@ const programs = {
       "Extending charitable support to residents of old age homes.",
     image: "/assets/img/gallery/old-age.webp",
 
-    overview: [
-      "Older adults deserve respect, dignity and compassion. MARWANN CHARITABLE TRUST extends charitable support to residents of old age homes through its community service activities.",
-      "Support for older adults can take many forms depending on the needs identified by the institution and the assistance available.",
-      "The program reflects the importance of community responsibility and treating older people with care and respect.",
-    ],
+   overview: [
+  "MARWANN CHARITABLE TRUST extends care and support to elderly people living in old age homes.",
+  "We provide food, clothing, medical assistance, and emotional companionship to senior citizens in need.",
+  "Our dedicated volunteers spend quality time with elderly residents, sharing kindness, comfort, and happiness.",
+  "Every visit reflects our respect, gratitude, and appreciation for the elderly members of our community.",
+  "We remain committed to helping senior citizens live with dignity, compassion, and care."
+],
 
     purpose:
       "To offer compassionate support to residents of old age homes.",
@@ -476,11 +516,13 @@ const programs = {
       "Providing medical help to people in need.",
     image: "/assets/img/gallery/medical-assistance.webp",
 
-    overview: [
-      "Medical needs can create financial and practical challenges for individuals and families. MARWANN CHARITABLE TRUST aims to provide charitable medical assistance to people who need help.",
-      "Assistance depends on the needs identified, the resources available and the nature of the support that can responsibly be provided.",
-      "Through this program, the trust seeks to support community wellbeing and encourage access to appropriate healthcare.",
-    ],
+   overview: [
+  "MARWANN CHARITABLE TRUST provides medical assistance to individuals who cannot afford essential healthcare.",
+  "We support patients with medicines, medical consultations, and necessary treatments.",
+  "The Trust also organizes health awareness programs to educate the public about health and wellbeing.",
+  "Our initiatives aim to make healthcare more accessible to underprivileged individuals and vulnerable communities.",
+  "Our mission is to promote better health and ensure access to essential medical support for everyone. Good health is the foundation of a better life."
+],
 
     purpose:
       "To assist people facing medical needs through charitable support.",
@@ -535,6 +577,141 @@ const programs = {
     ],
   },
 
+"students-yoga-event": {
+  title: "Students Yoga Event",
+  category: "Health & Wellness",
+  shortDescription:
+    "Promoting yoga, physical fitness, mental well-being, and healthy lifestyles among school students.",
+  image: "/assets/img/gallery/students-yoga.webp",
+
+  overview: [
+    "MARWANN CHARITABLE TRUST actively promotes health, fitness, and well-being among school students by organising International Yoga Day awareness programmes.",
+    "Through these initiatives, students are encouraged to understand the importance of yoga, physical fitness, mental peace, discipline, and a healthy lifestyle.",
+    "We believe that even a small act of kindness can bring meaningful change to someone's life.",
+    "Our mission is to continue serving society, supporting the needy, and creating a healthier, happier, and more compassionate community."
+  ],
+
+  purpose:
+    "To encourage school students to develop healthy habits through yoga awareness, physical fitness, discipline, and well-being.",
+
+  activities: [
+    {
+      title: "International Yoga Day",
+      description:
+        "Organise yoga awareness programmes to encourage students to learn about yoga and its role in a healthy lifestyle.",
+      icon: "♥",
+    },
+    {
+      title: "Student Wellness",
+      description:
+        "Promote awareness of physical fitness, relaxation, discipline, and overall well-being.",
+      icon: "♧",
+    },
+    {
+      title: "Healthy Living",
+      description:
+        "Encourage students to adopt healthy habits and participate in community wellness activities.",
+      icon: "✦",
+    },
+  ],
+
+  features: [
+    "International Yoga Day awareness",
+    "School student participation",
+    "Yoga and fitness awareness",
+    "Healthy lifestyle education",
+    "Community wellness initiatives",
+  ],
+
+  gallery: [
+    {
+      src: "/assets/img/gallery/students-yoga.webp",
+      alt: "Students participating in a yoga awareness programme",
+      caption: "Students Yoga Event",
+    },
+  ],
+
+  quickInfo: [
+    ["Category", "Health & Wellness"],
+    ["Focus", "Student Well-being"],
+    ["Activity", "Yoga Awareness"],
+  ],
+
+  related: [
+    "eye-camps",
+    "polio-vaccine",
+    "medical-assistance",
+  ],
+},
+
+"polio-vaccine": {
+  title: "Polio Vaccination Awareness",
+  category: "Health & Wellness",
+  shortDescription:
+    "Promoting awareness of polio vaccination and the importance of childhood immunisation.",
+  image: "/assets/img/gallery/polio-vaccine.webp",
+
+overview: [
+  "MARWANN CHARITABLE TRUST supports public health initiatives by promoting awareness about the importance of polio vaccination among children and parents.",
+  "Through awareness activities, our Trust encourages parents to ensure that their children receive polio drops on time to protect them against poliomyelitis (polio).",
+  "We aim to spread awareness about the importance of immunisation and contribute towards building a healthier, polio-free society."
+],
+
+  purpose:
+    "To promote awareness of polio vaccination and encourage timely childhood immunisation through public health awareness activities.",
+
+  activities: [
+    {
+      title: "Polio Vaccination Awareness",
+      description:
+        "Share information with parents and caregivers about the importance of childhood polio vaccination.",
+      icon: "♥",
+    },
+    {
+      title: "Community Outreach",
+      description:
+        "Encourage community participation in public health and immunisation awareness initiatives.",
+      icon: "♧",
+    },
+    {
+      title: "Child Health Awareness",
+      description:
+        "Promote awareness of routine immunisation and the importance of following official vaccination guidance.",
+      icon: "✦",
+    },
+  ],
+
+  features: [
+    "Polio vaccination awareness",
+    "Childhood immunisation education",
+    "Parent and caregiver awareness",
+    "Community health outreach",
+    "Public health initiatives",
+  ],
+
+  gallery: [
+    {
+      src: "/assets/img/gallery/polio-vaccine.webp",
+      alt: "MARWANN CHARITABLE TRUST polio vaccination awareness program",
+      caption: "Polio Vaccination Awareness",
+    },
+  ],
+
+  quickInfo: [
+    ["Category", "Health & Wellness"],
+    ["Focus", "Child Immunisation"],
+    ["Activity", "Vaccination Awareness"],
+  ],
+
+  related: [
+    "eye-camps",
+    "medical-assistance",
+    "nilavembu-kasayam-distribution",
+  ],
+},
+
+
+
   "womens-tailoring-classes": {
     title: "Women's Tailoring Classes",
     category: "Education & Skills",
@@ -542,11 +719,13 @@ const programs = {
       "Conducting tailoring classes to develop practical skills among women.",
     image: "/assets/img/gallery/tailoring.webp",
 
-    overview: [
-      "Practical skills can create opportunities for confidence, independence and future livelihoods. MARWANN CHARITABLE TRUST conducts tailoring classes to help women develop useful skills.",
-      "Tailoring provides a practical learning opportunity that can support personal development and potentially contribute to income-generating activities.",
-      "The program focuses on skills development and encouraging opportunities for women through learning and community support.",
-    ],
+  overview: [
+  "MARWANN CHARITABLE TRUST conducts tailoring training programs to empower women with valuable skills.",
+  "Participants learn professional tailoring and garment-making techniques.",
+  "The program encourages self-employment and financial independence.",
+  "Women gain confidence and skills to support themselves and their families.",
+  "Together, we create opportunities for women to build a brighter and more independent future."
+],
 
     purpose:
       "To encourage practical skill development and greater opportunities for women.",
