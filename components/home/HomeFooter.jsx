@@ -79,7 +79,7 @@ export default async function SiteFooter() {
           {/* Trust information */}
           <div className="site-footer-about">
             <Link href="/" className="site-footer-logo">
-             <img src="/assets/img/logo/logo.png" alt="MARWANN CHARITABLE TRUST" />
+             <img src="/assets/img/logo/maarwann-logo-white.png" alt="MARWANN CHARITABLE TRUST" />
             </Link>
 
 

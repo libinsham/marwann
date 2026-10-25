@@ -5,13 +5,18 @@ import { useEffect, useState } from "react";
 import "./TrustIntroPopup.css";
 
 
+
 import {
   FaWhatsapp,
   FaFacebookF,
   FaInstagram,
   FaYoutube,
+  FaTwitter,
   FaArrowUpRightFromSquare,
 } from "react-icons/fa6";
+
+
+
 
 
 const socialLinks = [
@@ -31,7 +36,14 @@ const socialLinks = [
     color: "#1877F2",
     button: "Follow Facebook",
   },
-
+{
+    name: "Instagram",
+    icon: FaInstagram,
+    description: "Connect with our community",
+    url: "https://www.instagram.com/marwanncharitabletrust",
+    color: "#ca0b64",
+    button: "Follow Instagram",
+  },
 
     {
     name: "YouTube",
@@ -40,6 +52,14 @@ const socialLinks = [
     url: "https://www.youtube.com/@marwanncharitabletrust/videos",
     color: "#FF0000",
     button: "Subscribe on YouTube",
+  },
+    {
+    name: "Twitter",
+    icon: FaTwitter,
+    description: "Connect with our community",
+    url: "https://x.com/marwanntrust_",
+    color: "#01000e",
+    button: "Follow Twitter",
   },
 ];
 
@@ -107,7 +127,7 @@ export default function TrustIntroPopup() {
         {/* Welcome banner */}
         <header className="mct-intro-banner">
           <span className="mct-banner-label">
-            MARWAN CHARITY TRUST
+            MARWAN CHARITABLE TRUST
           </span>
 
           <h1 id="mct-intro-title">
@@ -126,7 +146,7 @@ export default function TrustIntroPopup() {
           <h2>Connect With Us</h2>
 
           <p className="mct-intro-description">
-            Follow Marwan Charity Trust through our official
+            Follow Marwan Charitable Trust through our official
             social media channels for news, activities, and
             community updates.
           </p>

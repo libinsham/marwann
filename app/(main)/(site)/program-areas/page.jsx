@@ -70,7 +70,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="community" data-aos="fade-up" data-aos-duration="800">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/child-orphanage-support.webp" data-fancybox="marwann-program-gallery" data-caption="Child Orphanage Support" aria-label="Open photo: Child Orphanage Support">
+                    <a className="marwann-program-photo-link" href="/programs/child-orphanage-support" data-fancybox="marwann-program-gallery" data-caption="Child Orphanage Support" aria-label="Open photo: Child Orphanage Support">
                       <img src="/assets/img/gallery/child-orphanage-support.webp" alt="Child Orphanage Support" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -109,7 +109,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="community" data-aos="fade-up" data-aos-duration="800" data-aos-delay="80">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/covid-food-distribution.webp" data-fancybox="marwann-program-gallery" data-caption="COVID-19 Food Distribution" aria-label="Open photo: COVID-19 Food Distribution">
+                    <a className="marwann-program-photo-link" href="/programs/covid-food-distribution" data-fancybox="marwann-program-gallery" data-caption="COVID-19 Food Distribution" aria-label="Open photo: COVID-19 Food Distribution">
                       <img src="/assets/img/gallery/covid-food-distribution.webp" alt="COVID-19 Food Distribution" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -148,7 +148,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="health" data-aos="fade-up" data-aos-duration="800" data-aos-delay="160">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-health">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/nilavembu-kasayam-distribution.webp" data-fancybox="marwann-program-gallery" data-caption="Nilavembu Kasayam Distribution" aria-label="Open photo: Nilavembu Kasayam Distribution">
+                    <a className="marwann-program-photo-link" href="/programs/nilavembu-kasayam-distribution" data-fancybox="marwann-program-gallery" data-caption="Nilavembu Kasayam Distribution" aria-label="Open photo: Nilavembu Kasayam Distribution">
                       <img src="/assets/img/gallery/nilavembu-kasayam-distribution.webp" alt="Nilavembu Kasayam Distribution" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -189,7 +189,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="health" data-aos="fade-up" data-aos-duration="800">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-health">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/eye-camp.webp" data-fancybox="marwann-program-gallery" data-caption="Eye Camps" aria-label="Open photo: Eye Camps">
+                    <a className="marwann-program-photo-link" href="/programs/eye-camps" data-fancybox="marwann-program-gallery" data-caption="Eye Camps" aria-label="Open photo: Eye Camps">
                       <img src="/assets/img/gallery/eye-camp.webp" alt="Eye Camps" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -226,7 +226,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="community" data-aos="fade-up" data-aos-duration="800" data-aos-delay="80">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/rice-bag.webp" data-fancybox="marwann-program-gallery" data-caption="Rice Bag Distribution" aria-label="Open photo: Rice Bag Distribution">
+                    <a className="marwann-program-photo-link" href="/programs/rice-bag-distribution" data-fancybox="marwann-program-gallery" data-caption="Rice Bag Distribution" aria-label="Open photo: Rice Bag Distribution">
                       <img src="/assets/img/gallery/rice-bag.webp" alt="Rice Bag Distribution" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -265,7 +265,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="community" data-aos="fade-up" data-aos-duration="800" data-aos-delay="160">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/flood.webp" data-fancybox="marwann-program-gallery" data-caption="Independence Day and Flood Relief" aria-label="Open photo: Independence Day and Flood Relief">
+                    <a className="marwann-program-photo-link" href="/programs/independence-day-flood-relief" data-fancybox="marwann-program-gallery" data-caption="Independence Day and Flood Relief" aria-label="Open photo: Independence Day and Flood Relief">
                       <img src="/assets/img/gallery/flood.webp" alt="Independence Day and Flood Relief" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -304,7 +304,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="community" data-aos="fade-up" data-aos-duration="800">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-community">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/old-age.webp" data-fancybox="marwann-program-gallery" data-caption="Old Age Home Support" aria-label="Open photo: Old Age Home Support">
+                    <a className="marwann-program-photo-link" href="/programs/old-age-home-support" data-fancybox="marwann-program-gallery" data-caption="Old Age Home Support" aria-label="Open photo: Old Age Home Support">
                       <img src="/assets/img/gallery/old-age.webp" alt="Old Age Home Support" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -341,7 +341,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="health" data-aos="fade-up" data-aos-duration="800" data-aos-delay="80">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-health">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/medical-assistance.webp" data-fancybox="marwann-program-gallery" data-caption="Medical Assistance" aria-label="Open photo: Medical Assistance">
+                    <a className="marwann-program-photo-link" href="/programs/medical-assistance" data-fancybox="marwann-program-gallery" data-caption="Medical Assistance" aria-label="Open photo: Medical Assistance">
                       <img src="/assets/img/gallery/medical-assistance.webp" alt="Medical Assistance" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">
@@ -378,7 +378,7 @@ export default function Page() {
               <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 marwann-program-item" data-program-category="education" data-aos="fade-up" data-aos-duration="800" data-aos-delay="160">
                 <article className="marwann-program-card">
                   <div className="marwann-program-visual visual-skill">
-                    <a className="marwann-program-photo-link" href="/assets/img/gallery/tailoring.webp" data-fancybox="marwann-program-gallery" data-caption="Women's Tailoring Classes" aria-label="Open photo: Women's Tailoring Classes">
+                    <a className="marwann-program-photo-link" href="/programs/womens-tailoring-classes" data-fancybox="marwann-program-gallery" data-caption="Women's Tailoring Classes" aria-label="Open photo: Women's Tailoring Classes">
                       <img src="/assets/img/gallery/tailoring.webp" alt="Women's Tailoring Classes" loading="lazy" />
                       {" "}
                       <span className="program-photo-open" aria-hidden="true">

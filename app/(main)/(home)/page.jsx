@@ -1572,7 +1572,7 @@ export default function Page() {
 
                   <div className="thumb-2">
 
-                    <img alt="thumb-2" src="/assets/img/thumbs/thumb-22.webp" />
+                    <img alt="thumb-2" src="/assets/img/thumbs/thumb-14-B.webp" />
 
                   </div>
 

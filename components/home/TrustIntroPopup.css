@@ -203,14 +203,14 @@
   display: grid;
 
   /* Exactly three equal-width cards */
-  grid-template-columns: repeat(3, minmax(0, 225px));
+  grid-template-columns: repeat(5, minmax(0, 220px));
 
   /* Center the entire three-card group */
   justify-content: center;
   justify-items: stretch;
   align-items: stretch;
 
-  gap: 16px;
+  gap: 12px;
 
   width: 100%;
   max-width: 100%;
