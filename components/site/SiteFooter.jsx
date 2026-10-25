@@ -82,7 +82,7 @@ export default async function SiteFooter() {
           <div className="site-footer-about">
             <Link href="/" className="site-footer-logo">
               <img
-                src="assets/img/logo/maarwann-logo.png"
+                src="assets/img/logo/maarwann-logo-white.png"
                 alt="MARWANN CHARITABLE TRUST"
               />
             </Link>

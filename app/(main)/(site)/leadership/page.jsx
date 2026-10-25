@@ -12,39 +12,43 @@ export const metadata = {
 
 const trustees = [
   {
-    name: "Dr. S. Allahuddeen",
-    role: "All India Founder cum Chairman",
-    initials: "SA",
-    image: "/assets/img/trustees/Allahuddeen.jpeg",
-  },
-  {
     name: "Dr. A. Faheema Allahuddeen",
-    role: "All India Secretary",
-    initials: "FA",
+    displayName: "Samuga Rathna",
+    role: "Dr. A.FAHEEMA ALLAHUDDEEN is the All India Secretary of MARWANN CHARITABLE TRUST",
     image: "/assets/img/trustees/Faheema.jpeg",
   },
   {
     name: "Dr. A. Sakeena Allahuddeen",
-    role: "All India Treasurer",
-    initials: "SA",
+    displayName: "Samuga Chemmal",
+    role: "Dr. A.SAKEENA ALLAHUDDEEN is the All India Treasurer of MARWANN CHARITABLE TRUST",
     image: "/assets/img/trustees/Sakeena.jpg",
   },
   {
     name: "Mr. Kamalesh Kumar",
-    role: "All India MCT Trustee, Legal Advisor",
-    initials: "KK",
+    displayName: "Mr. Kamalesh Kumar",
+    role: "Mr. KAMALESH KUMAR  is the All India Trustee, Legal Advisor of MARWANN CHARITABLE TRUST",
     image: "/assets/img/trustees/kamalesh.jpg",
   },
 ];
 
+function ProfileImage({ src, alt, className = "" }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      loading="lazy"
+    />
+  );
+}
+
 export default function Page() {
   return (
     <main className="leadership-page">
-      {/* Leadership Hero / Breadcrumb Banner */}
+      {/* HERO BANNER */}
       <section className="breadcrumb-section">
         <div className="container-fluid leadership-hero-container">
           <div className="row g-0 leadership-hero-row">
-            {/* Left: Green panel */}
             <div className="col-xl-6 col-lg-6 leadership-hero-left">
               <div
                 className="breadcrumb-content"
@@ -53,11 +57,9 @@ export default function Page() {
                     "url(/assets/img/bg/breadcrumb-bg.webp)",
                 }}
               >
-                <div
+                <nav
                   className="breadcrumb-nav"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
+                  aria-label="Breadcrumb"
                 >
                   <ul>
                     <li>
@@ -72,18 +74,20 @@ export default function Page() {
                       </span>
                     </li>
                   </ul>
+                </nav>
+
+                <div className="breadcrumb-title">
+                  <h1>Leadership</h1>
+                  <p>
+                    Meet the people dedicated to serving our
+                    community.
+                  </p>
                 </div>
 
                 <div
-                  className="breadcrumb-title"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="400"
+                  className="shape-1"
+                  aria-hidden="true"
                 >
-                  <h1>Leadership</h1>
-                </div>
-
-                <div className="shape-1" aria-hidden="true">
                   <img
                     src="/assets/img/shapes/shape-1.webp"
                     alt=""
@@ -92,13 +96,12 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Right: Community photograph */}
             <div className="col-xl-6 col-lg-6 leadership-hero-right">
               <div className="breadcrumb-thumb">
-                <img
-                  src="/assets/img/thumbs/thumb-1.webp"
+                <ProfileImage
+                  src="/assets/img/thumbs/thumb-15-b.webp"
                   alt="MARWANN CHARITABLE TRUST community activities"
-                  fetchPriority="high"
+                  className="leadership-hero-image"
                 />
               </div>
             </div>
@@ -106,32 +109,48 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Leadership heading and trustee cards */}
-     
+      {/* LEADERSHIP INTRODUCTION */}
+      <section className="leadership-intro-section">
+        <div className="container">
+          <div className="leadership-intro">
+            <div className="common-subtitle">
+              <img
+                src="/assets/img/icons/icon-2.svg"
+                alt=""
+              />
+              <span>Our Leadership</span>
+            </div>
 
-      {/* Founder profile */}
+            <div className="common-title">
+              <h2>
+                Trustees of MARWANN CHARITABLE TRUST
+              </h2>
+            </div>
+
+            <p>
+              Our founder and trustees work together to support
+              charitable initiatives, improve lives, and serve
+              people in need.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FOUNDER PROFILE */}
       <section className="leadership-founder-section">
         <div className="container">
-          <div className="row align-items-center g-4">
-            <div
-              className="col-xl-4 col-lg-5 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+          <article className="row align-items-center g-4 leadership-profile-row">
+            <div className="col-xl-4 col-lg-5 col-md-5">
               <div className="trustee-founder-photo">
-                <img
+                <ProfileImage
                   src="/assets/img/trustees/Allahuddeen.jpeg"
-                  alt="Dr. S. Allahuddeen, Founder and Chairman"
-                  loading="lazy"
+                  alt="Samuga Sastha Dr. S. Allahuddeen, Founder and Chairman"
+                  className="leadership-founder-image"
                 />
               </div>
             </div>
 
-            <div
-              className="col-xl-8 col-lg-7 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div className="col-xl-8 col-lg-7 col-md-7">
               <div className="common-subtitle">
                 <img
                   src="/assets/img/icons/icon-2.svg"
@@ -141,8 +160,14 @@ export default function Page() {
               </div>
 
               <div className="common-title text-start">
-                <h2>Dr. S. Allahuddeen</h2>
+                <h2>
+                  Samuga Sastha Dr. S. Allahuddeen
+                </h2>
               </div>
+
+              <p className="leadership-founder-role">
+                All India Founder cum Chairman
+              </p>
 
               <div className="leadership-founder-text">
                 <p>
@@ -153,11 +178,10 @@ export default function Page() {
                 </p>
 
                 <p>
-                  The Trust&apos;s activities include
-                  community support, healthcare assistance,
-                  education-related initiatives, women&apos;s
-                  empowerment programmes and emergency
-                  relief activities.
+                  The Trust&apos;s activities include community
+                  support, healthcare assistance, education-related
+                  initiatives, women&apos;s empowerment programmes,
+                  and emergency relief activities.
                 </p>
               </div>
 
@@ -165,18 +189,24 @@ export default function Page() {
                 href="/our-story"
                 className="leadership-story-button"
               >
-                <span>We Serve God by Serving Others.</span>
+                <span>
+                  We Serve God by Serving Others.
+                </span>
 
-                <span className="leadership-story-arrow">
+                <span
+                  className="leadership-story-arrow"
+                  aria-hidden="true"
+                >
                   →
                 </span>
               </Link>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
- <section
+      {/* TRUSTEES — SAME LAYOUT AS FOUNDER */}
+      <section
         className="leadership-trustees-section"
         style={{
           backgroundImage:
@@ -184,62 +214,73 @@ export default function Page() {
         }}
       >
         <div className="container">
-          <div
-            className="leadership-intro"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
+          <header className="leadership-trustees-heading">
             <div className="common-subtitle">
-              <img
-                src="/assets/img/icons/icon-2.svg"
-                alt=""
-              />
-              <span>Leadership</span>
+             
+           
             </div>
 
-            <div className="common-title">
-              <h2>Trustees of MARWANN CHARITABLE TRUST</h2>
-            </div>
+           
 
-            <p>
-              The Trust&apos;s leadership team includes its
-              founder and trustees, serving in the roles
-              listed below.
-            </p>
-          </div>
+            
+          </header>
 
-          <div className="leadership-trustee-grid">
+          <div className="leadership-trustees-list">
             {trustees.map((trustee, index) => (
               <article
-                className="trustee-profile"
+                className="row align-items-center g-4 leadership-profile-row leadership-trustee-row"
                 data-aos="fade-up"
-                data-aos-delay={(index + 1) * 100}
+                data-aos-delay={index * 100}
                 key={trustee.name}
               >
-                <div className="trustee-photo">
-                  <img
-                    src={trustee.image}
-                    alt={trustee.name}
-                    loading="lazy"
-                  />
+                {/* LEFT: LARGE TRUSTEE PHOTO */}
+                <div className="col-xl-4 col-lg-5 col-md-5">
+                  <div className="trustee-founder-photo trustee-list-photo">
+                    <ProfileImage
+                      src={trustee.image}
+                      alt={trustee.name}
+                      className="leadership-trustee-profile-image"
+                    />
+                  </div>
                 </div>
 
-                <h3>{trustee.name}</h3>
-                <p>{trustee.role}</p>
+                {/* RIGHT: TRUSTEE DETAILS */}
+                <div className="col-xl-8 col-lg-7 col-md-7">
+                  <div className="common-subtitle">
+                   
+                   
+                  </div>
+
+                  <div className="common-title text-start">
+                    <h2>{trustee.displayName}</h2>
+                  </div>
+
+                  <h3 className="leadership-trustee-name">
+                    {trustee.name}
+                  </h3>
+
+                  <p className="leadership-founder-role">
+                    {trustee.role}
+                  </p>
+
+              
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust motto */}
+      {/* TRUST MOTTO */}
       <section className="leadership-motto-section">
         <div className="container">
           <div className="quote-panel">
             <p>
               &ldquo;We Serve God by Serving Others.&rdquo;
             </p>
-            <span>The Trust&apos;s guiding motto</span>
+            <span>
+              The Trust&apos;s guiding motto
+            </span>
           </div>
         </div>
       </section>

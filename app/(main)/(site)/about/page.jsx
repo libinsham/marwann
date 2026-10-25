@@ -204,6 +204,8 @@ export default function Page() {
             </div>
           </div>
         </section>
+        {/*   <!--  
+      
         <section className="p-t-100 p-b-100 p-t-xs-80 p-b-xs-80">
           <div className="container">
             <div className="row align-items-center row-gap-4">
@@ -245,7 +247,7 @@ export default function Page() {
               </div>
             </div>
 
-     {/*   <!--    <div className="m-t-80">
+     <div className="m-t-80">
               <div className="text-center m-b-40" data-aos="fade-up" data-aos-duration="1000">
                 <div className="common-subtitle">
                   <img src="/assets/img/icons/icon-1.svg" alt="" />
@@ -285,9 +287,12 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-            </div> -->  */}
+            </div> 
           </div>
         </section>
+-->  */}
+
+
         <section className="p-t-60 p-b-100 p-t-xs-40 p-b-xs-80" style={{ backgroundColor: "#f8f7f0" }}>
           <div className="container">
             <div className="text-center" data-aos="fade-up" data-aos-duration="1000">
