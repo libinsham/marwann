@@ -24,7 +24,7 @@ const trustees = [
     image: "/assets/img/trustees/Sakeena.jpg",
   },
   {
-    name: "Mr. Kamalesh Kumar",
+    name: "",
     displayName: "Mr. Kamalesh Kumar",
     role: "Mr. KAMALESH KUMAR  is the All India Trustee, Legal Advisor of MARWANN CHARITABLE TRUST",
     image: "/assets/img/trustees/kamalesh.jpg",

@@ -16,15 +16,12 @@ import {
 } from "react-icons/fa6";
 
 
-
-
-
 const socialLinks = [
   {
     name: "WhatsApp Channel",
     icon: FaWhatsapp,
     description: "Follow our latest announcements",
-    url: "https://whatsapp.com/channel/",
+    url: "https://whatsapp.com/channel/0029VbECtZs8V0trE7V7LG0r",
     color: "#25D366",
     button: "Follow Channel",
   },
@@ -32,7 +29,7 @@ const socialLinks = [
     name: "Facebook",
     icon: FaFacebookF,
     description: "Connect with our community",
-    url: "https://www.facebook.com/profile.php?id=100080103400545",
+    url: "https://www.facebook.com/marwann.charitabletrust.9",
     color: "#1877F2",
     button: "Follow Facebook",
   },
