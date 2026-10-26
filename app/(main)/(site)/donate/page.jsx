@@ -360,7 +360,7 @@ export default function Page() {
                       {/* Aadhaar: optional */}
                       <div className="col-md-6 field-group">
                         <label className="field-label" htmlFor="donor-aadhaar">
-                          Aadhaar Number (optional)
+                          Aadhaar Number *
                         </label>
                         <input
                           className="form-control"
@@ -386,7 +386,7 @@ export default function Page() {
                       {/* PAN: optional */}
                       <div className="col-md-6 field-group">
                         <label className="field-label" htmlFor="donor-pan">
-                          PAN Number (optional)
+                          PAN Number  *
                         </label>
                         <input
                           className="form-control"
