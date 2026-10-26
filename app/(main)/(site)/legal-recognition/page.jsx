@@ -44,7 +44,7 @@ export default function Page() {
               </div>
               <div className="col-xl-6 col-lg-6 d-none d-lg-block">
                 <div className="breadcrumb-thumb">
-                  <img src="/assets/img/thumbs/thumb-1.webp" alt="Community service" />
+                  <img src="/assets/img/thumbs/legal-b.webp" alt="Community service" />
                 </div>
               </div>
             </div>

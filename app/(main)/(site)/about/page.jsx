@@ -39,7 +39,7 @@ export default function Page() {
               </div>
               <div className="col-xl-6 col-lg-6 d-none d-lg-block">
                 <div className="breadcrumb-thumb">
-                  <img src="/assets/img/thumbs/thumb-1.webp" alt="" />
+                  <img src="/assets/img/thumbs/about-us-b.webp" alt="" />
                 </div>
               </div>
             </div>

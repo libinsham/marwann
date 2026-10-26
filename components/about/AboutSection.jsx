@@ -10,7 +10,7 @@ export default function AboutSection() {
       className="why-us-section-6 p-t-100 p-b-100 p-t-xs-80 p-b-xs-80"
       style={{
         backgroundImage:
-          'url(/assets/img/bg/why-us-bg.webp), url(/assets/img/bg/who-we-are-bg.webp)',
+          'url(/assets/img/bg/why-us-bg.webp), url(/assets/img/bg/about-us-b.webp)',
       }}
     >
       <div className="container">
