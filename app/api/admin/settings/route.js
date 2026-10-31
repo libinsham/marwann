@@ -6,13 +6,13 @@ import { cleanSettings } from '@/lib/validate'
 export const runtime = 'nodejs'
 
 export async function GET() {
-  const denied = await denyUnlessAdmin()
+  const denied = await denyUnlessAdmin('content.manage')
   if (denied) return denied
   return Response.json({ settings: await getSettings() })
 }
 
 export async function PUT(req) {
-  const denied = await denyUnlessAdmin()
+  const denied = await denyUnlessAdmin('content.manage')
   if (denied) return denied
   const { settings, error } = cleanSettings(await req.json().catch(() => ({})))
   if (error) return Response.json({ error }, { status: 400 })

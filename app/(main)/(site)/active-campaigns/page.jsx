@@ -1,5 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
+import LiveCampaigns from '@/components/site/LiveCampaigns'
+import { publicGet } from '@/lib/laravel'
+
+export const revalidate = 60
 
 export const metadata = {
   "title": "Active Campaigns | MARWANN CHARITABLE TRUST",
@@ -12,7 +16,8 @@ const css1 = "\n.work-page-intro { max-width: 820px; margin: 0 auto; }\n.work-ca
 
 const css2 = "\n    .campaign-hero {\n        position: relative;\n        overflow: hidden;\n        /* Keep hero content clear of the overlaid desktop header and top bar. */\n        padding: 145px 0 54px;\n        color: #fff;\n        text-align: center;\n        background: linear-gradient(135deg, #064f49 0%, #073d39 68%, #092f2d 100%);\n    }\n    .campaign-hero::before,\n    .campaign-hero::after {\n        content: \"\";\n        position: absolute;\n        border: 1px solid rgba(255,255,255,.13);\n        border-radius: 50%;\n        pointer-events: none;\n    }\n    .campaign-hero::before { width: 390px; height: 390px; top: -235px; right: -95px; }\n    .campaign-hero::after { width: 270px; height: 270px; top: -175px; right: -35px; }\n    .campaign-hero .container { position: relative; z-index: 1; }\n    .campaign-breadcrumb {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        flex-wrap: wrap;\n        gap: 8px;\n        margin-bottom: 22px;\n        color: rgba(255,255,255,.72);\n        font-size: 12px;\n    }\n    .campaign-breadcrumb a { color: #fff; text-decoration: none; transition: color .2s ease; }\n    .campaign-breadcrumb a:hover { color: #f7d95d; }\n    .campaign-breadcrumb i { color: #f7d95d; font-size: 10px; }\n    .campaign-hero-copy { max-width: 850px; margin: 0 auto; }\n    .campaign-eyebrow {\n        display: inline-block;\n        margin-bottom: 10px;\n        color: #f7d95d;\n        font-size: 11px;\n        font-weight: 800;\n        letter-spacing: .16em;\n        text-transform: uppercase;\n    }\n    .campaign-hero h1 {\n        margin: 0 0 12px;\n        color: #fff;\n        font-size: clamp(30px, 4vw, 46px);\n        font-weight: 750;\n        line-height: 1.15;\n        text-align: center;\n    }\n    .campaign-hero p {\n        max-width: 760px;\n        margin: 0 auto;\n        color: rgba(255,255,255,.84);\n        font-size: 15px;\n        line-height: 1.7;\n        text-align: center;\n    }\n    .campaign-main { padding: 54px 0 74px; background: #f8f7f0; }\n    .campaign-empty {\n        max-width: 860px;\n        margin: 0 auto;\n        padding: 42px 34px 38px;\n        border: 1px solid rgba(6,79,73,.10);\n        border-radius: 20px;\n        background: #fff;\n        text-align: center;\n        box-shadow: 0 14px 40px rgba(13,48,43,.06);\n    }\n    .campaign-empty .empty-icon {\n        display: grid;\n        place-items: center;\n        width: 72px;\n        height: 72px;\n        margin: 0 auto 16px;\n        border: 1px solid rgba(7,93,86,.08);\n        border-radius: 50%;\n        background: #e8f3f0;\n        color: #075d56;\n        font-size: 27px;\n    }\n    .campaign-status-pill {\n        display: inline-flex;\n        align-items: center;\n        gap: 8px;\n        margin-bottom: 14px;\n        padding: 7px 12px;\n        border-radius: 999px;\n        background: #f2f6f4;\n        color: #52615e;\n        font-size: 10px;\n        font-weight: 800;\n        letter-spacing: .1em;\n        line-height: 1.2;\n        text-transform: uppercase;\n    }\n    .campaign-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #94a3a0; }\n    .campaign-empty h2 { margin: 0 0 10px; color: #17212b; font-size: clamp(22px, 2.5vw, 30px); line-height: 1.25; }\n    .campaign-empty p { max-width: 650px; margin: 0 auto 23px; color: #69716f; font-size: 14px; line-height: 1.75; }\n    .campaign-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }\n    .campaign-bottom-note { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 22px auto 0; color: #687571; font-size: 12px; line-height: 1.6; text-align: center; }\n    .campaign-bottom-note i { color: #08776e; }\n    @media (min-width: 768px) and (max-width: 1199.98px) {\n        .campaign-hero { padding-top: 132px; }\n    }\n    @media (max-width: 767.98px) {\n        .campaign-hero { padding: 98px 0 42px; }\n        .campaign-breadcrumb { margin-bottom: 17px; }\n        .campaign-main { padding: 34px 0 55px; }\n        .campaign-empty { padding: 34px 22px 30px; }\n        .campaign-actions { flex-direction: column; }\n        .campaign-actions a { width: 100%; max-width: 310px; justify-content: center; }\n        .campaign-bottom-note { align-items: flex-start; max-width: 95%; }\n    }\n"
 
-export default function Page() {
+export default async function Page() {
+  const campaigns = (await publicGet('campaigns'))?.data || []
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: css0 }} />
@@ -32,7 +37,10 @@ export default function Page() {
         </section>
         <section className="campaign-main" aria-labelledby="campaign-status-title">
           <div className="container">
-            <div className="campaign-empty" data-aos="fade-up" data-aos-duration="800">
+            {campaigns.length > 0 ? (
+              <LiveCampaigns campaigns={campaigns} />
+            ) : (
+<div className="campaign-empty" data-aos="fade-up" data-aos-duration="800">
               <div className="empty-icon">
                 <i className="fa-light fa-calendar-check" aria-hidden="true"></i>
               </div>
@@ -59,6 +67,7 @@ export default function Page() {
                 <Link href="/contact" className="e-primary-btn is-hover-white">Contact Us</Link>
               </div>
             </div>
+            )}
             <p className="campaign-bottom-note">
               <i className="fa-regular fa-circle-info" aria-hidden="true"></i>
               {" "}

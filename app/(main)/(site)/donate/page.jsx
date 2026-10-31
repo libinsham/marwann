@@ -144,17 +144,102 @@ const donateScript = `
       return;
     }
 
-    if (status) {
-      status.textContent =
-        "Payment integration is pending. No payment has been initiated, no donation has been recorded, and no receipt has been generated. Please contact the Trust to arrange a contribution.";
-
-      status.style.display = "block";
-      status.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
-    }
+    startPayment();
   });
+
+  function setStatus(msg, ok) {
+    if (!status) return;
+    status.textContent = msg;
+    status.style.display = "block";
+    status.style.color = ok ? "#0b5d44" : "#8a1f14";
+    status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  async function api(path, opts) {
+    opts = opts || {};
+    var res = await fetch("/api/backend/" + path, {
+      method: opts.method || "GET",
+      headers: Object.assign({ "Content-Type": "application/json" }, opts.headers || {}),
+      body: opts.body
+    });
+    var json = await res.json().catch(function () { return {}; });
+    if (!res.ok) {
+      var first = json.errors ? Object.values(json.errors)[0] : null;
+      throw new Error((first && first[0]) || json.message || "Something went wrong. Please try again.");
+    }
+    return json.data || json;
+  }
+
+  function loadCheckout() {
+    return new Promise(function (resolve, reject) {
+      if (window.Razorpay) return resolve();
+      var s = document.createElement("script");
+      s.src = "https://checkout.razorpay.com/v1/checkout.js";
+      s.onload = resolve;
+      s.onerror = function () { reject(new Error("Could not load the secure payment window. Please check your connection and try again.")); };
+      document.body.appendChild(s);
+    });
+  }
+
+  async function startPayment() {
+    var fd = new FormData(form);
+    if (fd.get("frequency") === "monthly") {
+      setStatus("Monthly giving is not available online yet. Please choose One-Time Donation.", false);
+      return;
+    }
+    var button = form.querySelector("button[type=submit]");
+    if (button) button.disabled = true;
+    setStatus("Preparing your secure payment…", true);
+    try {
+      var campaign = new URLSearchParams(window.location.search).get("campaign");
+      var donation = await api("donations", {
+        method: "POST",
+        body: JSON.stringify({
+          donor_name: fd.get("donor_name"), email: fd.get("donor_email"), phone: fd.get("donor_phone") || null,
+          amount: String(selectedAmount), purpose: fd.get("purpose") || null, address: fd.get("donor_address") || null,
+          pan: fd.get("donor_pan") || null, campaign_id: campaign ? Number(campaign) : null, consent_communication: false
+        })
+      });
+      var token = donation.access_token;
+      var order = await api("payments/razorpay/orders", {
+        method: "POST", headers: { "X-Donation-Token": token },
+        body: JSON.stringify({ donation_reference: donation.reference })
+      });
+      await loadCheckout();
+
+      var rz = new window.Razorpay({
+        key: order.key_id, order_id: order.order_id, amount: order.amount, currency: order.currency,
+        name: order.name, description: order.description, prefill: order.prefill,
+        handler: async function (r) {
+          try {
+            var result = await api("payments/razorpay/verify", { method: "POST", body: JSON.stringify(r) });
+            for (var i = 0; i < 6 && result.status !== "paid"; i++) {
+              await new Promise(function (res) { setTimeout(res, 2500); });
+              result = await api("donations/" + donation.reference + "/status", { headers: { "X-Donation-Token": token } });
+            }
+            if (result.status === "paid") {
+              setStatus("Thank you. Your donation of Rs " + result.amount + " is confirmed. Receipt number: " + result.receipt_number + ". A copy is being emailed to you.", true);
+              form.reset();
+            } else {
+              setStatus("We are still confirming your payment. If money was deducted it will be confirmed automatically and a receipt will be emailed to you.", true);
+            }
+          } catch (e) {
+            setStatus("We could not confirm the payment yet. If money was deducted it will be reconciled automatically. " + e.message, false);
+          }
+          if (button) button.disabled = false;
+        },
+        modal: { ondismiss: function () { setStatus("Payment was cancelled. You can try again whenever you are ready.", false); if (button) button.disabled = false; } }
+      });
+      rz.on("payment.failed", function (resp) {
+        setStatus((resp.error && resp.error.description) || "Payment failed. Please try again.", false);
+        if (button) button.disabled = false;
+      });
+      rz.open();
+    } catch (e) {
+      setStatus(e.message, false);
+      if (button) button.disabled = false;
+    }
+  }
 })();
 `;
 
@@ -357,32 +442,6 @@ export default function Page() {
                         />
                       </div>
 
-                      {/* Aadhaar: optional */}
-                      <div className="col-md-6 field-group">
-                        <label className="field-label" htmlFor="donor-aadhaar">
-                          Aadhaar Number *
-                        </label>
-                        <input
-                          className="form-control"
-                          id="donor-aadhaar"
-                          name="donor_aadhaar"
-                          type="password"
-                          inputMode="numeric"
-                          pattern="[0-9]{12}"
-                          maxLength={12}
-                          autoComplete="off"
-                          placeholder="12-digit Aadhaar number"
-                          title="If provided, enter exactly 12 digits."
-                          aria-describedby="donor-aadhaar-help"
-                        />
-                        <small
-                          className="donate-field-hint"
-                          id="donor-aadhaar-help"
-                        >
-                          Optional. Provide only if required for an approved purpose.
-                        </small>
-                      </div>
-
                       {/* PAN: optional */}
                       <div className="col-md-6 field-group">
                         <label className="field-label" htmlFor="donor-pan">
@@ -521,8 +580,7 @@ export default function Page() {
                     </button>
 
                     <p className="donate-disclaimer">
-                      Payment processing is not yet connected. Submitting
-                      this form will not collect money or confirm a donation.
+                      Payments are processed securely by Razorpay. A donation is confirmed, and a receipt issued, only after the payment has been verified.
                     </p>
 
                     <div

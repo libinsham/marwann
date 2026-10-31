@@ -6,10 +6,10 @@ import SettingsForm from '@/components/admin/SettingsForm'
 export const dynamic = 'force-dynamic'
 
 export default async function SettingsPage() {
-  const admin = await requireAdminPage()
+  const admin = await requireAdminPage('content.view')
   const settings = await getSettings()
   return (
-    <AdminShell username={admin.username}>
+    <AdminShell admin={admin}>
       <h1>Site settings</h1>
       <p className="sub">Shown in the header, footer and Contact page.</p>
       <SettingsForm initial={settings} />

@@ -14,14 +14,14 @@ export default function AccountForm({ username }) {
     setMsg(null)
     if (next !== again) return setMsg({ err: true, text: 'The new passwords do not match' })
     setBusy(true)
-    const res = await fetch('/api/admin/password', {
+    const res = await fetch('/api/backend/auth/change-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ current, next }),
+      body: JSON.stringify({ current_password: current, password: next, password_confirmation: again }),
     })
     const data = await res.json().catch(() => ({}))
     setBusy(false)
-    if (!res.ok) return setMsg({ err: true, text: data.error || 'Could not change password' })
+    if (!res.ok) return setMsg({ err: true, text: (data.errors && Object.values(data.errors)[0]?.[0]) || data.message || 'Could not change password' })
     setCurrent('')
     setNext('')
     setAgain('')
@@ -34,8 +34,8 @@ export default function AccountForm({ username }) {
       <label htmlFor="cur">Current password</label>
       <input id="cur" type="password" value={current} onChange={(e) => setCurrent(e.target.value)} autoComplete="current-password" required />
       <label htmlFor="nw">New password</label>
-      <input id="nw" type="password" value={next} onChange={(e) => setNext(e.target.value)} autoComplete="new-password" minLength={10} required />
-      <div className="hint">At least 10 characters.</div>
+      <input id="nw" type="password" value={next} onChange={(e) => setNext(e.target.value)} autoComplete="new-password" minLength={12} required />
+      <div className="hint">At least 12 characters with upper and lower case letters and a number.</div>
       <label htmlFor="ag">Repeat new password</label>
       <input id="ag" type="password" value={again} onChange={(e) => setAgain(e.target.value)} autoComplete="new-password" required />
       {msg && <div className={'msg ' + (msg.err ? 'err' : 'ok')}>{msg.text}</div>}

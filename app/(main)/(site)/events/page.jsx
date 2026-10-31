@@ -1,5 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
+import LiveEvents from '@/components/site/LiveEvents'
+import { publicGet } from '@/lib/laravel'
+
+export const revalidate = 60
 
 export const metadata = {
   "title": "Events | MARWANN CHARITABLE TRUST",
@@ -16,7 +20,8 @@ const css3 = "\n/* Dark green navigation strip with readable white controls */\n
 
 const css4 = "\n.marwann-events-hero {\n    position:relative;overflow:hidden;padding:68px 0 58px;color:#fff;\n    background:linear-gradient(135deg,#064f49 0%,#073d39 70%,#092f2d 100%);\n}\n.marwann-events-hero:before,.marwann-events-hero:after {\n    content:\"\";position:absolute;border:1px solid rgba(255,255,255,.12);\n    border-radius:50%;pointer-events:none;\n}\n.marwann-events-hero:before {width:420px;height:420px;right:-145px;top:-230px;}\n.marwann-events-hero:after {width:290px;height:290px;right:-80px;top:-165px;}\n.marwann-events-hero .container { text-align:center; }\n.marwann-events-breadcrumb {color:rgba(255,255,255,.76);font-size:12px;margin-bottom:16px;text-align:center;}\n.marwann-events-breadcrumb a {color:#fff;text-decoration:none;}\n.marwann-events-breadcrumb i {margin:0 8px;color:#f7d95d;}\n.marwann-events-eyebrow {\n    color:#f7d95d;font-size:12px;font-weight:800;letter-spacing:.14em;\n    text-transform:uppercase;margin-bottom:10px;\n}\n.marwann-events-hero h1 {\n    color:#fff;font-size:clamp(30px,4vw,46px);font-weight:750;\n    line-height:1.15;margin:0 0 12px;\n}\n.marwann-events-hero p {\n    max-width:780px;color:rgba(255,255,255,.82);font-size:15px;\n    line-height:1.75;margin:0 auto;\n}\n.marwann-events-main {background:#f8f7f0;padding:76px 0 100px;}\n.marwann-events-card {\n    position:relative;overflow:hidden;max-width:900px;margin:0 auto;\n    padding:64px 38px;border:1px solid rgba(6,79,73,.10);\n    border-radius:20px;background:#fff;text-align:center;\n    box-shadow:0 14px 40px rgba(13,48,43,.06);\n}\n.marwann-events-icon {\n    width:86px;height:86px;display:grid;place-items:center;margin:0 auto 23px;\n    border-radius:50%;background:#e5f1ed;color:#075d56;font-size:34px;\n}\n.marwann-events-tag {\n    display:inline-block;margin-bottom:12px;padding:7px 13px;\n    border-radius:999px;background:#eaf4f1;color:#075d56;\n    font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;\n}\n.marwann-events-card h2 {\n    margin:0 0 13px;color:#17212b;font-size:clamp(24px,3vw,34px);\n    line-height:1.25;font-weight:750;\n}\n.marwann-events-card p {\n    max-width:650px;margin:0 auto;color:#64748b;font-size:14px;line-height:1.75;\n}\n.marwann-events-actions {\n    display:flex;align-items:center;justify-content:center;flex-wrap:wrap;\n    gap:12px;margin-top:28px;\n}\n.marwann-events-actions .e-primary-btn {\n    background:#075d56 !important;color:#fff !important;\n}\n.marwann-events-actions .e-primary-btn:hover {\n    background:#06433e !important;color:#fff !important;\n}\n.marwann-events-actions .secondary-link {\n    display:inline-flex;align-items:center;justify-content:center;\n    border:1px solid #dce6e3;border-radius:999px;padding:12px 20px;\n    color:#075d56;background:#fff;font-size:13px;font-weight:700;text-decoration:none;\n}\n.marwann-events-actions .secondary-link:hover {background:#f2f8f6;}\n.marwann-events-note {\n    margin:26px auto 0;padding:13px 16px;max-width:650px;\n    border:1px solid #d9e7e2;border-radius:10px;background:#eef6f3;\n    color:#42605a;font-size:12px;line-height:1.6;\n}\n@media(max-width:767.98px) {\n    .marwann-events-hero {padding:48px 0 40px;}\n    .marwann-events-main {padding:48px 0 65px;}\n    .marwann-events-card {padding:44px 22px;}\n}\n"
 
-export default function Page() {
+export default async function Page() {
+  const events = (await publicGet('events'))?.data || []
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: css0 }} />
@@ -47,7 +52,10 @@ export default function Page() {
         </section>
         <section className="marwann-events-main">
           <div className="container">
-            <div className="marwann-events-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+            {events.length > 0 ? (
+              <LiveEvents events={events} />
+            ) : (
+<div className="marwann-events-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
               <div className="marwann-events-icon">
                 <i className="fa-light fa-calendar-days" aria-hidden="true"></i>
               </div>
@@ -76,6 +84,7 @@ export default function Page() {
                 No upcoming events are currently listed. Please check back for announcements and future participation opportunities.
               </div>
             </div>
+            )}
           </div>
         </section>
       </main>
