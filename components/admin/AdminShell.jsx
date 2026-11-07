@@ -10,6 +10,7 @@ const TOP = [
   ['/admin/donations', 'Donations', 'donations.view'],
   ['/admin/m/campaigns', 'Campaigns', 'campaigns.view'],
   ['/admin/m/volunteers', 'Volunteers', 'volunteers.view'],
+  ['/admin/m/members', 'Members', 'members.view'],
   ['/admin/m/events', 'Events', 'events.view'],
   ['/admin/gallery', 'Gallery', 'gallery.view'],
 ]

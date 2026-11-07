@@ -201,7 +201,7 @@ export default function Page() {
                     <div className="marwann-volunteer-note">
                       <strong>Note:</strong>
                       {" "}
-                      This registration form is a front-end preview. Registration details are not yet sent to the Trust until a secure backend and privacy-compliant submission process are connected.
+                      Your application is submitted securely to MARWANN CHARITABLE TRUST for review. Submission does not automatically approve volunteer status; the team will contact you after reviewing your details.
                     </div>
                     <button type="submit" className="marwann-volunteer-submit m-t-25">
                       Submit Volunteer Interest

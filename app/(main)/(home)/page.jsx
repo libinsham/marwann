@@ -4,6 +4,7 @@ import Link from "next/link";
 import ReachSection from "@/components/home/ReachSection";
 import TrustIntroPopup from "@/components/home/TrustIntroPopup";
 import ImpactSection from '@/components/home/ImpactSection'
+import { publicGet } from '@/lib/laravel'
 
 export const metadata = {
   title: "MARWANN CHARITABLE TRUST — Empowering Communities, Transforming Lives",
@@ -13,7 +14,14 @@ export const metadata = {
 
 
 
-export default function Page() {
+export default async function Page() {
+  const [statesPayload, statsPayload] = await Promise.all([
+    publicGet('states', 60),
+    publicGet('grassroots-stats', 60),
+  ]);
+  const reachStates = Array.isArray(statesPayload?.data) ? statesPayload.data : [];
+  const reachStats = Array.isArray(statsPayload?.data) ? statsPayload.data : [];
+
   return (
     <>
       <TrustIntroPopup />
@@ -1894,15 +1902,9 @@ export default function Page() {
 
         {" "}
 
+        {/* Our Reach & Grassroots Presence — values are loaded from Laravel. */}
+        <ReachSection stateRecords={reachStates} globalStats={reachStats} />
       </main>
-
-
-    {/* Our Reach & Grassroots Presence */}
-
-
-
-<ReachSection />
-
     </>
 
   );

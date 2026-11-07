@@ -3,12 +3,12 @@
 
 import { useState } from "react";
 import India from "@svg-maps/india";
-import { stateData } from "@/components/home/reachData";
 import "./marwann-india-map.css";
 
 export default function IndiaMap({
   selectedState,
   onStateSelect,
+  stateData = {},
 }) {
   const [hoveredState, setHoveredState] = useState("");
 
@@ -32,11 +32,9 @@ export default function IndiaMap({
 
         <span>
           {hoveredData
-            ? `${hoveredData.members} DB Members • ${hoveredData.centres} Approved ${
-                hoveredData.centres === 1
-                  ? "Center"
-                  : "Centers"
-              }`
+            ? hoveredData.is_verified
+              ? `${Number(hoveredData.members || 0).toLocaleString('en-IN')} Members • ${Number(hoveredData.centres || 0).toLocaleString('en-IN')} Approved Centres`
+              : 'State figures awaiting Trust verification'
             : "\u00A0"}
         </span>
       </div>
@@ -55,7 +53,8 @@ export default function IndiaMap({
             const isHovered =
               hoveredState === location.name;
 
-            let fillColor = "#075d56";
+            const verified = Boolean(stateData[location.name]?.is_verified);
+            let fillColor = verified ? "#075d56" : "#dce8e3";
 
             if (isSelected) {
               fillColor = "#f7d95d";

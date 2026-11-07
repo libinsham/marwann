@@ -164,6 +164,7 @@ const NAV_ITEMS = [
       { label: 'Donate', href: '/donate' },
       { label: 'Crowdfunding', href: '/crowdfunding' },
       { label: 'Volunteer', href: '/volunteer' },
+      { label: 'Member Registration', href: '/membership' },
       { label: 'Events', href: '/events' },
     ],
   },
